@@ -1,13 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 
-interface LeaderboardEntry {
-  name: string;
-  score: number;
+// Remove LeaderboardEntry if not used
+// interface LeaderboardEntry {
+//   name: string;
+//   score: number;
+// }
+
+interface Counters {
+  Baldwin: number;
+  Sotomayor: number;
+  Mandela: number;
+  Truth: number;
 }
 
 const App: React.FC = () => {
-  const [counters, setCounters] = useState({
+  const [counters, setCounters] = useState<Counters>({
     Baldwin: 1515,
     Sotomayor: 1349,
     Mandela: 1274,
@@ -26,12 +34,12 @@ const App: React.FC = () => {
     return () => clearInterval(intervalId); // Clean up interval on component unmount
   }, [counters]);
 
-  const updateCounters = (counters: { [key: string]: number }) => {
+  const updateCounters = (counters: Counters) => {
     setCounters(counters); // Set the counters state to reflect changes
   };
 
   // Function to update leaderboard with points difference
-  const updateLeaderboard = (counters: { [key: string]: number }) => {
+  const updateLeaderboard = (counters: Counters) => {
     const houseScores = [
       { name: 'Baldwin', score: counters.Baldwin },
       { name: 'Sotomayor', score: counters.Sotomayor },
