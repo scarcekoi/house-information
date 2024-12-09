@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import './App.css';
 
 function App() {
-  // Explicitly define the type for the counters to avoid inference issues
+  // Explicitly type counters as numbers
   const counters: { [key: string]: number } = {
     Baldwin: 1515,
     Sotomayor: 1349,
@@ -40,6 +40,17 @@ function App() {
 
   // Function to update leaderboard (including the difference in scores)
   function updateLeaderboard(counters: { [key: string]: number }) {
+    // Ensure all counters are numbers
+    if (
+      typeof counters.Baldwin !== 'number' || 
+      typeof counters.Sotomayor !== 'number' || 
+      typeof counters.Mandela !== 'number' || 
+      typeof counters.Truth !== 'number'
+    ) {
+      console.error('Invalid data type in counters');
+      return;
+    }
+
     // Explicitly type houseScores as an array of objects with name (string) and score (number)
     const houseScores: { name: string; score: number }[] = [
       { name: 'Baldwin', score: counters.Baldwin },
@@ -52,9 +63,9 @@ function App() {
     houseScores.sort((a, b) => b.score - a.score);
 
     // Explicitly ensure diff values are numbers
-    const diff1 = Number(houseScores[0].score) - Number(houseScores[1].score);
-    const diff2 = Number(houseScores[1].score) - Number(houseScores[2].score);
-    const diff3 = Number(houseScores[2].score) - Number(houseScores[3].score);
+    const diff1 = houseScores[0].score - houseScores[1].score;
+    const diff2 = houseScores[1].score - houseScores[2].score;
+    const diff3 = houseScores[2].score - houseScores[3].score;
 
     // Check that diff values are numbers
     if (isNaN(diff1) || isNaN(diff2) || isNaN(diff3)) {
