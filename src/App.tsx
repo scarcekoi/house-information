@@ -41,7 +41,7 @@ function App() {
 
   // Function to update leaderboard with points difference
   function updateLeaderboard(counters: { [key: string]: number }) {
-    const houseScores = [
+    const houseScores: { name: string; score: number }[] = [
       { name: 'Baldwin', score: counters.Baldwin },
       { name: 'Sotomayor', score: counters.Sotomayor },
       { name: 'Mandela', score: counters.Mandela },
