@@ -24,10 +24,6 @@ body {
   margin-top: 10px;
 }
 
-.widget {
-  margin: 20px 0;
-}
-
 .leaderboard {
   font-size: 24px;
   text-align: center;
@@ -72,6 +68,18 @@ body {
   justify-content: center;
 }
 
+.house-counter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+}
+
+.house-name {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
 .digit {
   margin: 0 5px;
   padding: 10px;
@@ -99,14 +107,6 @@ body {
 
 .truth .digit {
   background-color: #DF8E1D;
-}
-
-.countdown {
-  font-size: 32px;
-  text-align: center;
-  margin-top: 40px;
-  font-weight: bold;
-  color: #CDD6F4;
 }
 
 .score-buttons {
