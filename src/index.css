@@ -45,8 +45,8 @@ h1 {
   margin: 10px 0;
   border-radius: 8px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Shadow for separation */
-  max-width: 320px;  /* Limit the width */
-  width: 100%;  /* Fill the width up to max */
+  width: 100%;  /* Ensure the widgets take full width available */
+  max-width: 400px;  /* Set a max-width for the widgets to prevent them from becoming too wide */
   display: flex;
   flex-direction: column; /* Stack the items vertically */
   align-items: center; /* Center the items horizontally */
