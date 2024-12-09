@@ -2,12 +2,12 @@ import { useEffect } from 'react';
 import './App.css';
 
 function App() {
-  // Initial counters
-  const counters = {
+  // Initial counters with explicit typing as numbers
+  const counters: { [key: string]: number } = {
     Baldwin: 1515,
     Sotomayor: 1349,
     Mandela: 1274,
-    Truth: 1201
+    Truth: 1201,
   };
 
   // Update counters on the screen
@@ -18,6 +18,7 @@ function App() {
 
   // Function to update the displayed counter values
   function updateCounters(counters: { [key: string]: number }) {
+    console.log('Updating counters:', counters); // Logging to check counter values
     document.getElementById("baldwin-0")!.innerText = Math.floor(counters.Baldwin / 1000).toString();
     document.getElementById("baldwin-1")!.innerText = Math.floor((counters.Baldwin % 1000) / 100).toString();
     document.getElementById("baldwin-2")!.innerText = Math.floor((counters.Baldwin % 100) / 10).toString();
@@ -41,7 +42,7 @@ function App() {
 
   // Function to update leaderboard with points difference
   function updateLeaderboard(counters: { [key: string]: number }) {
-    // Explicitly typing the scores as numbers and creating an array of objects
+    // Explicitly typing houseScores as an array of objects with name (string) and score (number)
     const houseScores: { name: string; score: number }[] = [
       { name: 'Baldwin', score: counters.Baldwin },
       { name: 'Sotomayor', score: counters.Sotomayor },
@@ -49,22 +50,28 @@ function App() {
       { name: 'Truth', score: counters.Truth }
     ];
 
-    // Sort scores in descending order, ensuring TypeScript knows these are numbers
-    houseScores.sort((a, b) => b.score - a.score);
+    // Logging houseScores to verify the values
+    console.log('House Scores:', houseScores);
 
-    // Ensure the differences are correctly treated as numbers
-    const diff1: number = houseScores[0].score - houseScores[1].score;
-    const diff2: number = houseScores[1].score - houseScores[2].score;
-    const diff3: number = houseScores[2].score - houseScores[3].score;
+    // Sorting by score explicitly as numbers
+    houseScores.sort((a, b) => b.score - a.score); // Sorting by descending score
 
-    // Update leaderboard text, using calculated differences
+    // Calculate score differences, ensuring proper number typing
+    const diff1 = houseScores[0].score - houseScores[1].score;
+    const diff2 = houseScores[1].score - houseScores[2].score;
+    const diff3 = houseScores[2].score - houseScores[3].score;
+
+    // Logging the differences for debugging
+    console.log('Differences:', { diff1, diff2, diff3 });
+
+    // Update leaderboard with scores and differences
     document.getElementById("first-place")!.innerText = `1st Place: ${houseScores[0].name} (+${diff1})`;
     document.getElementById("second-place")!.innerText = `2nd Place: ${houseScores[1].name} (+${diff2} | -${diff1})`;
     document.getElementById("third-place")!.innerText = `3rd Place: ${houseScores[2].name} (+${diff3} | -${diff2})`;
     document.getElementById("fourth-place")!.innerText = `4th Place: ${houseScores[3].name} (-${diff3})`;
   }
 
-  // Countdown timer (remains the same)
+  // Countdown timer (unchanged)
   const targetDate = new Date('2024-12-20T14:41:00');
   function updateCountdown() {
     const currentDate = new Date();
