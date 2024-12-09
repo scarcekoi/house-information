@@ -17,25 +17,28 @@ function App() {
 
   // Function to update the counters (digits)
   function updateCounters(counters: { [key: string]: number }) {
-    document.getElementById("baldwin-0")!.innerText = Math.floor(counters.Baldwin / 1000).toString();
-    document.getElementById("baldwin-1")!.innerText = Math.floor((counters.Baldwin % 1000) / 100).toString();
-    document.getElementById("baldwin-2")!.innerText = Math.floor((counters.Baldwin % 100) / 10).toString();
-    document.getElementById("baldwin-3")!.innerText = (counters.Baldwin % 10).toString();
+    const getElement = (id: string): HTMLElement | null => document.getElementById(id);
 
-    document.getElementById("sotomayor-0")!.innerText = Math.floor(counters.Sotomayor / 1000).toString();
-    document.getElementById("sotomayor-1")!.innerText = Math.floor((counters.Sotomayor % 1000) / 100).toString();
-    document.getElementById("sotomayor-2")!.innerText = Math.floor((counters.Sotomayor % 100) / 10).toString();
-    document.getElementById("sotomayor-3")!.innerText = (counters.Sotomayor % 10).toString();
+    // Ensure that each counter element exists and is typed correctly before performing operations
+    getElement("baldwin-0")!.innerText = Math.floor(counters.Baldwin / 1000).toString();
+    getElement("baldwin-1")!.innerText = Math.floor((counters.Baldwin % 1000) / 100).toString();
+    getElement("baldwin-2")!.innerText = Math.floor((counters.Baldwin % 100) / 10).toString();
+    getElement("baldwin-3")!.innerText = (counters.Baldwin % 10).toString();
 
-    document.getElementById("mandela-0")!.innerText = Math.floor(counters.Mandela / 1000).toString();
-    document.getElementById("mandela-1")!.innerText = Math.floor((counters.Mandela % 1000) / 100).toString();
-    document.getElementById("mandela-2")!.innerText = Math.floor((counters.Mandela % 100) / 10).toString();
-    document.getElementById("mandela-3")!.innerText = (counters.Mandela % 10).toString();
+    getElement("sotomayor-0")!.innerText = Math.floor(counters.Sotomayor / 1000).toString();
+    getElement("sotomayor-1")!.innerText = Math.floor((counters.Sotomayor % 1000) / 100).toString();
+    getElement("sotomayor-2")!.innerText = Math.floor((counters.Sotomayor % 100) / 10).toString();
+    getElement("sotomayor-3")!.innerText = (counters.Sotomayor % 10).toString();
 
-    document.getElementById("truth-0")!.innerText = Math.floor(counters.Truth / 1000).toString();
-    document.getElementById("truth-1")!.innerText = Math.floor((counters.Truth % 1000) / 100).toString();
-    document.getElementById("truth-2")!.innerText = Math.floor((counters.Truth % 100) / 10).toString();
-    document.getElementById("truth-3")!.innerText = (counters.Truth % 10).toString();
+    getElement("mandela-0")!.innerText = Math.floor(counters.Mandela / 1000).toString();
+    getElement("mandela-1")!.innerText = Math.floor((counters.Mandela % 1000) / 100).toString();
+    getElement("mandela-2")!.innerText = Math.floor((counters.Mandela % 100) / 10).toString();
+    getElement("mandela-3")!.innerText = (counters.Mandela % 10).toString();
+
+    getElement("truth-0")!.innerText = Math.floor(counters.Truth / 1000).toString();
+    getElement("truth-1")!.innerText = Math.floor((counters.Truth % 1000) / 100).toString();
+    getElement("truth-2")!.innerText = Math.floor((counters.Truth % 100) / 10).toString();
+    getElement("truth-3")!.innerText = (counters.Truth % 10).toString();
   }
 
   // Function to update leaderboard (including the difference in scores)
@@ -82,10 +85,10 @@ function App() {
     }
 
     // Updating leaderboard with differences
-    document.getElementById("first-place")!.innerText = `1st Place: ${houseScores[0].name} (+${diff1})`;
-    document.getElementById("second-place")!.innerText = `2nd Place: ${houseScores[1].name} (+${diff2} | -${diff1})`;
-    document.getElementById("third-place")!.innerText = `3rd Place: ${houseScores[2].name} (+${diff3} | -${diff2})`;
-    document.getElementById("fourth-place")!.innerText = `4th Place: ${houseScores[3].name} (-${diff3})`;
+    getElement("first-place")!.innerText = `1st Place: ${houseScores[0].name} (+${diff1})`;
+    getElement("second-place")!.innerText = `2nd Place: ${houseScores[1].name} (+${diff2} | -${diff1})`;
+    getElement("third-place")!.innerText = `3rd Place: ${houseScores[2].name} (+${diff3} | -${diff2})`;
+    getElement("fourth-place")!.innerText = `4th Place: ${houseScores[3].name} (-${diff3})`;
   }
 
   // Countdown timer to track remaining time
@@ -100,10 +103,10 @@ function App() {
     const secondsRemaining = Math.floor((timeDifference % (1000 * 60)) / 1000);
 
     if (timeDifference > 0) {
-      document.getElementById("countdown-timer")!.innerText =
+      getElement("countdown-timer")!.innerText =
         `${daysRemaining} Days ${hoursRemaining} Hours ${minutesRemaining} Minutes ${secondsRemaining} Seconds until next house village meeting`;
     } else {
-      document.getElementById("countdown-timer")!.innerText = "Village meeting has already occurred!";
+      getElement("countdown-timer")!.innerText = "Village meeting has already occurred!";
     }
   }
 
