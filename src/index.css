@@ -2,11 +2,9 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
+  color: #C6D0F5;  /* Match the text color from your HTML */
+  background-color: #1E1E2E;  /* Set the same background color from HTML */
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -28,6 +26,8 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background-color: #1E1E2E;  /* Ensure the background color matches */
+  color: #C6D0F5;  /* Ensure the text color matches */
 }
 
 h1 {
@@ -52,6 +52,14 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+/* Updated to ensure that widgets use the same background color as the body */
+.widget {
+  background-color: #1E1E2E;  /* Ensure widget background color is consistent */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 @media (prefers-color-scheme: light) {
