@@ -52,9 +52,9 @@ function App() {
     houseScores.sort((a, b) => b.score - a.score);
 
     // Ensure proper type handling for differences in scores (with explicit number typing)
-    const diff1 = houseScores[0].score - houseScores[1].score; // Difference between 1st and 2nd place
-    const diff2 = houseScores[1].score - houseScores[2].score; // Difference between 2nd and 3rd place
-    const diff3 = houseScores[2].score - houseScores[3].score; // Difference between 3rd and 4th place
+    const diff1: number = houseScores[0].score - houseScores[1].score; // Difference between 1st and 2nd place
+    const diff2: number = houseScores[1].score - houseScores[2].score; // Difference between 2nd and 3rd place
+    const diff3: number = houseScores[2].score - houseScores[3].score; // Difference between 3rd and 4th place
 
     // Updating leaderboard with differences
     document.getElementById("first-place")!.innerText = `1st Place: ${houseScores[0].name} (+${diff1})`;
