@@ -28,11 +28,23 @@ body {
   min-height: 100vh;
   background-color: #1E1E2E;  /* Ensure the background color matches */
   color: #C6D0F5;  /* Ensure the text color matches */
+  flex-direction: column;
 }
 
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+}
+
+/* Adjust the widget container size and appearance */
+.widget {
+  background-color: #1E1E2E;  /* Ensure widget background color is consistent */
+  padding: 10px 20px;  /* Reduced padding to make the widgets more compact */
+  margin: 10px 0;  /* Added some margin between widgets */
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);  /* Keep subtle shadow for separation */
+  max-width: 400px;  /* Limit the width of widgets */
+  width: 100%;  /* Ensure widgets fill available width, but with a max width */
 }
 
 button {
@@ -54,12 +66,10 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-/* Updated to ensure that widgets use the same background color as the body */
-.widget {
-  background-color: #1E1E2E;  /* Ensure widget background color is consistent */
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+/* Ensuring that widget sections maintain the layout for smaller screens */
+.counter-widget {
+  text-align: center;
+  padding: 10px;
 }
 
 @media (prefers-color-scheme: light) {
