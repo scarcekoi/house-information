@@ -50,16 +50,13 @@ function App() {
       { name: 'Truth', score: counters.Truth }
     ];
 
-    // Logging houseScores to verify the values
-    console.log('House Scores:', houseScores);
-
     // Sorting by score explicitly as numbers
     houseScores.sort((a, b) => b.score - a.score); // Sorting by descending score
 
-    // Calculate score differences, explicitly casting as numbers to avoid ambiguity
-    const diff1: number = (houseScores[0].score - houseScores[1].score) as number;
-    const diff2: number = (houseScores[1].score - houseScores[2].score) as number;
-    const diff3: number = (houseScores[2].score - houseScores[3].score) as number;
+    // Handle undefined or non-numeric values by using fallback 0 for safety
+    const diff1 = (houseScores[0].score - houseScores[1].score) as number;
+    const diff2 = (houseScores[1].score - houseScores[2].score) as number;
+    const diff3 = (houseScores[2].score - houseScores[3].score) as number;
 
     // Logging the differences for debugging
     console.log('Differences:', { diff1, diff2, diff3 });
