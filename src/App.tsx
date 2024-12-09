@@ -1,32 +1,46 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import './App.css';
 
-type CounterKey = 'Baldwin' | 'Sotomayor' | 'Mandela' | 'Truth';
-
-const initialCounters = {
-  Baldwin: 1515,
-  Sotomayor: 1349,
-  Mandela: 1274,
-  Truth: 1201
-};
-
 function App() {
-  const [counters, setCounters] = useState(initialCounters);
+  // Initial counters
+  const counters = {
+    Baldwin: 1515,
+    Sotomayor: 1349,
+    Mandela: 1274,
+    Truth: 1201
+  };
 
-  // Function to update the counters displayed on the page
-  function updateCounters() {
-    Object.keys(counters).forEach((key) => {
-      const counter = counters[key as CounterKey];
-      const counterElement = document.getElementById(`${key.toLowerCase()}-0`);
-      if (counterElement) {
-        counterElement.innerText = Math.floor(counter / 1000).toString();
-      }
-      // Continue for other digits (1, 2, 3)
-    });
+  // Update counters on the screen
+  useEffect(() => {
+    updateCounters(counters);
+    updateLeaderboard(counters);
+  }, [counters]);
+
+  // Function to update the displayed counter values
+  function updateCounters(counters: { [key: string]: number }) {
+    document.getElementById("baldwin-0")!.innerText = Math.floor(counters.Baldwin / 1000).toString();
+    document.getElementById("baldwin-1")!.innerText = Math.floor((counters.Baldwin % 1000) / 100).toString();
+    document.getElementById("baldwin-2")!.innerText = Math.floor((counters.Baldwin % 100) / 10).toString();
+    document.getElementById("baldwin-3")!.innerText = (counters.Baldwin % 10).toString();
+
+    document.getElementById("sotomayor-0")!.innerText = Math.floor(counters.Sotomayor / 1000).toString();
+    document.getElementById("sotomayor-1")!.innerText = Math.floor((counters.Sotomayor % 1000) / 100).toString();
+    document.getElementById("sotomayor-2")!.innerText = Math.floor((counters.Sotomayor % 100) / 10).toString();
+    document.getElementById("sotomayor-3")!.innerText = (counters.Sotomayor % 10).toString();
+
+    document.getElementById("mandela-0")!.innerText = Math.floor(counters.Mandela / 1000).toString();
+    document.getElementById("mandela-1")!.innerText = Math.floor((counters.Mandela % 1000) / 100).toString();
+    document.getElementById("mandela-2")!.innerText = Math.floor((counters.Mandela % 100) / 10).toString();
+    document.getElementById("mandela-3")!.innerText = (counters.Mandela % 10).toString();
+
+    document.getElementById("truth-0")!.innerText = Math.floor(counters.Truth / 1000).toString();
+    document.getElementById("truth-1")!.innerText = Math.floor((counters.Truth % 1000) / 100).toString();
+    document.getElementById("truth-2")!.innerText = Math.floor((counters.Truth % 100) / 10).toString();
+    document.getElementById("truth-3")!.innerText = (counters.Truth % 10).toString();
   }
 
   // Function to update leaderboard with points difference
-  function updateLeaderboard() {
+  function updateLeaderboard(counters: { [key: string]: number }) {
     const houseScores = [
       { name: 'Baldwin', score: counters.Baldwin },
       { name: 'Sotomayor', score: counters.Sotomayor },
@@ -46,68 +60,90 @@ function App() {
     document.getElementById("fourth-place")!.innerText = `4th Place: ${houseScores[3].name} (-${diff3})`;
   }
 
-  // Countdown logic
+  // Countdown timer (remains the same)
   const targetDate = new Date('2024-12-20T14:41:00');
-
   function updateCountdown() {
     const currentDate = new Date();
-    const timeDifference = targetDate.getTime() - currentDate.getTime();
+    const timeDifference = targetDate - currentDate;
 
     const daysRemaining = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
     const hoursRemaining = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     const minutesRemaining = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
     const secondsRemaining = Math.floor((timeDifference % (1000 * 60)) / 1000);
 
-    const countdownElement = document.getElementById("countdown-timer");
-    if (timeDifference > 0 && countdownElement) {
-      countdownElement.innerText = `${daysRemaining} Days ${hoursRemaining} Hours ${minutesRemaining} Minutes ${secondsRemaining} Seconds until next house village meeting`;
-    } else if (countdownElement) {
-      countdownElement.innerText = "Village meeting has already occurred!";
+    if (timeDifference > 0) {
+      document.getElementById("countdown-timer")!.innerText =
+        `${daysRemaining} Days ${hoursRemaining} Hours ${minutesRemaining} Minutes ${secondsRemaining} Seconds until next house village meeting`;
+    } else {
+      document.getElementById("countdown-timer")!.innerText = "Village meeting has already occurred!";
     }
   }
 
   useEffect(() => {
-    updateCounters();
-    updateLeaderboard();
-    updateCountdown();
     setInterval(updateCountdown, 1000); // Update every second
-  }, [counters]);
+  }, []);
 
   return (
-    <>
+    <div className="app">
       <div className="title">House Information</div>
 
-      {/* Leaderboard */}
-      <div className="widget leaderboard">
+      {/* Leaderboard Widget */}
+      <div className="widget leaderboard" id="leaderboard-widget">
         <div id="first-place" className="place">1st Place: </div>
         <div id="second-place" className="place">2nd Place: </div>
         <div id="third-place" className="place">3rd Place: </div>
         <div id="fourth-place" className="place">4th Place: </div>
       </div>
 
-      {/* Counter Widgets */}
-      {['Baldwin', 'Sotomayor', 'Mandela', 'Truth'].map((house) => (
-        <div key={house} className="widget counter-widget">
-          <div className="counter-label">{house}</div>
-          <div className={`counter ${house.toLowerCase()}`}>
-            {[...Array(4)].map((_, i) => (
-              <div
-                key={i}
-                className="digit"
-                id={`${house.toLowerCase()}-${i}`}
-              >
-                {Math.floor(counters[house as CounterKey] / Math.pow(10, 3 - i)) % 10}
-              </div>
-            ))}
-          </div>
+      {/* Baldwin Counter Widget */}
+      <div className="widget counter-widget" id="baldwin-widget">
+        <div className="counter-label">Baldwin</div>
+        <div className="counter baldwin">
+          <div className="digit" id="baldwin-0">0</div>
+          <div className="digit" id="baldwin-1">0</div>
+          <div className="digit" id="baldwin-2">0</div>
+          <div className="digit" id="baldwin-3">0</div>
         </div>
-      ))}
+      </div>
 
-      {/* Countdown */}
+      {/* Sotomayor Counter Widget */}
+      <div className="widget counter-widget" id="sotomayor-widget">
+        <div className="counter-label">Sotomayor</div>
+        <div className="counter sotomayor">
+          <div className="digit" id="sotomayor-0">0</div>
+          <div className="digit" id="sotomayor-1">0</div>
+          <div className="digit" id="sotomayor-2">0</div>
+          <div className="digit" id="sotomayor-3">0</div>
+        </div>
+      </div>
+
+      {/* Mandela Counter Widget */}
+      <div className="widget counter-widget" id="mandela-widget">
+        <div className="counter-label">Mandela</div>
+        <div className="counter mandela">
+          <div className="digit" id="mandela-0">0</div>
+          <div className="digit" id="mandela-1">0</div>
+          <div className="digit" id="mandela-2">0</div>
+          <div className="digit" id="mandela-3">0</div>
+        </div>
+      </div>
+
+      {/* Truth Counter Widget */}
+      <div className="widget counter-widget" id="truth-widget">
+        <div className="counter-label">Truth</div>
+        <div className="counter truth">
+          <div className="digit" id="truth-0">0</div>
+          <div className="digit" id="truth-1">0</div>
+          <div className="digit" id="truth-2">0</div>
+          <div className="digit" id="truth-3">0</div>
+        </div>
+      </div>
+
+      {/* Countdown Widget */}
       <div id="countdown-widget" className="countdown">
         <span id="countdown-timer">loading...</span>
       </div>
-    </>
+    </div>
   );
 }
 
