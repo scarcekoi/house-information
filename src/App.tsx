@@ -1,12 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 
-// Remove LeaderboardEntry if not used
-// interface LeaderboardEntry {
-//   name: string;
-//   score: number;
-// }
-
+// Define the Counters type for TypeScript
 interface Counters {
   Baldwin: number;
   Sotomayor: number;
@@ -15,6 +10,7 @@ interface Counters {
 }
 
 const App: React.FC = () => {
+  // Define the state for the counters
   const [counters, setCounters] = useState<Counters>({
     Baldwin: 1515,
     Sotomayor: 1349,
@@ -24,8 +20,8 @@ const App: React.FC = () => {
 
   const [countdownText, setCountdownText] = useState('');
 
-  // Update counters when the page loads
   useEffect(() => {
+    // Set interval to update countdown
     updateCounters(counters);
     updateLeaderboard(counters);
     updateCountdown();
@@ -34,11 +30,12 @@ const App: React.FC = () => {
     return () => clearInterval(intervalId); // Clean up interval on component unmount
   }, [counters]);
 
+  // Update the counters state
   const updateCounters = (counters: Counters) => {
-    setCounters(counters); // Set the counters state to reflect changes
+    setCounters(counters); // This will trigger re-render and update the counters displayed
   };
 
-  // Function to update leaderboard with points difference
+  // Update leaderboard with the current scores
   const updateLeaderboard = (counters: Counters) => {
     const houseScores = [
       { name: 'Baldwin', score: counters.Baldwin },
@@ -80,6 +77,11 @@ const App: React.FC = () => {
     }
   };
 
+  // Helper function to extract digits from a number
+  const getDigits = (num: number) => {
+    return num.toString().padStart(4, '0').split('').map(Number);
+  };
+
   return (
     <div className="App">
       <div className="title">House Information</div>
@@ -96,10 +98,11 @@ const App: React.FC = () => {
       <div className="widget counter-widget" id="baldwin-widget">
         <div className="counter-label">Baldwin</div>
         <div className="counter baldwin">
-          <div className="digit" id="baldwin-0">{Math.floor(counters.Baldwin / 1000)}</div>
-          <div className="digit" id="baldwin-1">{Math.floor((counters.Baldwin % 1000) / 100)}</div>
-          <div className="digit" id="baldwin-2">{Math.floor((counters.Baldwin % 100) / 10)}</div>
-          <div className="digit" id="baldwin-3">{counters.Baldwin % 10}</div>
+          {getDigits(counters.Baldwin).map((digit, index) => (
+            <div className="digit" key={`baldwin-${index}`}>
+              {digit}
+            </div>
+          ))}
         </div>
       </div>
 
@@ -107,10 +110,11 @@ const App: React.FC = () => {
       <div className="widget counter-widget" id="sotomayor-widget">
         <div className="counter-label">Sotomayor</div>
         <div className="counter sotomayor">
-          <div className="digit" id="sotomayor-0">{Math.floor(counters.Sotomayor / 1000)}</div>
-          <div className="digit" id="sotomayor-1">{Math.floor((counters.Sotomayor % 1000) / 100)}</div>
-          <div className="digit" id="sotomayor-2">{Math.floor((counters.Sotomayor % 100) / 10)}</div>
-          <div className="digit" id="sotomayor-3">{counters.Sotomayor % 10}</div>
+          {getDigits(counters.Sotomayor).map((digit, index) => (
+            <div className="digit" key={`sotomayor-${index}`}>
+              {digit}
+            </div>
+          ))}
         </div>
       </div>
 
@@ -118,10 +122,11 @@ const App: React.FC = () => {
       <div className="widget counter-widget" id="mandela-widget">
         <div className="counter-label">Mandela</div>
         <div className="counter mandela">
-          <div className="digit" id="mandela-0">{Math.floor(counters.Mandela / 1000)}</div>
-          <div className="digit" id="mandela-1">{Math.floor((counters.Mandela % 1000) / 100)}</div>
-          <div className="digit" id="mandela-2">{Math.floor((counters.Mandela % 100) / 10)}</div>
-          <div className="digit" id="mandela-3">{counters.Mandela % 10}</div>
+          {getDigits(counters.Mandela).map((digit, index) => (
+            <div className="digit" key={`mandela-${index}`}>
+              {digit}
+            </div>
+          ))}
         </div>
       </div>
 
@@ -129,10 +134,11 @@ const App: React.FC = () => {
       <div className="widget counter-widget" id="truth-widget">
         <div className="counter-label">Truth</div>
         <div className="counter truth">
-          <div className="digit" id="truth-0">{Math.floor(counters.Truth / 1000)}</div>
-          <div className="digit" id="truth-1">{Math.floor((counters.Truth % 1000) / 100)}</div>
-          <div className="digit" id="truth-2">{Math.floor((counters.Truth % 100) / 10)}</div>
-          <div className="digit" id="truth-3">{counters.Truth % 10}</div>
+          {getDigits(counters.Truth).map((digit, index) => (
+            <div className="digit" key={`truth-${index}`}>
+              {digit}
+            </div>
+          ))}
         </div>
       </div>
 
