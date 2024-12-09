@@ -1,9 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './App.css';
 
-const App = () => {
-  // Initial leaderboard data
-  const [leaderboardData, setLeaderboardData] = useState([
+interface LeaderboardEntry {
+  name: string;
+  score: number;
+  previousScore: number;
+}
+
+const App: React.FC = () => {
+  // Initial leaderboard data with typing for each player
+  const [leaderboardData, setLeaderboardData] = useState<LeaderboardEntry[]>([
     { name: 'Baldwin', score: 267, previousScore: 0 },
     { name: 'Truth', score: 155, previousScore: 267 },
     { name: 'Mandela', score: 134, previousScore: 155 },
@@ -11,7 +17,7 @@ const App = () => {
   ]);
 
   // Update the score for a player
-  const updateScore = (playerName, newScore) => {
+  const updateScore = (playerName: string, newScore: number): void => {
     setLeaderboardData(prevData =>
       prevData.map(player =>
         player.name === playerName
@@ -24,18 +30,23 @@ const App = () => {
   // Sort leaderboard by score in descending order
   const sortedLeaderboard = [...leaderboardData].sort((a, b) => b.score - a.score);
 
+  // Calculate the score change
+  const calculateScoreChange = (score: number, previousScore: number) => {
+    const change = score - previousScore;
+    return change >= 0 ? `(+${change})` : `(${change})`;
+  };
+
   return (
     <div className="App">
       <div className="title">Leaderboard</div>
       <div className="leaderboard">
         {sortedLeaderboard.map((player, index) => {
           const rank = index + 1;
-          const scoreChange = player.score - player.previousScore;
           return (
             <div key={index} className={`place ${player.name.toLowerCase()}`}>
               <span>{rank}{rank === 1 ? 'st' : rank === 2 ? 'nd' : rank === 3 ? 'rd' : 'th'} Place: {player.name}</span>
               <span>
-                {scoreChange > 0 ? `(+${scoreChange})` : `(${scoreChange})`}
+                {calculateScoreChange(player.score, player.previousScore)}
               </span>
             </div>
           );
@@ -52,23 +63,14 @@ const App = () => {
 
       <div className="counter-widget">
         <div className="counter-label">Score Counters</div>
+        {/* Display each house's individual score counter */}
         <div className="counter">
-          <div className="digit">2</div>
-          <div className="digit">3</div>
-          <div className="digit">4</div>
-          <div className="digit">5</div>
-          <div className="digit">1</div>
-          <div className="digit">7</div>
-          <div className="digit">8</div>
-          <div className="digit">9</div>
-          <div className="digit">1</div>
-          <div className="digit">9</div>
-          <div className="digit">2</div>
-          <div className="digit">3</div>
-          <div className="digit">2</div>
-          <div className="digit">0</div>
-          <div className="digit">7</div>
-          <div className="digit">8</div>
+          {leaderboardData.map((house, index) => (
+            <div key={index} className="house-counter">
+              <div className="house-name">{house.name}</div>
+              <div className="digit">{house.score}</div>
+            </div>
+          ))}
         </div>
       </div>
     </div>
