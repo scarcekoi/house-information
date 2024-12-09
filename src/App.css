@@ -1,123 +1,129 @@
 body {
-    font-family: Garamond, sans-serif;
-    margin: 0;
-    background-color: #1E1E2E;
-    color: #C6D0F5;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;  /* Center content vertically */
-    align-items: center;     /* Center content horizontally */
-    height: 100vh;
-    padding: 0 20px;
+  font-family: Garamond, sans-serif;
+  margin: 0;
+  background-color: #1E1E2E;
+  color: #C6D0F5;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  padding: 0 20px;
 }
 
 .App {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 2rem;
-    text-align: center;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
 }
 
 .title {
-    font-size: 48px;
-    font-weight: bold;
-    margin-top: 10px;
-    color: #C6D0F5;
+  font-size: 48px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 10px;
 }
 
 .widget {
-    margin: 20px 0;
+  margin: 20px 0;
 }
 
 .leaderboard {
-    font-size: 24px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
+  font-size: 24px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .place {
-    display: block;
-    transition: transform 0.3s ease;
-    margin: 5px 0;
-    padding: 5px;
-    font-size: 20px;
-    background-color: #2B2B36;
-    border-radius: 8px;
-    color: #C6D0F5;
+  display: block;
+  transition: transform 0.3s ease;
+  margin: 5px 0;
 }
 
 .place:hover {
-    transform: scale(1.1);
-    background-color: #3E3E4E;
+  transform: scale(1.1);
 }
 
 .counter-widget {
-    text-align: center;
-    margin-top: 20px;
+  text-align: center;
 }
 
 .counter-label {
-    display: inline-block;
-    font-size: 36px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    padding: 10px;
-    transition: transform 0.3s ease;
-    color: #C6D0F5;
+  display: inline-block;
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  padding: 10px;
+  transition: transform 0.3s ease;
+  color: #C6D0F5;
 }
 
 .counter-label:hover {
-    transform: scale(1.2);
+  transform: scale(1.2);
 }
 
 .counter {
-    display: flex;
-    justify-content: center;
-    font-size: 48px;
-    font-weight: bold;
-    gap: 10px; /* Space between the digits */
-    cursor: default;
-    flex-wrap: wrap;
+  display: flex;
+  font-size: 48px;
+  font-weight: bold;
+  cursor: default;
+  justify-content: center;
 }
 
 .digit {
-    padding: 20px;
-    border-radius: 15px;
-    color: #C6D0F5;
-    background-color: #11111B;
-    border: 5px solid #11111B;
-    transition: transform 0.3s ease;
-    display: inline-block;
-    font-size: 50px;  /* Increased font size for visibility */
+  margin: 0 5px;
+  padding: 10px;
+  border-radius: 15px;
+  color: #C6D0F5;
+  transition: transform 0.3s ease;
+  border: 5px solid #11111B;
 }
 
 .digit:hover {
-    transform: scale(1.2);
+  transform: scale(1.2);
 }
 
 .baldwin .digit {
-    background-color: #D20F39;
+  background-color: #D20F39;
 }
 
 .sotomayor .digit {
-    background-color: #1E66F5;
+  background-color: #1E66F5;
 }
 
 .mandela .digit {
-    background-color: #40A02B;
+  background-color: #40A02B;
 }
 
 .truth .digit {
-    background-color: #DF8E1D;
+  background-color: #DF8E1D;
 }
 
 .countdown {
-    font-size: 32px;
-    text-align: center;
-    margin-top: 40px;
-    font-weight: bold;
-    color: #CDD6F4;
+  font-size: 32px;
+  text-align: center;
+  margin-top: 40px;
+  font-weight: bold;
+  color: #CDD6F4;
+}
+
+.score-buttons {
+  margin-top: 20px;
+}
+
+button {
+  margin: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #3B3B4D;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #5A5A6B;
 }
