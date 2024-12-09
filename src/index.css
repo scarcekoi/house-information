@@ -25,24 +25,25 @@ body {
   display: flex;
   flex-direction: column;  /* Arrange widgets vertically */
   align-items: center;  /* Center horizontally */
-  justify-content: center;  /* Center vertically */
+  justify-content: flex-start;  /* Align items from the top */
   min-width: 320px;
   min-height: 100vh;
   background-color: #1E1E2E;  /* Background color */
   color: #C6D0F5;  /* Text color */
   padding: 20px;
+  overflow-y: auto;  /* Enable scrolling if content exceeds the screen height */
 }
 
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
-  margin-bottom: 20px;  /* Add space between title and widgets */
+  margin-bottom: 10px;  /* Reduce space between title and widgets */
   text-align: center;  /* Center the title */
 }
 
 .widget {
   background-color: #1E1E2E;  /* Background color for widgets */
-  padding: 20px;
+  padding: 15px 20px;  /* Reduce the padding at the top and bottom */
   margin: 10px 0;
   border-radius: 8px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Shadow for separation */
@@ -53,30 +54,79 @@ h1 {
   text-align: center; /* Center the text in each widget */
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-
-button:hover {
-  border-color: #646cff;
-}
-
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
 .counter-widget {
   text-align: center;
   padding: 10px;
+}
+
+.counter-label {
+  font-size: 36px;  /* Reduce label font size */
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.counter {
+  display: flex;
+  font-size: 48px;
+  font-weight: bold;
+  justify-content: center;
+}
+
+.digit {
+  margin: 0 5px;
+  padding: 8px 12px;  /* Adjust padding to make digits shorter */
+  border-radius: 15px;
+  color: #C6D0F5;
+  transition: transform 0.3s ease;
+  border: 5px solid #11111B;
+}
+
+.digit:hover {
+  transform: scale(1.2);
+}
+
+/* Color the digits to match their respective counter label */
+.baldwin .digit {
+  background-color: #D20F39;
+}
+
+.sotomayor .digit {
+  background-color: #1E66F5;
+}
+
+.mandela .digit {
+  background-color: #40A02B;
+}
+
+.truth .digit {
+  background-color: #DF8E1D;
+}
+
+/* Leaderboard widget styling */
+.leaderboard {
+  font-size: 24px;
+  text-align: center;
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center the items horizontally */
+}
+
+.place {
+  display: block; /* Ensures the leaderboard items stack vertically */
+  margin: 5px 0; /* Adds space between leaderboard items */
+  transition: transform 0.3s ease;
+}
+
+.place:hover {
+  transform: scale(1.1); /* Zoom in on hover */
+}
+
+.countdown {
+  font-size: 32px;
+  text-align: center;
+  margin-top: 40px;
+  font-weight: bold;
+  color: #CDD6F4;
 }
 
 @media (prefers-color-scheme: light) {
