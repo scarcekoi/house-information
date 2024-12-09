@@ -41,7 +41,7 @@ function App() {
 
   // Function to update leaderboard with points difference
   function updateLeaderboard(counters: { [key: string]: number }) {
-    // Explicitly typing the scores as numbers
+    // Explicitly typing the scores as numbers and creating an array of objects
     const houseScores: { name: string; score: number }[] = [
       { name: 'Baldwin', score: counters.Baldwin },
       { name: 'Sotomayor', score: counters.Sotomayor },
@@ -49,15 +49,15 @@ function App() {
       { name: 'Truth', score: counters.Truth }
     ];
 
-    // Sort scores in descending order
+    // Sort scores in descending order, ensuring TypeScript knows these are numbers
     houseScores.sort((a, b) => b.score - a.score);
 
-    // Explicitly define the differences with number type annotations
+    // Ensure the differences are correctly treated as numbers
     const diff1: number = houseScores[0].score - houseScores[1].score;
     const diff2: number = houseScores[1].score - houseScores[2].score;
     const diff3: number = houseScores[2].score - houseScores[3].score;
 
-    // Update leaderboard text
+    // Update leaderboard text, using calculated differences
     document.getElementById("first-place")!.innerText = `1st Place: ${houseScores[0].name} (+${diff1})`;
     document.getElementById("second-place")!.innerText = `2nd Place: ${houseScores[1].name} (+${diff2} | -${diff1})`;
     document.getElementById("third-place")!.innerText = `3rd Place: ${houseScores[2].name} (+${diff3} | -${diff2})`;
