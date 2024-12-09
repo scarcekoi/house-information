@@ -25,12 +25,12 @@ body {
   display: flex;
   flex-direction: column; /* Ensure widgets stack vertically */
   align-items: center;  /* Center horizontally */
-  justify-content: flex-start; /* Start from the top */
+  justify-content: center; /* Center vertically */
   min-width: 320px;
   min-height: 100vh;
   background-color: #1E1E2E; /* Background color */
   color: #C6D0F5; /* Text color */
-  padding: 20px;  /* Padding for space around */
+  padding: 0 20px;  /* Padding for space around */
 }
 
 h1 {
@@ -45,8 +45,7 @@ h1 {
   margin: 10px 0;
   border-radius: 8px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Shadow for separation */
-  width: 100%;  /* Ensure the widgets take full width available */
-  max-width: 400px;  /* Set a max-width for the widgets to prevent them from becoming too wide */
+  width: 300px;  /* Set a specific width for a "skinny" widget */
   display: flex;
   flex-direction: column; /* Stack the items vertically */
   align-items: center; /* Center the items horizontally */
