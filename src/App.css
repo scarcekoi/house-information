@@ -10,13 +10,6 @@ body {
   padding: 0 20px;
 }
 
-.App {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-
 .title {
   font-size: 48px;
   font-weight: bold;
@@ -24,6 +17,11 @@ body {
   margin-top: 10px;
 }
 
+.widget {
+  margin: 20px 0;
+}
+
+/* Leaderboard widget styling */
 .leaderboard {
   font-size: 24px;
   text-align: center;
@@ -32,6 +30,7 @@ body {
   align-items: center;
 }
 
+/* Place styling for leaderboard */
 .place {
   display: block;
   transition: transform 0.3s ease;
@@ -42,6 +41,7 @@ body {
   transform: scale(1.1);
 }
 
+/* Counter widget styling */
 .counter-widget {
   text-align: center;
 }
@@ -68,18 +68,6 @@ body {
   justify-content: center;
 }
 
-.house-counter {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 10px;
-}
-
-.house-name {
-  font-size: 24px;
-  margin-bottom: 10px;
-}
-
 .digit {
   margin: 0 5px;
   padding: 10px;
@@ -93,6 +81,7 @@ body {
   transform: scale(1.2);
 }
 
+/* Color the digits to match their respective counter label */
 .baldwin .digit {
   background-color: #D20F39;
 }
@@ -109,21 +98,11 @@ body {
   background-color: #DF8E1D;
 }
 
-.score-buttons {
-  margin-top: 20px;
-}
-
-button {
-  margin: 5px;
-  padding: 10px 20px;
-  font-size: 16px;
-  background-color: #3B3B4D;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #5A5A6B;
+/* Countdown widget styling */
+.countdown {
+  font-size: 32px;
+  text-align: center;
+  margin-top: 40px;
+  font-weight: bold;
+  color: #CDD6F4;
 }
