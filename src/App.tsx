@@ -17,6 +17,7 @@ function App() {
 
   // Function to update the counters (digits)
   function updateCounters(counters: { [key: string]: number }) {
+    // Directly using document.getElementById
     const getElement = (id: string): HTMLElement | null => document.getElementById(id);
 
     // Ensure that each counter element exists and is typed correctly before performing operations
@@ -85,10 +86,10 @@ function App() {
     }
 
     // Updating leaderboard with differences
-    getElement("first-place")!.innerText = `1st Place: ${houseScores[0].name} (+${diff1})`;
-    getElement("second-place")!.innerText = `2nd Place: ${houseScores[1].name} (+${diff2} | -${diff1})`;
-    getElement("third-place")!.innerText = `3rd Place: ${houseScores[2].name} (+${diff3} | -${diff2})`;
-    getElement("fourth-place")!.innerText = `4th Place: ${houseScores[3].name} (-${diff3})`;
+    document.getElementById("first-place")!.innerText = `1st Place: ${houseScores[0].name} (+${diff1})`;
+    document.getElementById("second-place")!.innerText = `2nd Place: ${houseScores[1].name} (+${diff2} | -${diff1})`;
+    document.getElementById("third-place")!.innerText = `3rd Place: ${houseScores[2].name} (+${diff3} | -${diff2})`;
+    document.getElementById("fourth-place")!.innerText = `4th Place: ${houseScores[3].name} (-${diff3})`;
   }
 
   // Countdown timer to track remaining time
@@ -103,10 +104,10 @@ function App() {
     const secondsRemaining = Math.floor((timeDifference % (1000 * 60)) / 1000);
 
     if (timeDifference > 0) {
-      getElement("countdown-timer")!.innerText =
+      document.getElementById("countdown-timer")!.innerText =
         `${daysRemaining} Days ${hoursRemaining} Hours ${minutesRemaining} Minutes ${secondsRemaining} Seconds until next house village meeting`;
     } else {
-      getElement("countdown-timer")!.innerText = "Village meeting has already occurred!";
+      document.getElementById("countdown-timer")!.innerText = "Village meeting has already occurred!";
     }
   }
 
