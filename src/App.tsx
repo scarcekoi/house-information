@@ -56,10 +56,10 @@ function App() {
     // Sorting by score explicitly as numbers
     houseScores.sort((a, b) => b.score - a.score); // Sorting by descending score
 
-    // Calculate score differences, ensuring proper number typing
-    const diff1 = houseScores[0].score - houseScores[1].score;
-    const diff2 = houseScores[1].score - houseScores[2].score;
-    const diff3 = houseScores[2].score - houseScores[3].score;
+    // Calculate score differences, explicitly casting as numbers to avoid ambiguity
+    const diff1: number = (houseScores[0].score - houseScores[1].score) as number;
+    const diff2: number = (houseScores[1].score - houseScores[2].score) as number;
+    const diff3: number = (houseScores[2].score - houseScores[3].score) as number;
 
     // Logging the differences for debugging
     console.log('Differences:', { diff1, diff2, diff3 });
@@ -152,7 +152,7 @@ function App() {
 
       {/* Countdown Widget */}
       <div id="countdown-widget" className="countdown">
-        <span id="countdown-timer">loading...</span>
+        <span id="countdown-timer"></span>
       </div>
     </div>
   );
