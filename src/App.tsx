@@ -51,6 +51,9 @@ function App() {
       return;
     }
 
+    // Logging counters for debugging
+    console.log('Counters:', counters);
+
     // Explicitly type houseScores as an array of objects with name (string) and score (number)
     const houseScores: { name: string; score: number }[] = [
       { name: 'Baldwin', score: counters.Baldwin },
@@ -62,10 +65,16 @@ function App() {
     // Sort the houseScores array by score in descending order (explicit typing as numbers)
     houseScores.sort((a, b) => b.score - a.score);
 
+    // Debugging: Log sorted houseScores
+    console.log('Sorted houseScores:', houseScores);
+
     // Explicitly ensure diff values are numbers
     const diff1 = houseScores[0].score - houseScores[1].score;
     const diff2 = houseScores[1].score - houseScores[2].score;
     const diff3 = houseScores[2].score - houseScores[3].score;
+
+    // Debugging: Log differences
+    console.log('Differences:', diff1, diff2, diff3);
 
     // Check that diff values are numbers
     if (isNaN(diff1) || isNaN(diff2) || isNaN(diff3)) {
