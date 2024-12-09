@@ -24,16 +24,19 @@ body {
   margin: 0;
   display: flex;
   place-items: center;
+  justify-content: center; /* Ensure widgets are centered horizontally */
   min-width: 320px;
   min-height: 100vh;
   background-color: #1E1E2E;  /* Ensure the background color matches */
   color: #C6D0F5;  /* Ensure the text color matches */
   flex-direction: column;
+  padding: 20px;  /* Add some padding to prevent touching the edges */
 }
 
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+  margin-bottom: 20px; /* Space between title and widgets */
 }
 
 /* Adjust the widget container size and appearance */
@@ -43,7 +46,7 @@ h1 {
   margin: 10px 0;  /* Added some margin between widgets */
   border-radius: 8px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);  /* Keep subtle shadow for separation */
-  max-width: 400px;  /* Limit the width of widgets */
+  max-width: 300px;  /* Make widgets skinnier */
   width: 100%;  /* Ensure widgets fill available width, but with a max width */
 }
 
