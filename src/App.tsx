@@ -51,10 +51,15 @@ function App() {
     // Sort the houseScores array by score in descending order (explicit typing as numbers)
     houseScores.sort((a, b) => b.score - a.score);
 
-    // Ensure proper type handling for differences in scores (with explicit number typing)
-    const diff1: number = houseScores[0].score - houseScores[1].score; // Difference between 1st and 2nd place
-    const diff2: number = houseScores[1].score - houseScores[2].score; // Difference between 2nd and 3rd place
-    const diff3: number = houseScores[2].score - houseScores[3].score; // Difference between 3rd and 4th place
+    // Explicitly ensure diff values are numbers
+    const diff1 = Number(houseScores[0].score) - Number(houseScores[1].score);
+    const diff2 = Number(houseScores[1].score) - Number(houseScores[2].score);
+    const diff3 = Number(houseScores[2].score) - Number(houseScores[3].score);
+
+    // Check that diff values are numbers
+    if (isNaN(diff1) || isNaN(diff2) || isNaN(diff3)) {
+      console.error("Invalid difference values:", diff1, diff2, diff3);
+    }
 
     // Updating leaderboard with differences
     document.getElementById("first-place")!.innerText = `1st Place: ${houseScores[0].name} (+${diff1})`;
