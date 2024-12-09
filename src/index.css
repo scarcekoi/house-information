@@ -3,8 +3,8 @@
   line-height: 1.5;
   font-weight: 400;
   color-scheme: light dark;
-  color: #C6D0F5;  /* Match the text color from your HTML */
-  background-color: #1E1E2E;  /* Set the same background color from HTML */
+  color: #C6D0F5;  /* Text color */
+  background-color: #1E1E2E;  /* Background color */
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -23,14 +23,14 @@ a:hover {
 body {
   margin: 0;
   display: flex;
-  place-items: center;
-  justify-content: center; /* Ensure widgets are centered horizontally */
+  flex-direction: column; /* Ensure widgets stack vertically */
+  align-items: center;  /* Center horizontally */
+  justify-content: flex-start; /* Start from the top */
   min-width: 320px;
   min-height: 100vh;
-  background-color: #1E1E2E;  /* Ensure the background color matches */
-  color: #C6D0F5;  /* Ensure the text color matches */
-  flex-direction: column;
-  padding: 20px;  /* Add some padding to prevent touching the edges */
+  background-color: #1E1E2E; /* Background color */
+  color: #C6D0F5; /* Text color */
+  padding: 20px;  /* Padding for space around */
 }
 
 h1 {
@@ -39,15 +39,17 @@ h1 {
   margin-bottom: 20px; /* Space between title and widgets */
 }
 
-/* Adjust the widget container size and appearance */
 .widget {
-  background-color: #1E1E2E;  /* Ensure widget background color is consistent */
-  padding: 10px 20px;  /* Reduced padding to make the widgets more compact */
-  margin: 10px 0;  /* Added some margin between widgets */
+  background-color: #1E1E2E;  /* Background color for widgets */
+  padding: 10px 20px;
+  margin: 10px 0;
   border-radius: 8px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);  /* Keep subtle shadow for separation */
-  max-width: 300px;  /* Make widgets skinnier */
-  width: 100%;  /* Ensure widgets fill available width, but with a max width */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Shadow for separation */
+  max-width: 320px;  /* Limit the width */
+  width: 100%;  /* Fill the width up to max */
+  display: flex;
+  flex-direction: column; /* Stack the items vertically */
+  align-items: center; /* Center the items horizontally */
 }
 
 button {
@@ -69,7 +71,6 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-/* Ensuring that widget sections maintain the layout for smaller screens */
 .counter-widget {
   text-align: center;
   padding: 10px;
