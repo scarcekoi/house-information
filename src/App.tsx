@@ -108,10 +108,8 @@ const App: React.FC = () => {
       <h1 className="title">House Information</h1>
 
       {!isLoggedIn ? (
-        // Show the login component if not logged in
         <Lgn onLogin={handleLogin} onError={handleError} />
       ) : (
-        // Show the dashboard if logged in
         <div>
           <p>Welcome, {username}!</p>
           <p>You are logged in as a {role}.</p>
@@ -128,6 +126,9 @@ const App: React.FC = () => {
           </div>
 
           {/* Other Widgets (Counters, Countdown) */}
+          <div id="countdown-widget" className="countdown">
+            <span id="countdown-timer">{countdownText}</span>
+          </div>
         </div>
       )}
 
