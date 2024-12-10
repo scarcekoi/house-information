@@ -23,7 +23,6 @@ const App: React.FC = () => {
   useEffect(() => {
     // Set interval to update countdown
     updateCounters(counters);
-    updateLeaderboard(counters);
     updateCountdown();
     const intervalId = setInterval(updateCountdown, 1000); // Update every second
 
@@ -33,28 +32,6 @@ const App: React.FC = () => {
   // Update the counters state
   const updateCounters = (counters: Counters) => {
     setCounters(counters); // This will trigger re-render and update the counters displayed
-  };
-
-  // Update leaderboard with the current scores
-  const updateLeaderboard = (counters: Counters) => {
-    const houseScores = [
-      { name: 'Baldwin', score: counters.Baldwin },
-      { name: 'Sotomayor', score: counters.Sotomayor },
-      { name: 'Mandela', score: counters.Mandela },
-      { name: 'Truth', score: counters.Truth },
-    ];
-
-    houseScores.sort((a, b) => b.score - a.score);
-
-    const diff1 = houseScores[0].score - houseScores[1].score;
-    const diff2 = houseScores[1].score - houseScores[2].score;
-    const diff3 = houseScores[2].score - houseScores[3].score;
-
-    // Updating leaderboard display dynamically
-    document.getElementById("first-place")!.innerText = `1st Place: ${houseScores[0].name} (+${diff1})`;
-    document.getElementById("second-place")!.innerText = `2nd Place: ${houseScores[1].name} (+${diff2} | -${diff1})`;
-    document.getElementById("third-place")!.innerText = `3rd Place: ${houseScores[2].name} (+${diff3} | -${diff2})`;
-    document.getElementById("fourth-place")!.innerText = `4th Place: ${houseScores[3].name} (-${diff3})`;
   };
 
   // Countdown logic
@@ -93,7 +70,7 @@ const App: React.FC = () => {
         <div id="first-place" className="place">
           <span className="place-digit">1st</span>
           {getDigits(counters.Baldwin).map((digit, index) => (
-            <div className="digit" key={`first-${index}`}>
+            <div className="digit baldwin" key={`first-${index}`}>
               {digit}
             </div>
           ))}
@@ -101,7 +78,7 @@ const App: React.FC = () => {
         <div id="second-place" className="place">
           <span className="place-digit">2nd</span>
           {getDigits(counters.Sotomayor).map((digit, index) => (
-            <div className="digit" key={`second-${index}`}>
+            <div className="digit sotomayor" key={`second-${index}`}>
               {digit}
             </div>
           ))}
@@ -109,7 +86,7 @@ const App: React.FC = () => {
         <div id="third-place" className="place">
           <span className="place-digit">3rd</span>
           {getDigits(counters.Mandela).map((digit, index) => (
-            <div className="digit" key={`third-${index}`}>
+            <div className="digit mandela" key={`third-${index}`}>
               {digit}
             </div>
           ))}
@@ -117,7 +94,7 @@ const App: React.FC = () => {
         <div id="fourth-place" className="place">
           <span className="place-digit">4th</span>
           {getDigits(counters.Truth).map((digit, index) => (
-            <div className="digit" key={`fourth-${index}`}>
+            <div className="digit truth" key={`fourth-${index}`}>
               {digit}
             </div>
           ))}
