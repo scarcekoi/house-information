@@ -3,7 +3,7 @@ body {
   font-family: Garamond, sans-serif;
   margin: 0;
   background-color: #1E1E2E;
-  color: #CDD6F4;  /* Updated text color */
+  color: #CDD6F4;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -17,13 +17,13 @@ body {
   font-weight: bold;
   text-align: center;
   margin-top: 10px;
-  color: #CDD6F4;  /* Updated title color */
+  color: #CDD6F4;
 }
 
 /* Widget styling */
 .widget {
   margin: 20px 0;
-  background-color: #181825;  /* Updated widget background color */
+  background-color: #181825;
   padding: 15px;
   border-radius: 8px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Shadow for separation */
@@ -41,18 +41,23 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: #CDD6F4;  /* Updated leaderboard text color */
+  color: #CDD6F4;
 }
 
 .place {
   display: flex;
   align-items: center; /* Align items horizontally */
   margin: 10px 0;
-  transition: transform 0.3s ease;
+  padding: 10px 20px; /* Added padding to give it a button-like look */
+  background-color: #2A2A39; /* Darker background to make it look like a button */
+  border-radius: 50px;  /* Rounded corners */
+  cursor: pointer; /* Show pointer cursor when hovering */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for background color and scaling */
 }
 
 .place:hover {
-  transform: scale(1.1);
+  background-color: #383C53; /* Lighter background on hover */
+  transform: scale(1.05); /* Slightly enlarge on hover */
 }
 
 /* Bubble around leaderboard position */
@@ -65,7 +70,6 @@ body {
   margin-right: 10px;  /* Space between the bubble and the house name */
   font-size: 24px;
   display: inline-block;
-  transition: transform 0.3s ease;
 }
 
 .place-digit:hover {
@@ -101,7 +105,7 @@ body {
   margin-bottom: 10px;
   padding: 10px;
   transition: transform 0.3s ease;
-  color: #CDD6F4;  /* Updated counter label color */
+  color: #CDD6F4;
 }
 
 .counter-label:hover {
@@ -114,14 +118,14 @@ body {
   font-weight: bold;
   cursor: default;
   justify-content: center;
-  color: #CDD6F4;  /* Updated counter digits color */
+  color: #CDD6F4;
 }
 
 .digit {
   margin: 0 5px;
   padding: 10px;
   border-radius: 15px;
-  color: #CDD6F4;  /* Updated digit text color */
+  color: #CDD6F4;
   transition: transform 0.3s ease;
   border: 5px solid #11111B;
 }
@@ -153,5 +157,5 @@ body {
   text-align: center;
   margin-top: 40px;
   font-weight: bold;
-  color: #CDD6F4;  /* Updated countdown text color */
+  color: #CDD6F4;
 }
