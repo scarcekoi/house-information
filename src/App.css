@@ -137,13 +137,13 @@ body {
   text-align: center;  /* Center the text */
 }
 
-/* Add a Login Button to the top right */
+/* Login button styling */
 .login-btn {
   position: absolute;
   top: 20px;
   right: 20px;
-  background-color: #1E66F5;
-  color: #FFFFFF;
+  background-color: #181825;  /* Set background color */
+  color: #CDD6F4;  /* Set text color */
   padding: 10px 20px;
   border: none;
   border-radius: 8px;
