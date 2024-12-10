@@ -115,6 +115,7 @@ h1 {
   flex-direction: column; /* Stack items vertically */
   align-items: center; /* Center the items horizontally */
   margin-bottom: 20px;  /* Space at the bottom */
+  width: 360px;  /* Increased width of the leaderboard to prevent text wrapping */
 }
 
 .place {
