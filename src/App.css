@@ -48,19 +48,13 @@ body {
   display: flex;
   align-items: center; /* Align items horizontally */
   margin: 10px 0;
-  padding: 10px 20px; /* Added padding to give it a button-like look */
-  background-color: #2A2A39; /* Darker background to make it look like a button */
+  padding: 10px 20px; /* Added padding to give it a look similar to the old digits */
+  background-color: transparent; /* No background color to look static */
   border-radius: 50px;  /* Rounded corners */
-  cursor: pointer; /* Show pointer cursor when hovering */
-  transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for background color and scaling */
+  cursor: default; /* No pointer cursor */
+  transition: none; /* Removed hover transition */
 }
 
-.place:hover {
-  background-color: #383C53; /* Lighter background on hover */
-  transform: scale(1.05); /* Slightly enlarge on hover */
-}
-
-/* Bubble around leaderboard position */
 .place-digit {
   background-color: #11111B; /* Dark background for the bubble */
   color: #CDD6F4; /* Light text inside the bubble */
@@ -70,10 +64,13 @@ body {
   margin-right: 10px;  /* Space between the bubble and the house name */
   font-size: 24px;
   display: inline-block;
+  cursor: default; /* Static numbers with no hover effect */
 }
 
+/* Remove scaling effect on hover */
 .place-digit:hover {
-  transform: scale(1.1);
+  transform: none;
+  background-color: transparent;
 }
 
 /* Color the bubbles based on house color */
@@ -130,12 +127,6 @@ body {
   transition: none;  /* Remove hover transition */
   border: 5px solid #11111B;  /* Subtle border for distinction */
   cursor: default;  /* Change cursor to default (not a pointer) */
-}
-
-/* Remove scaling effect on hover */
-.digit:hover {
-  transform: none;  /* Remove scaling effect */
-  background-color: transparent;  /* Make background transparent */
 }
 
 /* Ensure the counter digits are styled as static elements */
