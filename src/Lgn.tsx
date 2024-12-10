@@ -1,13 +1,13 @@
 import React, { useState, FormEvent } from 'react';
-import './App.css';
 
-const App: React.FC = () => {
-  // State to manage login form inputs
+interface LgnProps {
+  onLogin: (username: string, role: string) => void;
+  onError: (error: string) => void;
+}
+
+const Lgn: React.FC<LgnProps> = ({ onLogin, onError }) => {
   const [username, setUsername] = useState<string>('');
   const [password, setPassword] = useState<string>('');
-  const [role, setRole] = useState<string>('');  // Manage role (e.g., 'prefect', 'teacher', 'user')
-  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);  // To check if the user is logged in
-  const [error, setError] = useState<string>('');  // To manage error messages
 
   // Sample valid credentials with roles
   const validUsers = {
@@ -16,138 +16,52 @@ const App: React.FC = () => {
     user: { username: 'studentUser', password: 'student123' },
   };
 
-  // State to manage the house numbers
-  const [houseNumbers, setHouseNumbers] = useState({
-    house1: 0,
-    house2: 0,
-    house3: 0,
-    house4: 0,
-  });
-
-  // Handle Login
   const handleLogin = (e: FormEvent) => {
     e.preventDefault();
-
-    // Check credentials and assign role
     if (username === validUsers.prefect.username && password === validUsers.prefect.password) {
-      setIsLoggedIn(true);
-      setRole('prefect');
-      setError('');
+      onLogin(username, 'prefect');
+      onError('');
     } else if (username === validUsers.teacher.username && password === validUsers.teacher.password) {
-      setIsLoggedIn(true);
-      setRole('teacher');
-      setError('');
+      onLogin(username, 'teacher');
+      onError('');
     } else if (username === validUsers.user.username && password === validUsers.user.password) {
-      setIsLoggedIn(true);
-      setRole('user');
-      setError('');
+      onLogin(username, 'user');
+      onError('');
     } else {
-      setIsLoggedIn(false);
-      setRole('');
-      setError('Invalid username or password!');
-    }
-  };
-
-  // Handle House Number Edit (only for prefects and teachers)
-  const handleHouseNumberChange = (house: string, value: number) => {
-    if (role === 'prefect' || role === 'teacher') {
-      setHouseNumbers((prevState) => ({
-        ...prevState,
-        [house]: value,
-      }));
+      onError('Invalid username or password!');
     }
   };
 
   return (
-    <div className="App">
-      <h1 className="title">Welcome to the House Management Dashboard</h1>
-
-      {!isLoggedIn ? (
-        // Login form
-        <div className="login-widget">
-          <h2>Login</h2>
-          <form onSubmit={handleLogin}>
-            <div>
-              <label htmlFor="username">Username</label>
-              <input
-                type="text"
-                id="username"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-                placeholder="Enter username"
-              />
-            </div>
-            <div>
-              <label htmlFor="password">Password</label>
-              <input
-                type="password"
-                id="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                placeholder="Enter password"
-              />
-            </div>
-            <button type="submit" className="login-btn">
-              Login
-            </button>
-            {error && <p className="error-message">{error}</p>}  {/* Show error message */}
-          </form>
+    <div className="login-widget">
+      <h2>Login</h2>
+      <form onSubmit={handleLogin}>
+        <div>
+          <label htmlFor="username">Username</label>
+          <input
+            type="text"
+            id="username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            placeholder="Enter username"
+          />
         </div>
-      ) : (
-        // Dashboard after successful login
-        <div className="dashboard">
-          <p>Welcome, {username}!</p>
-          <p>You are logged in as a {role}.</p>
-          <button className="login-btn" onClick={() => setIsLoggedIn(false)}>
-            Logout
-          </button>
-
-          {/* Display House Number Editing only for 'prefect' or 'teacher' */}
-          {(role === 'prefect' || role === 'teacher') && (
-            <div className="house-edit">
-              <h2>Edit House Numbers</h2>
-              <div>
-                <label htmlFor="house1">House 1</label>
-                <input
-                  type="number"
-                  id="house1"
-                  value={houseNumbers.house1}
-                  onChange={(e) => handleHouseNumberChange('house1', Number(e.target.value))}
-                />
-              </div>
-              <div>
-                <label htmlFor="house2">House 2</label>
-                <input
-                  type="number"
-                  id="house2"
-                  value={houseNumbers.house2}
-                  onChange={(e) => handleHouseNumberChange('house2', Number(e.target.value))}
-                />
-              </div>
-              <div>
-                <label htmlFor="house3">House 3</label>
-                <input
-                  type="number"
-                  id="house3"
-                  value={houseNumbers.house3}
-                  onChange={(e) => handleHouseNumberChange('house3', Number(e.target.value))}
-                />
-              </div>
-              <div>
-                <label htmlFor="house4">House 4</label>
-                <input
-                  type="number"
-                  id="house4"
-                  value={houseNumbers.house4}
-                  onChange={(e) => handleHouseNumberChange('house4', Number(e.target.value))}
-                />
-              </div>
-            </div>
-          )}
+        <div>
+          <label htmlFor="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            placeholder="Enter password"
+          />
         </div>
-      )}
+        <button type="submit" className="login-btn">
+          Login
+        </button>
+      </form>
     </div>
   );
-}
+};
 
-export default App;
+export default Lgn;
