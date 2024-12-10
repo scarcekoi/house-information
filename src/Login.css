@@ -1,0 +1,170 @@
+body {
+  font-family: Garamond, sans-serif;
+  margin: 0;
+  background-color: #1E1E2E;
+  color: #CDD6F4;  /* Updated text color */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  padding: 0 20px;
+}
+
+.title {
+  font-size: 48px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 10px;
+  color: #CDD6F4;  /* Updated title color */
+}
+
+.widget {
+  margin: 20px 0;
+  background-color: #181825;  /* Updated widget background color */
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Shadow for separation */
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-sizing: border-box; /* Ensure padding is inside the box */
+}
+
+.leaderboard {
+  font-size: 24px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #CDD6F4;  /* Updated leaderboard text color */
+}
+
+.place {
+  display: block;
+  transition: transform 0.3s ease;
+  margin: 5px 0;
+}
+
+.place:hover {
+  transform: scale(1.1);
+}
+
+.counter-widget {
+  text-align: center;
+  padding: 10px;
+  flex-grow: 1;  /* Allow counters to grow and occupy space */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.counter-label {
+  font-size: 36px;  /* Reduce label font size */
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #CDD6F4;  /* Updated counter label color */
+}
+
+.counter {
+  display: flex;
+  font-size: 48px;
+  font-weight: bold;
+  justify-content: center;
+  color: #CDD6F4;  /* Updated counter digits color */
+}
+
+.digit {
+  margin: 0 3px;  /* Reduced space between digits */
+  padding: 6px 8px;  /* Adjust padding to make digits smaller */
+  border-radius: 15px;
+  color: #CDD6F4;  /* Updated digit text color */
+  transition: transform 0.3s ease;
+  border: 5px solid #11111B;
+}
+
+.digit:hover {
+  transform: scale(1.2);
+}
+
+/* Color the digits to match their respective counter label */
+.baldwin .digit {
+  background-color: #D20F39;
+}
+
+.sotomayor .digit {
+  background-color: #1E66F5;
+}
+
+.mandela .digit {
+  background-color: #40A02B;
+}
+
+.truth .digit {
+  background-color: #DF8E1D;
+}
+
+/* Leaderboard widget styling */
+.leaderboard {
+  font-size: 24px;
+  text-align: center;
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center the items horizontally */
+  margin-bottom: 20px;  /* Space at the bottom */
+  width: 360px;  /* Increased width of the leaderboard to prevent text wrapping */
+  color: #CDD6F4;  /* Updated leaderboard text color */
+}
+
+.place {
+  display: block; /* Ensures the leaderboard items stack vertically */
+  margin: 5px 0; /* Adds space between leaderboard items */
+  transition: transform 0.3s ease;
+}
+
+.place:hover {
+  transform: scale(1.1); /* Zoom in on hover */
+}
+
+.countdown {
+  font-size: 32px;
+  text-align: center;
+  margin-top: 40px;
+  font-weight: bold;
+  color: #CDD6F4;  /* Updated countdown text color */
+  width: 100%;  /* Make sure countdown takes full width */
+  text-align: center;  /* Center the text */
+}
+
+/* Login button styling */
+.login-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: #11111b;  /* Updated background color */
+  color: #CDD6F4;  /* Set text color */
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.login-btn:hover {
+  background-color: #181825;  /* Updated hover background color */
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
