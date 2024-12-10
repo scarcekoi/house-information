@@ -50,6 +50,7 @@ const App: React.FC = () => {
     const diff2 = houseScores[1].score - houseScores[2].score;
     const diff3 = houseScores[2].score - houseScores[3].score;
 
+    // Updating leaderboard display dynamically
     document.getElementById("first-place")!.innerText = `1st Place: ${houseScores[0].name} (+${diff1})`;
     document.getElementById("second-place")!.innerText = `2nd Place: ${houseScores[1].name} (+${diff2} | -${diff1})`;
     document.getElementById("third-place")!.innerText = `3rd Place: ${houseScores[2].name} (+${diff3} | -${diff2})`;
@@ -88,13 +89,42 @@ const App: React.FC = () => {
 
       {/* Leaderboard Widget */}
       <div className="widget leaderboard" id="leaderboard-widget">
-        <div id="first-place" className="place">1st Place: </div>
-        <div id="second-place" className="place">2nd Place: </div>
-        <div id="third-place" className="place">3rd Place: </div>
-        <div id="fourth-place" className="place">4th Place: </div>
+        {/* Leaderboard Positions */}
+        <div id="first-place" className="place">
+          <span className="place-digit">1st</span>
+          {getDigits(counters.Baldwin).map((digit, index) => (
+            <div className="digit" key={`first-${index}`}>
+              {digit}
+            </div>
+          ))}
+        </div>
+        <div id="second-place" className="place">
+          <span className="place-digit">2nd</span>
+          {getDigits(counters.Sotomayor).map((digit, index) => (
+            <div className="digit" key={`second-${index}`}>
+              {digit}
+            </div>
+          ))}
+        </div>
+        <div id="third-place" className="place">
+          <span className="place-digit">3rd</span>
+          {getDigits(counters.Mandela).map((digit, index) => (
+            <div className="digit" key={`third-${index}`}>
+              {digit}
+            </div>
+          ))}
+        </div>
+        <div id="fourth-place" className="place">
+          <span className="place-digit">4th</span>
+          {getDigits(counters.Truth).map((digit, index) => (
+            <div className="digit" key={`fourth-${index}`}>
+              {digit}
+            </div>
+          ))}
+        </div>
       </div>
 
-      {/* Baldwin Counter Widget */}
+      {/* Counter Widgets */}
       <div className="widget counter-widget" id="baldwin-widget">
         <div className="counter-label">Baldwin</div>
         <div className="counter baldwin">
@@ -105,8 +135,6 @@ const App: React.FC = () => {
           ))}
         </div>
       </div>
-
-      {/* Sotomayor Counter Widget */}
       <div className="widget counter-widget" id="sotomayor-widget">
         <div className="counter-label">Sotomayor</div>
         <div className="counter sotomayor">
@@ -117,8 +145,6 @@ const App: React.FC = () => {
           ))}
         </div>
       </div>
-
-      {/* Mandela Counter Widget */}
       <div className="widget counter-widget" id="mandela-widget">
         <div className="counter-label">Mandela</div>
         <div className="counter mandela">
@@ -129,8 +155,6 @@ const App: React.FC = () => {
           ))}
         </div>
       </div>
-
-      {/* Truth Counter Widget */}
       <div className="widget counter-widget" id="truth-widget">
         <div className="counter-label">Truth</div>
         <div className="counter truth">
