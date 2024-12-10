@@ -1,5 +1,16 @@
 import React, { useState, FormEvent } from 'react';
 
+interface UserCredentials {
+  username: string;
+  password: string;
+}
+
+interface ValidUsers {
+  prefect: UserCredentials;
+  teacher: UserCredentials;
+  user: UserCredentials;
+}
+
 interface LgnProps {
   onLogin: (username: string, role: string) => void;
   onError: (error: string) => void;
@@ -9,8 +20,7 @@ const Lgn: React.FC<LgnProps> = ({ onLogin, onError }) => {
   const [username, setUsername] = useState<string>('');
   const [password, setPassword] = useState<string>('');
 
-  // Sample valid credentials with roles
-  const validUsers = {
+  const validUsers: ValidUsers = {
     prefect: { username: 'prefectUser', password: 'prefect123' },
     teacher: { username: 'teacherUser', password: 'teacher123' },
     user: { username: 'studentUser', password: 'student123' }
@@ -22,10 +32,10 @@ const Lgn: React.FC<LgnProps> = ({ onLogin, onError }) => {
     // Validate login credentials
     for (const role in validUsers) {
       if (
-        validUsers[role].username === username &&
-        validUsers[role].password === password
+        validUsers[role as keyof ValidUsers].username === username &&
+        validUsers[role as keyof ValidUsers].password === password
       ) {
-        onLogin(username, role);
+        onLogin(username, role); // Calls the onLogin prop
         return;
       }
     }
