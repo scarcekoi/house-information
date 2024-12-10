@@ -1,9 +1,8 @@
-/* Body styling */
 body {
   font-family: Garamond, sans-serif;
   margin: 0;
   background-color: #1E1E2E;
-  color: #CDD6F4;
+  color: #CDD6F4;  /* Updated text color */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -11,27 +10,99 @@ body {
   padding: 0 20px;
 }
 
-/* Title styling */
 .title {
   font-size: 48px;
   font-weight: bold;
   text-align: center;
   margin-top: 10px;
-  color: #CDD6F4;
+  color: #CDD6F4;  /* Updated title color */
 }
 
-/* Widget styling */
 .widget {
   margin: 20px 0;
-  background-color: #181825;
+  background-color: #181825;  /* Updated widget background color */
   padding: 15px;
   border-radius: 8px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Shadow for separation */
-  width: 400px; /* Increased width for leaderboard */
+  width: 300px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+  box-sizing: border-box; /* Ensure padding is inside the box */
+}
+
+.leaderboard {
+  font-size: 24px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #CDD6F4;  /* Updated leaderboard text color */
+}
+
+.place {
+  display: block;
+  transition: transform 0.3s ease;
+  margin: 5px 0;
+}
+
+.place:hover {
+  transform: scale(1.1);
+}
+
+.counter-widget {
+  text-align: center;
+  padding: 10px;
+  flex-grow: 1;  /* Allow counters to grow and occupy space */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.counter-label {
+  font-size: 36px;  /* Reduce label font size */
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #CDD6F4;  /* Updated counter label color */
+}
+
+.counter {
+  display: flex;
+  font-size: 48px;
+  font-weight: bold;
+  justify-content: center;
+  color: #CDD6F4;  /* Updated counter digits color */
+}
+
+.digit {
+  margin: 0 3px;  /* Reduced space between digits */
+  padding: 6px 8px;  /* Adjust padding to make digits smaller */
+  border-radius: 15px;
+  color: #CDD6F4;  /* Updated digit text color */
+  transition: transform 0.3s ease;
+  border: 5px solid #11111B;
+}
+
+.digit:hover {
+  transform: scale(1.2);
+}
+
+/* Color the digits to match their respective counter label */
+.baldwin .digit {
+  background-color: #D20F39;
+}
+
+.sotomayor .digit {
+  background-color: #1E66F5;
+}
+
+.mandela .digit {
+  background-color: #40A02B;
+}
+
+.truth .digit {
+  background-color: #DF8E1D;
 }
 
 /* Leaderboard widget styling */
@@ -39,112 +110,42 @@ body {
   font-size: 24px;
   text-align: center;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: #CDD6F4;
-  padding: 20px;  /* Added padding for more space inside the leaderboard box */
-  width: 100%; /* Ensure the leaderboard takes up full width of the container */
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center the items horizontally */
+  margin-bottom: 20px;  /* Space at the bottom */
+  width: 360px;  /* Increased width of the leaderboard to prevent text wrapping */
+  color: #CDD6F4;  /* Updated leaderboard text color */
 }
 
-/* Each place styling */
 .place {
-  display: flex;
-  align-items: center; /* Align items horizontally */
-  margin: 10px 0;
-  padding: 12px 30px; /* Increased padding for larger leaderboard */
-  background-color: #11111B; /* Dark background for each place */
-  border-radius: 50px;  /* Rounded corners */
-  cursor: default; /* No pointer cursor */
-  transition: none; /* Removed hover transition */
-  width: 100%; /* Full width of the box */
-  max-width: 350px;  /* To make sure it doesn't stretch too much */
-}
-
-/* Color the bubbles based on house color */
-.baldwin .place-digit {
-  background-color: #D20F39;  /* Baldwin bubble color */
-}
-
-.sotomayor .place-digit {
-  background-color: #1E66F5;  /* Sotomayor bubble color */
-}
-
-.mandela .place-digit {
-  background-color: #40A02B;  /* Mandela bubble color */
-}
-
-.truth .place-digit {
-  background-color: #DF8E1D;  /* Truth bubble color */
-}
-
-/* Counter widget styling */
-.counter-widget {
-  text-align: center;
-}
-
-.counter-label {
-  display: inline-block;
-  font-size: 36px;
-  font-weight: bold;
-  margin-bottom: 10px;
-  padding: 10px;
+  display: block; /* Ensures the leaderboard items stack vertically */
+  margin: 5px 0; /* Adds space between leaderboard items */
   transition: transform 0.3s ease;
-  color: #CDD6F4;
 }
 
-.counter-label:hover {
-  transform: scale(1.2);
+.place:hover {
+  transform: scale(1.1); /* Zoom in on hover */
 }
 
-.counter {
-  display: flex;
-  font-size: 48px;
-  font-weight: bold;
-  cursor: default;
-  justify-content: center;
-  color: #CDD6F4;
-}
-
-/* Digit styling */
-.digit {
-  margin: 0 5px;  /* Maintain small space between digits */
-  padding: 6px 8px;  /* Smaller padding for a more compact look */
-  border-radius: 15px;
-  color: #CDD6F4;  /* Digit text color */
-  transition: transform 0.3s ease;  /* Reintroduced smooth transition for digits */
-  border: 5px solid #11111B;  /* Subtle border for distinction */
-  cursor: default;  /* Change cursor to default (not a pointer) */
-}
-
-/* Ensure the counter digits are styled as static elements */
-.counter .digit {
-  background-color: transparent;  /* Make background transparent */
-  color: #CDD6F4;  /* Text color */
-  border: none;  /* Remove border if needed */
-}
-
-/* Color the digits to match their respective counter label */
-.baldwin .digit {
-  background-color: #D20F39;  /* Baldwin color */
-}
-
-.sotomayor .digit {
-  background-color: #1E66F5;  /* Sotomayor color */
-}
-
-.mandela .digit {
-  background-color: #40A02B;  /* Mandela color */
-}
-
-.truth .digit {
-  background-color: #DF8E1D;  /* Truth color */
-}
-
-/* Countdown widget styling */
 .countdown {
   font-size: 32px;
   text-align: center;
   margin-top: 40px;
   font-weight: bold;
-  color: #CDD6F4;
+  color: #CDD6F4;  /* Updated countdown text color */
+  width: 100%;  /* Make sure countdown takes full width */
+  text-align: center;  /* Center the text */
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
 }
