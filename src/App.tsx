@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import Lgn from './Lgn'; // Ensure the correct import path
+import Lgn from './Lgn.tsx'; // Make sure the import path is correct
 
 // Define the Counters type for TypeScript
 interface Counters {
