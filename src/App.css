@@ -43,6 +43,7 @@ body {
   align-items: center;
   color: #CDD6F4;
   padding: 20px;  /* Added padding for more space inside the leaderboard box */
+  width: 100%; /* Ensure the leaderboard takes up full width of the container */
 }
 
 /* Each place styling */
@@ -57,18 +58,6 @@ body {
   transition: none; /* Removed hover transition */
   width: 100%; /* Full width of the box */
   max-width: 350px;  /* To make sure it doesn't stretch too much */
-}
-
-.place-digit {
-  background-color: #11111B; /* Dark background for the bubble */
-  color: #CDD6F4; /* Light text inside the bubble */
-  padding: 12px 25px; /* Increased padding for the digits */
-  border-radius: 50%;
-  font-weight: bold;
-  margin-right: 15px;  /* Space between the bubble and the house name */
-  font-size: 30px;  /* Increased font size */
-  display: inline-block;
-  cursor: default; /* Static numbers with no hover effect */
 }
 
 /* Color the bubbles based on house color */
