@@ -29,6 +29,7 @@ body {
   flex-direction: column;
   align-items: center;
   text-align: center;
+  box-sizing: border-box; /* Ensure padding is inside the box */
 }
 
 .leaderboard {
@@ -52,34 +53,31 @@ body {
 
 .counter-widget {
   text-align: center;
+  padding: 10px;
+  flex-grow: 1;  /* Allow counters to grow and occupy space */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .counter-label {
-  display: inline-block;
-  font-size: 36px;
+  font-size: 36px;  /* Reduce label font size */
   font-weight: bold;
   margin-bottom: 10px;
-  padding: 10px;
-  transition: transform 0.3s ease;
   color: #CDD6F4;  /* Updated counter label color */
-}
-
-.counter-label:hover {
-  transform: scale(1.2);
 }
 
 .counter {
   display: flex;
   font-size: 48px;
   font-weight: bold;
-  cursor: default;
   justify-content: center;
   color: #CDD6F4;  /* Updated counter digits color */
 }
 
 .digit {
-  margin: 0 5px;
-  padding: 10px;
+  margin: 0 3px;  /* Reduced space between digits */
+  padding: 6px 8px;  /* Adjust padding to make digits smaller */
   border-radius: 15px;
   color: #CDD6F4;  /* Updated digit text color */
   transition: transform 0.3s ease;
@@ -107,10 +105,47 @@ body {
   background-color: #DF8E1D;
 }
 
+/* Leaderboard widget styling */
+.leaderboard {
+  font-size: 24px;
+  text-align: center;
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center the items horizontally */
+  margin-bottom: 20px;  /* Space at the bottom */
+  width: 360px;  /* Increased width of the leaderboard to prevent text wrapping */
+  color: #CDD6F4;  /* Updated leaderboard text color */
+}
+
+.place {
+  display: block; /* Ensures the leaderboard items stack vertically */
+  margin: 5px 0; /* Adds space between leaderboard items */
+  transition: transform 0.3s ease;
+}
+
+.place:hover {
+  transform: scale(1.1); /* Zoom in on hover */
+}
+
 .countdown {
   font-size: 32px;
   text-align: center;
   margin-top: 40px;
   font-weight: bold;
   color: #CDD6F4;  /* Updated countdown text color */
+  width: 100%;  /* Make sure countdown takes full width */
+  text-align: center;  /* Center the text */
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
 }

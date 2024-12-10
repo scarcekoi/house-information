@@ -25,13 +25,24 @@ body {
   display: flex;
   flex-direction: column;  /* Arrange widgets vertically */
   justify-content: flex-start;  /* Align items from the top */
-  align-items: center;  /* Center horizontally */
+  align-items: center;  /* Center widgets horizontally */
   min-width: 320px;
   min-height: 100vh;
   background-color: #1E1E2E;  /* Background color */
-  color: #CDD6F4;  /* Updated text color */
+  color: #CDD6F4;  /* Text color */
   padding: 20px;
   overflow-y: auto;  /* Enable scrolling if content exceeds the screen height */
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  /* Vertically center all widgets */
+  align-items: center;  /* Horizontally center all widgets */
+  width: 100%;  /* Allow the app to take the full width */
+  max-width: 1200px; /* Optionally limit the width for large screens */
+  margin: 0 auto;  /* Center the content in the viewport */
+  padding: 20px 0;  /* Ensure some padding around the widgets */
 }
 
 h1 {
@@ -62,8 +73,8 @@ h1 {
   padding: 10px;
   flex-grow: 1;  /* Allow counters to grow and occupy space */
   display: flex;
-  flex-direction: column;  /* Stack counter label and digits */
-  justify-content: center;  /* Center content vertically */
+  flex-direction: column;
+  justify-content: center;
 }
 
 .counter-label {
