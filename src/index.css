@@ -42,7 +42,7 @@ h1 {
 }
 
 .widget {
-  background-color: #1E1E2E;  /* Background color for widgets */
+  background-color: #181825;  /* Updated widget background color */
   padding: 15px 20px;  /* Reduce the padding at the top and bottom */
   margin: 10px 0;
   border-radius: 8px;
@@ -73,8 +73,8 @@ h1 {
 }
 
 .digit {
-  margin: 0 5px;
-  padding: 8px 12px;  /* Adjust padding to make digits shorter */
+  margin: 0 3px;  /* Reduce space between digits */
+  padding: 6px 8px;  /* Adjust padding to make digits smaller */
   border-radius: 15px;
   color: #C6D0F5;
   transition: transform 0.3s ease;
