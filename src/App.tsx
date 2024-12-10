@@ -82,6 +82,7 @@ const App: React.FC = () => {
       <div className="title">House Information</div>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
       <div className="widget leaderboard">
         <div className="place">1st Place: Baldwin</div>
         <div className="place">2nd Place: Sotomayor</div>
@@ -110,6 +111,16 @@ const App: React.FC = () => {
         <div id="fourth-place" className="place">4th Place: </div>
       </div>
 
+=======
+      {/* Leaderboard Widget */}
+      <div className="widget leaderboard" id="leaderboard-widget">
+        <div id="first-place" className="place">1st Place: </div>
+        <div id="second-place" className="place">2nd Place: </div>
+        <div id="third-place" className="place">3rd Place: </div>
+        <div id="fourth-place" className="place">4th Place: </div>
+      </div>
+
+>>>>>>> parent of 7ab6f6b (Update App.tsx)
       {/* Baldwin Counter Widget */}
       <div className="widget counter-widget" id="baldwin-widget">
         <div className="counter-label">Baldwin</div>
@@ -135,8 +146,11 @@ const App: React.FC = () => {
 
       {/* Mandela Counter Widget */}
 <<<<<<< HEAD
+<<<<<<< HEAD
       <div className="widget counter-widget">
 =======
+=======
+>>>>>>> parent of 7ab6f6b (Update App.tsx)
       <div className="widget counter-widget" id="mandela-widget">
 >>>>>>> parent of 7ab6f6b (Update App.tsx)
         <div className="counter-label">Mandela</div>
@@ -149,8 +163,11 @@ const App: React.FC = () => {
 
       {/* Truth Counter Widget */}
 <<<<<<< HEAD
+<<<<<<< HEAD
       <div className="widget counter-widget">
 =======
+=======
+>>>>>>> parent of 7ab6f6b (Update App.tsx)
       <div className="widget counter-widget" id="truth-widget">
 >>>>>>> parent of 7ab6f6b (Update App.tsx)
         <div className="counter-label">Truth</div>
