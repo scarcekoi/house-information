@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import Lgn from './Lgn'; // Import the login component
+import Lgn from './Lgn'; // Ensure the correct import path
 
 // Define the Counters type for TypeScript
 interface Counters {
@@ -11,7 +11,6 @@ interface Counters {
 }
 
 const App: React.FC = () => {
-  // Define the state for the counters
   const [counters, setCounters] = useState<Counters>({
     Baldwin: 1515,
     Sotomayor: 1349,
@@ -20,27 +19,25 @@ const App: React.FC = () => {
   });
 
   const [countdownText, setCountdownText] = useState('');
-  const [username, setUsername] = useState<string>(''); // To track logged-in username
-  const [role, setRole] = useState<string>(''); // To track logged-in user's role
-  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false); // To check login status
-  const [error, setError] = useState<string>(''); // Error message for invalid login attempts
+  const [username, setUsername] = useState<string>(''); // Track logged-in username
+  const [role, setRole] = useState<string>(''); // Track logged-in user's role
+  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false); // Login status
+  const [error, setError] = useState<string>(''); // Error message for failed login attempts
 
   useEffect(() => {
-    // Set interval to update countdown
+    // Update the counters and leaderboard
     updateCounters(counters);
     updateLeaderboard(counters);
     updateCountdown();
     const intervalId = setInterval(updateCountdown, 1000); // Update every second
 
-    return () => clearInterval(intervalId); // Clean up interval on component unmount
+    return () => clearInterval(intervalId); // Cleanup interval on component unmount
   }, [counters]);
 
-  // Update the counters state
   const updateCounters = (counters: Counters) => {
-    setCounters(counters); // This will trigger re-render and update the counters displayed
+    setCounters(counters); // Trigger re-render to update counters
   };
 
-  // Update leaderboard with the current scores
   const updateLeaderboard = (counters: Counters) => {
     const houseScores = [
       { name: 'Baldwin', score: counters.Baldwin },
@@ -55,7 +52,7 @@ const App: React.FC = () => {
     const diff2 = houseScores[1].score - houseScores[2].score;
     const diff3 = houseScores[2].score - houseScores[3].score;
 
-    // Updating leaderboard display dynamically
+    // Dynamically update leaderboard positions
     document.getElementById("first-place")!.innerText = `1st Place: ${houseScores[0].name} (+${diff1})`;
     document.getElementById("second-place")!.innerText = `2nd Place: ${houseScores[1].name} (+${diff2} | -${diff1})`;
     document.getElementById("third-place")!.innerText = `3rd Place: ${houseScores[2].name} (+${diff3} | -${diff2})`;
@@ -107,6 +104,7 @@ const App: React.FC = () => {
     <div className="App">
       <h1 className="title">House Information</h1>
 
+      {/* Login or logged-in state */}
       {!isLoggedIn ? (
         <Lgn onLogin={handleLogin} onError={handleError} />
       ) : (
@@ -115,17 +113,15 @@ const App: React.FC = () => {
           <p>You are logged in as a {role}.</p>
           <button className="login-btn" onClick={handleLogout}>Logout</button>
 
-          {/* Leaderboard */}
+          {/* Leaderboard and other widgets */}
           <div id="leaderboard-widget" className="widget leaderboard">
-            {/* Render leaderboard positions */}
-            <div id="first-place" className="place">
-              <span className="place-digit">1st</span>
-              {/* Display Baldwin count */}
-            </div>
-            {/* More leaderboard positions */}
+            <div id="first-place" className="place"></div>
+            <div id="second-place" className="place"></div>
+            <div id="third-place" className="place"></div>
+            <div id="fourth-place" className="place"></div>
           </div>
 
-          {/* Other Widgets (Counters, Countdown) */}
+          {/* Countdown widget */}
           <div id="countdown-widget" className="countdown">
             <span id="countdown-timer">{countdownText}</span>
           </div>
