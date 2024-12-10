@@ -137,6 +137,25 @@ body {
   text-align: center;  /* Center the text */
 }
 
+/* Add a Login Button to the top right */
+.login-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: #1E66F5;
+  color: #FFFFFF;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.login-btn:hover {
+  background-color: #3a80e2;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;

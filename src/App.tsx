@@ -83,8 +83,16 @@ const App: React.FC = () => {
     return num.toString().padStart(4, '0').split('').map(Number);
   };
 
+  // Handle login button click
+  const handleLoginClick = () => {
+    alert("Login clicked! Add your login functionality here.");
+  };
+
   return (
     <div className="App">
+      {/* Login Button */}
+      <button className="login-btn" onClick={handleLoginClick}>Login</button>
+
       <div className="title">House Information</div>
 
       {/* Leaderboard Widget */}
