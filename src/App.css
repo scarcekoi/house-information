@@ -27,7 +27,7 @@ body {
   padding: 15px;
   border-radius: 8px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Shadow for separation */
-  width: 300px;
+  width: 400px; /* Increased width for leaderboard */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -42,35 +42,33 @@ body {
   flex-direction: column;
   align-items: center;
   color: #CDD6F4;
+  padding: 20px;  /* Added padding for more space inside the leaderboard box */
 }
 
+/* Each place styling */
 .place {
   display: flex;
   align-items: center; /* Align items horizontally */
   margin: 10px 0;
-  padding: 10px 20px; /* Added padding to give it a look similar to the old digits */
-  background-color: transparent; /* No background color to look static */
+  padding: 12px 30px; /* Increased padding for larger leaderboard */
+  background-color: #11111B; /* Dark background for each place */
   border-radius: 50px;  /* Rounded corners */
   cursor: default; /* No pointer cursor */
   transition: none; /* Removed hover transition */
+  width: 100%; /* Full width of the box */
+  max-width: 350px;  /* To make sure it doesn't stretch too much */
 }
 
 .place-digit {
   background-color: #11111B; /* Dark background for the bubble */
   color: #CDD6F4; /* Light text inside the bubble */
-  padding: 10px 20px;
+  padding: 12px 25px; /* Increased padding for the digits */
   border-radius: 50%;
   font-weight: bold;
-  margin-right: 10px;  /* Space between the bubble and the house name */
-  font-size: 24px;
+  margin-right: 15px;  /* Space between the bubble and the house name */
+  font-size: 30px;  /* Increased font size */
   display: inline-block;
   cursor: default; /* Static numbers with no hover effect */
-}
-
-/* Remove scaling effect on hover */
-.place-digit:hover {
-  transform: none;
-  background-color: transparent;
 }
 
 /* Color the bubbles based on house color */
@@ -124,7 +122,7 @@ body {
   padding: 6px 8px;  /* Smaller padding for a more compact look */
   border-radius: 15px;
   color: #CDD6F4;  /* Digit text color */
-  transition: none;  /* Remove hover transition */
+  transition: transform 0.3s ease;  /* Reintroduced smooth transition for digits */
   border: 5px solid #11111B;  /* Subtle border for distinction */
   cursor: default;  /* Change cursor to default (not a pointer) */
 }
