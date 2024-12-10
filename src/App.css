@@ -55,38 +55,38 @@ body {
   transform: scale(1.1);
 }
 
-/* Bubble around house names */
-.bubble {
+/* Bubble around leaderboard position */
+.place-digit {
   background-color: #11111B; /* Dark background for the bubble */
   color: #CDD6F4; /* Light text inside the bubble */
   padding: 10px 20px;
-  border-radius: 50px;
+  border-radius: 50%;
   font-weight: bold;
-  margin-left: 10px;
-  font-size: 18px;
+  margin-right: 10px;  /* Space between the bubble and the house name */
+  font-size: 24px;
   display: inline-block;
   transition: transform 0.3s ease;
 }
 
-.bubble:hover {
+.place-digit:hover {
   transform: scale(1.1);
 }
 
 /* Color the bubbles based on house color */
-.baldwin .bubble {
-  background-color: #D20F39;
+.baldwin .place-digit {
+  background-color: #D20F39;  /* Baldwin bubble color */
 }
 
-.sotomayor .bubble {
-  background-color: #1E66F5;
+.sotomayor .place-digit {
+  background-color: #1E66F5;  /* Sotomayor bubble color */
 }
 
-.mandela .bubble {
-  background-color: #40A02B;
+.mandela .place-digit {
+  background-color: #40A02B;  /* Mandela bubble color */
 }
 
-.truth .bubble {
-  background-color: #DF8E1D;
+.truth .place-digit {
+  background-color: #DF8E1D;  /* Truth bubble color */
 }
 
 /* Counter widget styling */
