@@ -1,17 +1,23 @@
 import React, { useState, useEffect } from 'react';
-import './App.css'; // Make sure this CSS file is imported
+import './App.css';
+
+// Define the Counters type for TypeScript
+interface Counters {
+  Baldwin: number;
+  Sotomayor: number;
+  Mandela: number;
+  Truth: number;
+}
 
 const App: React.FC = () => {
-  const [counters, setCounters] = useState({
+  // Define the state for the counters
+  const [counters, setCounters] = useState<Counters>({
     Baldwin: 1515,
     Sotomayor: 1349,
     Mandela: 1274,
     Truth: 1201,
   });
 
-<<<<<<< HEAD
-  const getDigits = (num: number) => num.toString().padStart(4, '0').split('').map(Number);
-=======
   const [countdownText, setCountdownText] = useState('');
 
   useEffect(() => {
@@ -44,6 +50,7 @@ const App: React.FC = () => {
     const diff2 = houseScores[1].score - houseScores[2].score;
     const diff3 = houseScores[2].score - houseScores[3].score;
 
+    // Updating leaderboard display dynamically
     document.getElementById("first-place")!.innerText = `1st Place: ${houseScores[0].name} (+${diff1})`;
     document.getElementById("second-place")!.innerText = `2nd Place: ${houseScores[1].name} (+${diff2} | -${diff1})`;
     document.getElementById("third-place")!.innerText = `3rd Place: ${houseScores[2].name} (+${diff3} | -${diff2})`;
@@ -75,64 +82,49 @@ const App: React.FC = () => {
   const getDigits = (num: number) => {
     return num.toString().padStart(4, '0').split('').map(Number);
   };
->>>>>>> parent of 7ab6f6b (Update App.tsx)
 
   return (
     <div className="App">
       <div className="title">House Information</div>
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-      <div className="widget leaderboard">
-        <div className="place">1st Place: Baldwin</div>
-        <div className="place">2nd Place: Sotomayor</div>
-        <div className="place">3rd Place: Mandela</div>
-        <div className="place">4th Place: Truth</div>
-      </div>
-
-      {/* Baldwin Counter Widget */}
-      <div className="widget counter-widget">
-        <div className="counter-label">Baldwin</div>
-        <div className="counter">
+      {/* Leaderboard Widget */}
+      <div className="widget leaderboard" id="leaderboard-widget">
+        {/* Leaderboard Positions */}
+        <div id="first-place" className="place">
+          <span className="place-digit">1st</span>
           {getDigits(counters.Baldwin).map((digit, index) => (
-            <div className="digit" key={`baldwin-${index}`}>{digit}</div>
+            <div className="digit" key={`first-${index}`}>
+              {digit}
+            </div>
+          ))}
+        </div>
+        <div id="second-place" className="place">
+          <span className="place-digit">2nd</span>
+          {getDigits(counters.Sotomayor).map((digit, index) => (
+            <div className="digit" key={`second-${index}`}>
+              {digit}
+            </div>
+          ))}
+        </div>
+        <div id="third-place" className="place">
+          <span className="place-digit">3rd</span>
+          {getDigits(counters.Mandela).map((digit, index) => (
+            <div className="digit" key={`third-${index}`}>
+              {digit}
+            </div>
+          ))}
+        </div>
+        <div id="fourth-place" className="place">
+          <span className="place-digit">4th</span>
+          {getDigits(counters.Truth).map((digit, index) => (
+            <div className="digit" key={`fourth-${index}`}>
+              {digit}
+            </div>
           ))}
         </div>
       </div>
 
-      {/* Sotomayor Counter Widget */}
-      <div className="widget counter-widget">
-=======
-      {/* Leaderboard Widget */}
-      <div className="widget leaderboard" id="leaderboard-widget">
-        <div id="first-place" className="place">1st Place: </div>
-        <div id="second-place" className="place">2nd Place: </div>
-        <div id="third-place" className="place">3rd Place: </div>
-        <div id="fourth-place" className="place">4th Place: </div>
-      </div>
-
-=======
-      {/* Leaderboard Widget */}
-      <div className="widget leaderboard" id="leaderboard-widget">
-        <div id="first-place" className="place">1st Place: </div>
-        <div id="second-place" className="place">2nd Place: </div>
-        <div id="third-place" className="place">3rd Place: </div>
-        <div id="fourth-place" className="place">4th Place: </div>
-      </div>
-
->>>>>>> parent of 7ab6f6b (Update App.tsx)
-=======
-      {/* Leaderboard Widget */}
-      <div className="widget leaderboard" id="leaderboard-widget">
-        <div id="first-place" className="place">1st Place: </div>
-        <div id="second-place" className="place">2nd Place: </div>
-        <div id="third-place" className="place">3rd Place: </div>
-        <div id="fourth-place" className="place">4th Place: </div>
-      </div>
-
->>>>>>> parent of 7ab6f6b (Update App.tsx)
-      {/* Baldwin Counter Widget */}
+      {/* Counter Widgets */}
       <div className="widget counter-widget" id="baldwin-widget">
         <div className="counter-label">Baldwin</div>
         <div className="counter baldwin">
@@ -143,60 +135,41 @@ const App: React.FC = () => {
           ))}
         </div>
       </div>
-
-      {/* Sotomayor Counter Widget */}
       <div className="widget counter-widget" id="sotomayor-widget">
->>>>>>> parent of 7ab6f6b (Update App.tsx)
         <div className="counter-label">Sotomayor</div>
-        <div className="counter">
+        <div className="counter sotomayor">
           {getDigits(counters.Sotomayor).map((digit, index) => (
-            <div className="digit" key={`sotomayor-${index}`}>{digit}</div>
+            <div className="digit" key={`sotomayor-${index}`}>
+              {digit}
+            </div>
           ))}
         </div>
       </div>
-
-      {/* Mandela Counter Widget */}
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-      <div className="widget counter-widget">
-=======
-=======
->>>>>>> parent of 7ab6f6b (Update App.tsx)
-=======
->>>>>>> parent of 7ab6f6b (Update App.tsx)
       <div className="widget counter-widget" id="mandela-widget">
->>>>>>> parent of 7ab6f6b (Update App.tsx)
         <div className="counter-label">Mandela</div>
-        <div className="counter">
+        <div className="counter mandela">
           {getDigits(counters.Mandela).map((digit, index) => (
-            <div className="digit" key={`mandela-${index}`}>{digit}</div>
+            <div className="digit" key={`mandela-${index}`}>
+              {digit}
+            </div>
           ))}
         </div>
       </div>
-
-      {/* Truth Counter Widget */}
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-      <div className="widget counter-widget">
-=======
-=======
->>>>>>> parent of 7ab6f6b (Update App.tsx)
-=======
->>>>>>> parent of 7ab6f6b (Update App.tsx)
       <div className="widget counter-widget" id="truth-widget">
->>>>>>> parent of 7ab6f6b (Update App.tsx)
         <div className="counter-label">Truth</div>
-        <div className="counter">
+        <div className="counter truth">
           {getDigits(counters.Truth).map((digit, index) => (
-            <div className="digit" key={`truth-${index}`}>{digit}</div>
+            <div className="digit" key={`truth-${index}`}>
+              {digit}
+            </div>
           ))}
         </div>
       </div>
 
       {/* Countdown Widget */}
-      <div className="countdown">Countdown Widget here</div>
+      <div id="countdown-widget" className="countdown">
+        <span id="countdown-timer">{countdownText}</span>
+      </div>
     </div>
   );
 };
