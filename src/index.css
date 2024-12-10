@@ -3,7 +3,7 @@
   line-height: 1.5;
   font-weight: 400;
   color-scheme: light dark;
-  color: #C6D0F5;  /* Text color */
+  color: #CDD6F4;  /* Updated text color */
   background-color: #1E1E2E;  /* Background color */
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -29,7 +29,7 @@ body {
   min-width: 320px;
   min-height: 100vh;
   background-color: #1E1E2E;  /* Background color */
-  color: #C6D0F5;  /* Text color */
+  color: #CDD6F4;  /* Updated text color */
   padding: 20px;
   overflow-y: auto;  /* Enable scrolling if content exceeds the screen height */
 }
@@ -40,10 +40,11 @@ h1 {
   margin-bottom: 20px;  /* Reduced space between title and widgets */
   text-align: center;  /* Center the title */
   width: 100%;  /* Ensures the title spans the full width */
+  color: #CDD6F4;  /* Updated title text color */
 }
 
 .widget {
-  background-color: #181825;  /* Updated widget background color */
+  background-color: #181825;  /* Widget background color */
   padding: 15px;  /* Add padding on all sides */
   margin: 20px 0;  /* Increased space between widgets */
   border-radius: 8px;
@@ -69,6 +70,7 @@ h1 {
   font-size: 36px;  /* Reduce label font size */
   font-weight: bold;
   margin-bottom: 10px;
+  color: #CDD6F4;  /* Updated counter label color */
 }
 
 .counter {
@@ -76,13 +78,14 @@ h1 {
   font-size: 48px;
   font-weight: bold;
   justify-content: center;
+  color: #CDD6F4;  /* Updated counter digits color */
 }
 
 .digit {
   margin: 0 3px;  /* Reduced space between digits */
   padding: 6px 8px;  /* Adjust padding to make digits smaller */
   border-radius: 15px;
-  color: #C6D0F5;
+  color: #CDD6F4;  /* Updated digit text color */
   transition: transform 0.3s ease;
   border: 5px solid #11111B;
 }
@@ -117,6 +120,7 @@ h1 {
   align-items: center; /* Center the items horizontally */
   margin-bottom: 20px;  /* Space at the bottom */
   width: 360px;  /* Increased width of the leaderboard to prevent text wrapping */
+  color: #CDD6F4;  /* Updated leaderboard text color */
 }
 
 .place {
@@ -134,7 +138,7 @@ h1 {
   text-align: center;
   margin-top: 40px;
   font-weight: bold;
-  color: #CDD6F4;
+  color: #CDD6F4;  /* Updated countdown text color */
   width: 100%;  /* Make sure countdown takes full width */
   text-align: center;  /* Center the text */
 }
