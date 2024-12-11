@@ -44,13 +44,13 @@ body {
   box-sizing: border-box; /* Ensures padding is included in width calculations */
   flex-grow: 1;  /* Allow the container to grow and occupy space */
   min-height: 80vh; /* Ensure the container takes enough vertical space */
-  padding-left: 10%; /* Move the content slightly to the right */
+  padding-left: 100%; /* Move the content slightly to the right */
 }
 
 .widget {
   margin: 20px;
   background-color: #181825;  /* Updated widget background color */
-  padding: 150px;
+  padding: 15px;
   border-radius: 8px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Shadow for separation */
   width: 300px;
