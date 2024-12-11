@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import Lgn from './Lgn.tsx'; // Make sure the import path is correct
 
 // Define the Counters type for TypeScript
 interface Counters {
@@ -109,10 +108,6 @@ const App: React.FC = () => {
         <Lgn onLogin={handleLogin} onError={handleError} />
       ) : (
         <div>
-          <p>Welcome, {username}!</p>
-          <p>You are logged in as a {role}.</p>
-          <button className="login-btn" onClick={handleLogout}>Logout</button>
-
           {/* Leaderboard and other widgets */}
           <div id="leaderboard-widget" className="widget leaderboard">
             <div id="first-place" className="place"></div>
