@@ -1,71 +1,55 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-  color-scheme: light dark;
-  color: #CDD6F4;  /* Updated text color */
-  background-color: #1E1E2E;  /* Background color */
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
 body {
+  font-family: Calibri, sans-serif; /* Set body text to Calibri */
   margin: 0;
-  display: flex;
-  flex-direction: column;  /* Arrange widgets vertically */
-  justify-content: flex-start;  /* Align items from the top */
-  align-items: center;  /* Center widgets horizontally */
-  min-width: 320px;
-  min-height: 100vh;
-  background-color: #1E1E2E;  /* Background color */
-  color: #CDD6F4;  /* Text color */
-  padding: 20px;
-  overflow-y: auto;  /* Enable scrolling if content exceeds the screen height */
-}
-
-.App {
+  background-color: #1E1E2E;
+  color: #CDD6F4;  /* Updated text color */
   display: flex;
   flex-direction: column;
-  justify-content: center;  /* Vertically center all widgets */
-  align-items: center;  /* Horizontally center all widgets */
-  width: 100%;  /* Allow the app to take the full width */
-  max-width: 1200px; /* Optionally limit the width for large screens */
-  margin: 0 auto;  /* Center the content in the viewport */
-  padding: 20px 0;  /* Ensure some padding around the widgets */
+  justify-content: space-between;
+  height: 100vh;
+  padding: 0 20px;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-  margin-bottom: 20px;  /* Reduced space between title and widgets */
-  text-align: center;  /* Center the title */
-  width: 100%;  /* Ensures the title spans the full width */
-  color: #CDD6F4;  /* Updated title text color */
+.title {
+  font-family: 'Jellee Roman', serif; /* Set titles to Jellee Roman */
+  font-size: 48px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 10px;
+  color: #CDD6F4;  /* Updated title color */
 }
 
 .widget {
-  background-color: #181825;  /* Widget background color */
-  padding: 15px;  /* Add padding on all sides */
-  margin: 20px 0;  /* Increased space between widgets */
+  margin: 20px 0;
+  background-color: #181825;  /* Updated widget background color */
+  padding: 15px;
   border-radius: 8px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Shadow for separation */
-  width: 300px;  /* Set a specific width for a "skinny" widget */
+  width: 300px;
   display: flex;
-  flex-direction: column; /* Stack the items vertically */
-  align-items: center; /* Center the items horizontally */
-  text-align: center; /* Center the text in each widget */
-  box-sizing: border-box;  /* Ensure padding is inside the box */
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-sizing: border-box; /* Ensure padding is inside the box */
+}
+
+.leaderboard {
+  font-size: 24px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #CDD6F4;  /* Updated leaderboard text color */
+}
+
+.place {
+  display: block;
+  transition: transform 0.3s ease;
+  margin: 5px 0;
+}
+
+.place:hover {
+  transform: scale(1.1);
 }
 
 .counter-widget {
@@ -152,6 +136,25 @@ h1 {
   color: #CDD6F4;  /* Updated countdown text color */
   width: 100%;  /* Make sure countdown takes full width */
   text-align: center;  /* Center the text */
+}
+
+/* Login button styling */
+.login-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: #11111b;  /* Updated background color */
+  color: #CDD6F4;  /* Set text color */
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.login-btn:hover {
+  background-color: #181825;  /* Updated hover background color */
 }
 
 @media (prefers-color-scheme: light) {

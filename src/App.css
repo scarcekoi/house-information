@@ -1,5 +1,13 @@
+/* Import Jellee Roman font */
+@font-face {
+  font-family: 'Jellee Roman';
+  src: url('./assets/Jellee-Roman.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
-  font-family: Garamond, sans-serif;
+  font-family: Calibri, sans-serif; /* Set body text to Calibri */
   margin: 0;
   background-color: #1E1E2E;
   color: #CDD6F4;  /* Updated text color */
@@ -11,6 +19,7 @@ body {
 }
 
 .title {
+  font-family: 'Jellee Roman', serif; /* Set titles to Jellee Roman */
   font-size: 48px;
   font-weight: bold;
   text-align: center;
