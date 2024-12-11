@@ -37,7 +37,7 @@ body {
   flex-direction: column;  /* Stack widgets vertically */
   justify-content: center;  /* Center the widgets horizontally */
   align-items: center;  /* Align the widgets in the center */
-  gap: 40px;  /* Increased space between widgets (was 20px before) */
+  gap: 40px;  /* Increased space between widgets */
   margin-top: 20px;  /* Add some space from the title */
   width: 100%; /* Ensure it takes full width of screen */
   max-width: 800px; /* Limit max-width for better control */
@@ -134,4 +134,50 @@ body {
 /* Optional styling for digits, if you want specific colors for numbers */
 .leaderboard-item span {
   color: #FF9D00; /* Example: digits are orange */
+}
+
+/* Styling for the digit boxes */
+.digit {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  margin: 2px;
+  text-align: center;
+  line-height: 30px;
+  font-size: 20px;
+  border-radius: 5px;
+  background-color: rgba(0, 255, 255, 0.1);
+}
+
+/* Styling for different house colors */
+.baldwin {
+  background-color: rgba(255, 0, 0, 0.5);
+}
+
+.sotomayor {
+  background-color: rgba(0, 0, 255, 0.5);
+}
+
+.mandela {
+  background-color: rgba(0, 255, 0, 0.5);
+}
+
+.truth {
+  background-color: rgba(255, 255, 0, 0.5);
+}
+
+/* Leaderboard container styling */
+.leaderboard-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  align-items: center;
+}
+
+/* The container for the house counter and digits */
+.counter {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
 }

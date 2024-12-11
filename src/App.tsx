@@ -92,19 +92,27 @@ const App: React.FC = () => {
           <div className="content">
             <div id="first-place" className="place">
               <span className="place-digit">1st</span>
-              {getDigits(counters.Baldwin)[0]}-{getDigits(counters.Baldwin)[1]}-{getDigits(counters.Baldwin)[2]}-{getDigits(counters.Baldwin)[3]}
+              {getDigits(counters.Baldwin).map((digit, index) => (
+                <div className="digit baldwin" key={`first-${index}`}>{digit}</div>
+              ))}
             </div>
             <div id="second-place" className="place">
               <span className="place-digit">2nd</span>
-              {getDigits(counters.Sotomayor)[0]}-{getDigits(counters.Sotomayor)[1]}-{getDigits(counters.Sotomayor)[2]}-{getDigits(counters.Sotomayor)[3]}
+              {getDigits(counters.Sotomayor).map((digit, index) => (
+                <div className="digit sotomayor" key={`second-${index}`}>{digit}</div>
+              ))}
             </div>
             <div id="third-place" className="place">
               <span className="place-digit">3rd</span>
-              {getDigits(counters.Mandela)[0]}-{getDigits(counters.Mandela)[1]}-{getDigits(counters.Mandela)[2]}-{getDigits(counters.Mandela)[3]}
+              {getDigits(counters.Mandela).map((digit, index) => (
+                <div className="digit mandela" key={`third-${index}`}>{digit}</div>
+              ))}
             </div>
             <div id="fourth-place" className="place">
               <span className="place-digit">4th</span>
-              {getDigits(counters.Truth)[0]}-{getDigits(counters.Truth)[1]}-{getDigits(counters.Truth)[2]}-{getDigits(counters.Truth)[3]}
+              {getDigits(counters.Truth).map((digit, index) => (
+                <div className="digit truth" key={`fourth-${index}`}>{digit}</div>
+              ))}
             </div>
           </div>
         </div>
@@ -112,22 +120,38 @@ const App: React.FC = () => {
         {/* House Boxes */}
         <div className="house-box baldwinn">
           <h3>Baldwin House</h3>
-          <p>Score: {counters.Baldwin}</p>
+          <div className="counter">
+            {getDigits(counters.Baldwin).map((digit, index) => (
+              <div className="digit baldwin" key={index}>{digit}</div>
+            ))}
+          </div>
         </div>
 
         <div className="house-box sotomayor">
           <h3>Sotomayor House</h3>
-          <p>Score: {counters.Sotomayor}</p>
+          <div className="counter">
+            {getDigits(counters.Sotomayor).map((digit, index) => (
+              <div className="digit sotomayor" key={index}>{digit}</div>
+            ))}
+          </div>
         </div>
 
         <div className="house-box mandela">
           <h3>Mandela House</h3>
-          <p>Score: {counters.Mandela}</p>
+          <div className="counter">
+            {getDigits(counters.Mandela).map((digit, index) => (
+              <div className="digit mandela" key={index}>{digit}</div>
+            ))}
+          </div>
         </div>
 
         <div className="house-box truth">
           <h3>Truth House</h3>
-          <p>Score: {counters.Truth}</p>
+          <div className="counter">
+            {getDigits(counters.Truth).map((digit, index) => (
+              <div className="digit truth" key={index}>{digit}</div>
+            ))}
+          </div>
         </div>
 
         {/* Countdown Text */}
