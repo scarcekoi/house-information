@@ -12,12 +12,12 @@ body {
   background-color: #1E1E2E;
   color: #CDD6F4;  /* Updated text color */
   display: flex;
-  flex-direction: column;
+  flex-direction: column;  /* Keep everything aligned from top */
   justify-content: flex-start;  /* Keep everything aligned from top */
   align-items: center;  /* Center items horizontally */
   min-height: 100vh;
   padding: 0;
-  box-sizing: border-box; /* Ensure padding is included in height calculations */
+  box-sizing: border-box; /* Ensures padding is inside the box */
   overflow-y: auto; /* Allow scrolling */
 }
 
@@ -46,55 +46,7 @@ body {
   min-height: 80vh; /* Ensure the container takes enough vertical space */
 }
 
-/* Widget styling */
-.widget {
-  margin: 20px;
-  background-color: #181825;  /* Updated widget background color */
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Shadow for separation */
-  width: 100%;
-  max-width: 400px; /* Restrict width */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  box-sizing: border-box; /* Ensure padding is inside the box */
-  min-height: 200px; /* Optional: Set a minimum height for each widget */
-}
-
-/* Gradient border using background and padding */
-.gradient-border {
-  position: relative;
-  padding: 10px;
-  background: linear-gradient(45deg, #743ad5, #d53a9d); /* Gradient color */
-  border-radius: 8px;
-  box-shadow: 0px 0px 10px rgba(255, 0, 150, 0.5); /* Glow effect */
-}
-
-.gradient-border .content {
-  position: relative;
-  z-index: 1; /* Ensure content stays on top of the gradient */
-  background-color: #181825;  /* Ensure the background color of the content box */
-  border-radius: 8px;
-}
-
-/* Specific styles for each house box */
-.house-box {
-  position: relative;
-  padding: 20px;
-  background-color: #181825;
-  border-radius: 8px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
-  width: 100%;
-  max-width: 400px;
-}
-
-.house-box:hover {
-  box-shadow: 0px 0px 20px rgba(0, 0, 255, 0.7); /* Hover glow effect */
-}
-
-/* Leaderboard widget styling */
+/* Glow effect around the leaderboard */
 .leaderboard {
   font-size: 24px;
   text-align: center;
@@ -104,112 +56,49 @@ body {
   margin-bottom: 20px;  /* Space at the bottom */
   width: 100%;  /* Ensure it takes full width */
   color: #CDD6F4;  /* Updated leaderboard text color */
+  position: relative;
+  padding: 20px;
+  box-shadow: 0 0 15px 5px rgba(0, 255, 255, 0.7); /* Glowing effect around the leaderboard */
 }
 
-.place {
-  display: block; /* Ensures the leaderboard items stack vertically */
-  margin: 5px 0; /* Adds space between leaderboard items */
-  transition: transform 0.3s ease;
-  color: #CDD6F4;  /* Apply the color directly here */
-}
-
-.place:hover {
-  transform: scale(1.1); /* Zoom in on hover */
-}
-
-/* Counter widgets */
-.counter-widget {
+/* No box for "Next House Village Meeting", it's just text */
+.next-house-village-meeting {
+  font-size: 20px;
   text-align: center;
-  padding: 10px;
-  flex-grow: 1;  /* Allow counters to grow and occupy space */
+  color: #CDD6F4;  /* Updated text color */
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+/* Styling for each house box with glow effect always on */
+.house-box {
   display: flex;
   flex-direction: column;
-  justify-content: center;  /* Vertically center the contents */
-}
-
-.counter-label {
-  font-size: 36px;  /* Reduce label font size */
-  font-weight: bold;
-  margin-bottom: 10px;
-  color: #CDD6F4;  /* Updated counter label color */
-}
-
-.counter {
-  display: flex;
-  font-size: 48px;
-  font-weight: bold;
+  align-items: center;
   justify-content: center;
-  color: #CDD6F4;  /* Updated counter digits color */
+  background-color: #2E2E3A;
+  padding: 20px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 250px;
+  color: #CDD6F4;
+  box-shadow: 0 0 15px 5px rgba(0, 255, 255, 0.5); /* Always glowing effect */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.digit {
-  margin: 0 3px;  /* Reduced space between digits */
-  padding: 6px 8px;  /* Adjust padding to make digits smaller */
-  border-radius: 15px;
-  transition: transform 0.3s ease;
-  border: 5px solid #11111B;
+/* Hover effect to slightly scale and increase glow of house box */
+.house-box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px 10px rgba(0, 255, 255, 0.7); /* Stronger glowing effect on hover */
 }
 
-.digit:hover {
-  transform: scale(1.2);
-}
-
-/* Color the digits to match their respective counter label */
-.baldwin .digit {
-  background-color: #D20F39;
-}
-
-.sotomayor .digit {
-  background-color: #1E66F5;
-}
-
-.mandela .digit {
-  background-color: #40A02B;
-}
-
-.truth .digit {
-  background-color: #DF8E1D;
-}
-
-/* Countdown widget styling */
-.countdown {
-  font-size: 32px;
+/* Leaderboard item styling */
+.leaderboard-item {
+  font-size: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: rgba(0, 255, 255, 0.2);
+  margin-bottom: 10px;
+  width: 80%;
   text-align: center;
-  margin-top: 40px;
-  font-weight: bold;
-  color: #CDD6F4;  /* Updated countdown text color */
-  width: 100%;  /* Make sure countdown takes full width */
-  text-align: center;  /* Center the text */
-}
-
-/* Login button styling */
-.login-btn {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  background-color: #11111b;  /* Updated background color */
-  color: #CDD6F4;  /* Set text color */
-  padding: 10px 20px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.3s ease;
-}
-
-.login-btn:hover {
-  background-color: #181825;  /* Updated hover background color */
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
 }
