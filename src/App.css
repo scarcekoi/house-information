@@ -44,7 +44,6 @@ body {
   box-sizing: border-box; /* Ensures padding is included in width calculations */
   flex-grow: 1;  /* Allow the container to grow and occupy space */
   min-height: 80vh; /* Ensure the container takes enough vertical space */
-  padding-left: 100%; /* Move the content slightly to the right */
 }
 
 .widget {
