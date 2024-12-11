@@ -58,7 +58,16 @@ body {
   color: #CDD6F4;  /* Updated leaderboard text color */
   position: relative;
   padding: 20px;
-  box-shadow: 0 0 15px 5px rgba(0, 255, 255, 0.7); /* Glowing effect around the leaderboard */
+  background-color: #2E2E3A;  /* Set background color */
+  border-radius: 10px;  /* Add rounded corners */
+  box-shadow: 0 0 15px 5px rgba(0, 255, 255, 0.5); /* Glowing effect around the leaderboard */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect for the leaderboard */
+.leaderboard:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px 10px rgba(0, 255, 255, 0.7); /* Stronger glowing effect on hover */
 }
 
 /* No box for "Next House Village Meeting", it's just text */
@@ -76,12 +85,12 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #2E2E3A;
+  background-color: #2E2E3A;  /* Background color for the house box */
   padding: 20px;
   border-radius: 10px;
   width: 100%;
   max-width: 250px;
-  color: #CDD6F4;
+  color: #CDD6F4;  /* Text color in the house box */
   box-shadow: 0 0 15px 5px rgba(0, 255, 255, 0.5); /* Always glowing effect */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -101,4 +110,10 @@ body {
   margin-bottom: 10px;
   width: 80%;
   text-align: center;
+  color: #CDD6F4;  /* Color for leaderboard digits */
+}
+
+/* Optional styling for digits, if you want specific colors for numbers */
+.leaderboard-item span {
+  color: #FF9D00; /* Example: digits are orange */
 }
