@@ -37,7 +37,7 @@ body {
   flex-direction: column;  /* Stack widgets vertically */
   justify-content: center;  /* Center the widgets horizontally */
   align-items: center;  /* Align the widgets in the center */
-  gap: 20px;  /* Space between widgets */
+  gap: 40px;  /* Increased space between widgets (was 20px before) */
   margin-top: 20px;  /* Add some space from the title */
   width: 100%; /* Ensure it takes full width of screen */
   max-width: 800px; /* Limit max-width for better control */
@@ -93,6 +93,7 @@ body {
   color: #CDD6F4;  /* Text color in the house box */
   box-shadow: 0 0 15px 5px rgba(0, 255, 255, 0.5); /* Always glowing effect */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 40px;  /* Added more space between house boxes (was not specified) */
 }
 
 /* Hover effect to slightly scale and increase glow of house box */
