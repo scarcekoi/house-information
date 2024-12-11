@@ -88,7 +88,7 @@ const App: React.FC = () => {
 
       <div className="widget-container">
         {/* Leaderboard Widget */}
-        <div className="widget leaderboard" id="leaderboard-widget">
+        <div className="widget leaderboard border-gradient border-gradient-purple" id="leaderboard-widget">
           <div id="first-place" className="place">
             <span className="place-digit">1st</span>
             {getDigits(counters.Baldwin).map((digit, index) => (
@@ -116,44 +116,47 @@ const App: React.FC = () => {
         </div>
 
         {/* Counter Widgets */}
-        <div className="widget counter-widget" id="baldwin-widget">
-          <div className="counter-label">Baldwin</div>
-          <div className="counter baldwin">
+        <div className="counter-widget">
+          <div className="counter-label">Baldwin House</div>
+          <div className="counter">
             {getDigits(counters.Baldwin).map((digit, index) => (
-              <div className="digit" key={`baldwin-${index}`}>{digit}</div>
+              <div className="digit baldwin" key={index}>{digit}</div>
             ))}
           </div>
         </div>
-        <div className="widget counter-widget" id="sotomayor-widget">
-          <div className="counter-label">Sotomayor</div>
-          <div className="counter sotomayor">
+
+        <div className="counter-widget">
+          <div className="counter-label">Sotomayor House</div>
+          <div className="counter">
             {getDigits(counters.Sotomayor).map((digit, index) => (
-              <div className="digit" key={`sotomayor-${index}`}>{digit}</div>
+              <div className="digit sotomayor" key={index}>{digit}</div>
             ))}
           </div>
         </div>
 
-        <div className="widget counter-widget" id="mandela-widget">
-          <div className="counter-label">Mandela</div>
-          <div className="counter mandela">
+        <div className="counter-widget">
+          <div className="counter-label">Mandela House</div>
+          <div className="counter">
             {getDigits(counters.Mandela).map((digit, index) => (
-              <div className="digit" key={`mandela-${index}`}>{digit}</div>
+              <div className="digit mandela" key={index}>{digit}</div>
             ))}
           </div>
         </div>
 
-        <div className="widget counter-widget" id="truth-widget">
-          <div className="counter-label">Truth</div>
-          <div className="counter truth">
+        <div className="counter-widget">
+          <div className="counter-label">Truth House</div>
+          <div className="counter">
             {getDigits(counters.Truth).map((digit, index) => (
-              <div className="digit" key={`truth-${index}`}>{digit}</div>
+              <div className="digit truth" key={index}>{digit}</div>
             ))}
           </div>
+        </div>
+
+        {/* Countdown Widget */}
+        <div className="widget countdown border-gradient border-gradient-green">
+          <div className="countdown-text">{countdownText}</div>
         </div>
       </div>
-
-      {/* Countdown Widget */}
-      <div className="countdown">{countdownText}</div>
     </div>
   );
 };
