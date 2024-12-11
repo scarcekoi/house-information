@@ -10,6 +10,7 @@ interface Counters {
 }
 
 const App: React.FC = () => {
+  // Define the state for the counters
   const [counters, setCounters] = useState<Counters>({
     Baldwin: 1515,
     Sotomayor: 1349,
@@ -18,25 +19,23 @@ const App: React.FC = () => {
   });
 
   const [countdownText, setCountdownText] = useState('');
-  const [username, setUsername] = useState<string>(''); // Track logged-in username
-  const [role, setRole] = useState<string>(''); // Track logged-in user's role
-  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false); // Login status
-  const [error, setError] = useState<string>(''); // Error message for failed login attempts
 
   useEffect(() => {
-    // Update the counters and leaderboard
+    // Set interval to update countdown
     updateCounters(counters);
     updateLeaderboard(counters);
     updateCountdown();
     const intervalId = setInterval(updateCountdown, 1000); // Update every second
 
-    return () => clearInterval(intervalId); // Cleanup interval on component unmount
+    return () => clearInterval(intervalId); // Clean up interval on component unmount
   }, [counters]);
 
+  // Update the counters state
   const updateCounters = (counters: Counters) => {
-    setCounters(counters); // Trigger re-render to update counters
+    setCounters(counters); // This will trigger re-render and update the counters displayed
   };
 
+  // Update leaderboard with the current scores
   const updateLeaderboard = (counters: Counters) => {
     const houseScores = [
       { name: 'Baldwin', score: counters.Baldwin },
@@ -51,7 +50,7 @@ const App: React.FC = () => {
     const diff2 = houseScores[1].score - houseScores[2].score;
     const diff3 = houseScores[2].score - houseScores[3].score;
 
-    // Dynamically update leaderboard positions
+    // Updating leaderboard display dynamically
     document.getElementById("first-place")!.innerText = `1st Place: ${houseScores[0].name} (+${diff1})`;
     document.getElementById("second-place")!.innerText = `2nd Place: ${houseScores[1].name} (+${diff2} | -${diff1})`;
     document.getElementById("third-place")!.innerText = `3rd Place: ${houseScores[2].name} (+${diff3} | -${diff2})`;
@@ -79,52 +78,106 @@ const App: React.FC = () => {
     }
   };
 
-  // Handle successful login
-  const handleLogin = (username: string, role: string) => {
-    setUsername(username);
-    setRole(role);
-    setIsLoggedIn(true);
-    setError('');
+  // Helper function to extract digits from a number
+  const getDigits = (num: number) => {
+    return num.toString().padStart(4, '0').split('').map(Number);
   };
 
-  // Handle error
-  const handleError = (error: string) => {
-    setError(error);
-  };
-
-  // Handle logout
-  const handleLogout = () => {
-    setIsLoggedIn(false);
-    setUsername('');
-    setRole('');
+  // Handle login button click
+  const handleLoginClick = () => {
+    alert("Login clicked! Add your login functionality here.");
   };
 
   return (
     <div className="App">
-      <h1 className="title">House Information</h1>
+      {/* Login Button */}
+      <button className="login-btn" onClick={handleLoginClick}>Login</button>
 
-      {/* Login or logged-in state */}
-      {!isLoggedIn ? (
-        <Lgn onLogin={handleLogin} onError={handleError} />
-      ) : (
-        <div>
-          {/* Leaderboard and other widgets */}
-          <div id="leaderboard-widget" className="widget leaderboard">
-            <div id="first-place" className="place"></div>
-            <div id="second-place" className="place"></div>
-            <div id="third-place" className="place"></div>
-            <div id="fourth-place" className="place"></div>
-          </div>
+      <div className="title">House Information</div>
 
-          {/* Countdown widget */}
-          <div id="countdown-widget" className="countdown">
-            <span id="countdown-timer">{countdownText}</span>
-          </div>
+      {/* Leaderboard Widget */}
+      <div className="widget leaderboard" id="leaderboard-widget">
+        {/* Leaderboard Positions */}
+        <div id="first-place" className="place">
+          <span className="place-digit">1st</span>
+          {getDigits(counters.Baldwin).map((digit, index) => (
+            <div className="digit" key={`first-${index}`}>
+              {digit}
+            </div>
+          ))}
         </div>
-      )}
+        <div id="second-place" className="place">
+          <span className="place-digit">2nd</span>
+          {getDigits(counters.Sotomayor).map((digit, index) => (
+            <div className="digit" key={`second-${index}`}>
+              {digit}
+            </div>
+          ))}
+        </div>
+        <div id="third-place" className="place">
+          <span className="place-digit">3rd</span>
+          {getDigits(counters.Mandela).map((digit, index) => (
+            <div className="digit" key={`third-${index}`}>
+              {digit}
+            </div>
+          ))}
+        </div>
+        <div id="fourth-place" className="place">
+          <span className="place-digit">4th</span>
+          {getDigits(counters.Truth).map((digit, index) => (
+            <div className="digit" key={`fourth-${index}`}>
+              {digit}
+            </div>
+          ))}
+        </div>
+      </div>
 
-      {/* Display error message if login fails */}
-      {error && <p className="error-message">{error}</p>}
+      {/* Counter Widgets */}
+      <div className="widget counter-widget" id="baldwin-widget">
+        <div className="counter-label">Baldwin</div>
+        <div className="counter baldwin">
+          {getDigits(counters.Baldwin).map((digit, index) => (
+            <div className="digit" key={`baldwin-${index}`}>
+              {digit}
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="widget counter-widget" id="sotomayor-widget">
+        <div className="counter-label">Sotomayor</div>
+        <div className="counter sotomayor">
+          {getDigits(counters.Sotomayor).map((digit, index) => (
+            <div className="digit" key={`sotomayor-${index}`}>
+              {digit}
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="widget counter-widget" id="mandela-widget">
+        <div className="counter-label">Mandela</div>
+        <div className="counter mandela">
+          {getDigits(counters.Mandela).map((digit, index) => (
+            <div className="digit" key={`mandela-${index}`}>
+              {digit}
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="widget counter-widget" id="truth-widget">
+        <div className="counter-label">Truth</div>
+        <div className="counter truth">
+          {getDigits(counters.Truth).map((digit, index) => (
+            <div className="digit" key={`truth-${index}`}>
+              {digit}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Countdown Widget */}
+      <div id="countdown-widget" className="countdown">
+        <span id="countdown-timer">{countdownText}</span>
+      </div>
     </div>
   );
 };
