@@ -50,7 +50,7 @@ body {
 .widget {
   margin: 20px;
   background-color: #181825;  /* Updated widget background color */
-  padding: 15px;
+  padding: 20px;
   border-radius: 8px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Shadow for separation */
   width: 100%;
@@ -63,25 +63,35 @@ body {
   min-height: 200px; /* Optional: Set a minimum height for each widget */
 }
 
-/* Gradient border */
-.border-gradient {
-  border: 10px solid;
-  border-image-slice: 1;
-  border-width: 5px;
+/* Gradient border using background and padding */
+.gradient-border {
+  position: relative;
+  padding: 10px;
+  background: linear-gradient(45deg, #743ad5, #d53a9d); /* Gradient color */
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(255, 0, 150, 0.5); /* Glow effect */
 }
 
-.border-gradient-purple {
-  border-image-source: linear-gradient(to left, #743ad5, #d53a9d);
+.gradient-border .content {
+  position: relative;
+  z-index: 1; /* Ensure content stays on top of the gradient */
+  background-color: #181825;  /* Ensure the background color of the content box */
+  border-radius: 8px;
 }
 
-.border-gradient-green {
-  border-image-source: linear-gradient(to left, #00C853, #B2FF59);
+/* Specific styles for each house box */
+.house-box {
+  position: relative;
+  padding: 20px;
+  background-color: #181825;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+  width: 100%;
+  max-width: 400px;
 }
 
-.only-top {
-  border-left: 0;
-  border-right: 0;
-  border-bottom: 0;
+.house-box:hover {
+  box-shadow: 0px 0px 20px rgba(0, 0, 255, 0.7); /* Hover glow effect */
 }
 
 /* Leaderboard widget styling */

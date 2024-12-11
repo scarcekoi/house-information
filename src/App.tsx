@@ -88,35 +88,37 @@ const App: React.FC = () => {
 
       <div className="widget-container">
         {/* Leaderboard Widget */}
-        <div className="widget leaderboard border-gradient border-gradient-purple" id="leaderboard-widget">
-          <div id="first-place" className="place">
-            <span className="place-digit">1st</span>
-            {getDigits(counters.Baldwin).map((digit, index) => (
-              <div className="digit" key={`first-${index}`}>{digit}</div>
-            ))}
-          </div>
-          <div id="second-place" className="place">
-            <span className="place-digit">2nd</span>
-            {getDigits(counters.Sotomayor).map((digit, index) => (
-              <div className="digit" key={`second-${index}`}>{digit}</div>
-            ))}
-          </div>
-          <div id="third-place" className="place">
-            <span className="place-digit">3rd</span>
-            {getDigits(counters.Mandela).map((digit, index) => (
-              <div className="digit" key={`third-${index}`}>{digit}</div>
-            ))}
-          </div>
-          <div id="fourth-place" className="place">
-            <span className="place-digit">4th</span>
-            {getDigits(counters.Truth).map((digit, index) => (
-              <div className="digit" key={`fourth-${index}`}>{digit}</div>
-            ))}
+        <div className="widget leaderboard gradient-border">
+          <div className="content">
+            <div id="first-place" className="place">
+              <span className="place-digit">1st</span>
+              {getDigits(counters.Baldwin).map((digit, index) => (
+                <div className="digit" key={`first-${index}`}>{digit}</div>
+              ))}
+            </div>
+            <div id="second-place" className="place">
+              <span className="place-digit">2nd</span>
+              {getDigits(counters.Sotomayor).map((digit, index) => (
+                <div className="digit" key={`second-${index}`}>{digit}</div>
+              ))}
+            </div>
+            <div id="third-place" className="place">
+              <span className="place-digit">3rd</span>
+              {getDigits(counters.Mandela).map((digit, index) => (
+                <div className="digit" key={`third-${index}`}>{digit}</div>
+              ))}
+            </div>
+            <div id="fourth-place" className="place">
+              <span className="place-digit">4th</span>
+              {getDigits(counters.Truth).map((digit, index) => (
+                <div className="digit" key={`fourth-${index}`}>{digit}</div>
+              ))}
+            </div>
           </div>
         </div>
 
-        {/* Counter Widgets */}
-        <div className="counter-widget">
+        {/* House Boxes */}
+        <div className="house-box">
           <div className="counter-label">Baldwin House</div>
           <div className="counter">
             {getDigits(counters.Baldwin).map((digit, index) => (
@@ -125,7 +127,7 @@ const App: React.FC = () => {
           </div>
         </div>
 
-        <div className="counter-widget">
+        <div className="house-box">
           <div className="counter-label">Sotomayor House</div>
           <div className="counter">
             {getDigits(counters.Sotomayor).map((digit, index) => (
@@ -134,7 +136,7 @@ const App: React.FC = () => {
           </div>
         </div>
 
-        <div className="counter-widget">
+        <div className="house-box">
           <div className="counter-label">Mandela House</div>
           <div className="counter">
             {getDigits(counters.Mandela).map((digit, index) => (
@@ -143,7 +145,7 @@ const App: React.FC = () => {
           </div>
         </div>
 
-        <div className="counter-widget">
+        <div className="house-box">
           <div className="counter-label">Truth House</div>
           <div className="counter">
             {getDigits(counters.Truth).map((digit, index) => (
@@ -153,8 +155,10 @@ const App: React.FC = () => {
         </div>
 
         {/* Countdown Widget */}
-        <div className="widget countdown border-gradient border-gradient-green">
-          <div className="countdown-text">{countdownText}</div>
+        <div className="widget countdown gradient-border">
+          <div className="content">
+            <div className="countdown-text">{countdownText}</div>
+          </div>
         </div>
       </div>
     </div>
