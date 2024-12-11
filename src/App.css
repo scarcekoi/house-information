@@ -13,12 +13,12 @@ body {
   color: #CDD6F4;  /* Updated text color */
   display: flex;
   flex-direction: column;
-  justify-content: center;  /* Ensure center alignment vertically */
+  justify-content: flex-start;  /* Keep everything aligned from top */
   align-items: center;  /* Center items horizontally */
-  height: 100vh;
+  min-height: 100vh;
   padding: 0;
   box-sizing: border-box; /* Ensure padding is included in height calculations */
-  overflow: hidden; /* Prevent scrolling */
+  overflow-y: auto; /* Allow scrolling */
 }
 
 .title {
@@ -31,7 +31,7 @@ body {
   width: 100%;
 }
 
-/* Center the widget container */
+/* Center the widget container and move it slightly to the right */
 .widget-container {
   display: flex;
   flex-wrap: wrap;  /* Allow wrapping of widgets */
@@ -44,6 +44,7 @@ body {
   box-sizing: border-box; /* Ensures padding is included in width calculations */
   flex-grow: 1;  /* Allow the container to grow and occupy space */
   min-height: 80vh; /* Ensure the container takes enough vertical space */
+  padding-left: 10%; /* Move the content slightly to the right */
 }
 
 .widget {
