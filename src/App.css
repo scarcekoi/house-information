@@ -34,25 +34,27 @@ body {
 /* Center the widget container */
 .widget-container {
   display: flex;
-  flex-wrap: wrap;  /* Allow wrapping of widgets */
+  flex-direction: column;  /* Stack widgets vertically */
   justify-content: center;  /* Center the widgets horizontally */
-  align-items: center;  /* Align items vertically */
-  gap: 20px;  /* Add space between widgets */
+  align-items: center;  /* Align the widgets in the center */
+  gap: 20px;  /* Space between widgets */
   margin-top: 20px;  /* Add some space from the title */
   width: 100%; /* Ensure it takes full width of screen */
-  max-width: 1200px; /* Optional: Set a max-width for better control */
+  max-width: 800px; /* Limit max-width for better control */
   box-sizing: border-box; /* Ensures padding is included in width calculations */
   flex-grow: 1;  /* Allow the container to grow and occupy space */
   min-height: 80vh; /* Ensure the container takes enough vertical space */
 }
 
+/* Widget styling */
 .widget {
   margin: 20px;
   background-color: #181825;  /* Updated widget background color */
   padding: 15px;
   border-radius: 8px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Shadow for separation */
-  width: 300px;
+  width: 100%;
+  max-width: 400px; /* Restrict width */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -69,7 +71,7 @@ body {
   flex-direction: column; /* Stack items vertically */
   align-items: center; /* Center the items horizontally */
   margin-bottom: 20px;  /* Space at the bottom */
-  width: 360px;  /* Increased width of the leaderboard to prevent text wrapping */
+  width: 100%;  /* Ensure it takes full width */
   color: #CDD6F4;  /* Updated leaderboard text color */
 }
 
@@ -83,6 +85,7 @@ body {
   transform: scale(1.1); /* Zoom in on hover */
 }
 
+/* Counter widgets */
 .counter-widget {
   text-align: center;
   padding: 10px;
