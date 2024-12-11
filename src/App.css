@@ -91,7 +91,7 @@ body {
   width: 100%;
   max-width: 250px;
   color: #CDD6F4;  /* Text color in the house box */
-  box-shadow: 0 0 15px 5px rgba(0, 255, 255, 0.5); /* Default glowing effect */
+  box-shadow: 0 0 15px 5px rgba(210, 15, 57, 0.5); /* Always glowing effect */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   margin-bottom: 40px;  /* Added more space between house boxes (was not specified) */
 }
@@ -99,24 +99,7 @@ body {
 /* Hover effect to slightly scale and increase glow of house box */
 .house-box:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 20px 10px rgba(0, 255, 255, 0.7); /* Stronger glowing effect on hover */
-}
-
-/* Custom box shadows for specific houses */
-.baldwin {
-  box-shadow: 0 0 15px 5px #e78284; /* Baldwin's box shadow color */
-}
-
-.sotomayor {
-  box-shadow: 0 0 15px 5px #8caaee; /* Sotomayor's box shadow color */
-}
-
-.mandela {
-  box-shadow: 0 0 15px 5px #a6d189; /* Mandela's box shadow color */
-}
-
-.truth {
-  box-shadow: 0 0 15px 5px #e5c890; /* Truth's box shadow color */
+  box-shadow: 0 0 20px 10px rgba(210, 15, 57, 0.7); /* Stronger glowing effect on hover */
 }
 
 /* Leaderboard item styling */
