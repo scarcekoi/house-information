@@ -18,6 +18,7 @@ body {
   height: 100vh;
   padding: 0;
   box-sizing: border-box; /* Ensure padding is included in height calculations */
+  overflow: hidden; /* Prevent scrolling */
 }
 
 .title {
@@ -27,6 +28,7 @@ body {
   text-align: center;
   margin-top: 10px;
   color: #CDD6F4;  /* Updated title color */
+  width: 100%;
 }
 
 /* Center the widget container */
@@ -40,6 +42,8 @@ body {
   width: 100%; /* Ensure it takes full width of screen */
   max-width: 1200px; /* Optional: Set a max-width for better control */
   box-sizing: border-box; /* Ensures padding is included in width calculations */
+  flex-grow: 1;  /* Allow the container to grow and occupy space */
+  min-height: 80vh; /* Ensure the container takes enough vertical space */
 }
 
 .widget {
@@ -54,6 +58,7 @@ body {
   align-items: center;
   text-align: center;
   box-sizing: border-box; /* Ensure padding is inside the box */
+  min-height: 200px; /* Optional: Set a minimum height for each widget */
 }
 
 /* Leaderboard widget styling */
@@ -84,7 +89,7 @@ body {
   flex-grow: 1;  /* Allow counters to grow and occupy space */
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: center;  /* Vertically center the contents */
 }
 
 .counter-label {
@@ -132,28 +137,7 @@ body {
   background-color: #DF8E1D;
 }
 
-/* Leaderboard widget styling */
-.leaderboard {
-  font-size: 24px;
-  text-align: center;
-  display: flex;
-  flex-direction: column; /* Stack items vertically */
-  align-items: center; /* Center the items horizontally */
-  margin-bottom: 20px;  /* Space at the bottom */
-  width: 360px;  /* Increased width of the leaderboard to prevent text wrapping */
-  color: #CDD6F4;  /* Updated leaderboard text color */
-}
-
-.place {
-  display: block; /* Ensures the leaderboard items stack vertically */
-  margin: 5px 0; /* Adds space between leaderboard items */
-  transition: transform 0.3s ease;
-}
-
-.place:hover {
-  transform: scale(1.1); /* Zoom in on hover */
-}
-
+/* Countdown widget styling */
 .countdown {
   font-size: 32px;
   text-align: center;
