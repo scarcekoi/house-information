@@ -93,25 +93,25 @@ const App: React.FC = () => {
             <div id="first-place" className="place">
               <span className="place-digit">1st</span>
               {getDigits(counters.Baldwin).map((digit, index) => (
-                <div className="digit" key={`first-${index}`}>{digit}</div>
+                <div className="digit baldwin" key={`first-${index}`}>{digit}</div>
               ))}
             </div>
             <div id="second-place" className="place">
               <span className="place-digit">2nd</span>
               {getDigits(counters.Sotomayor).map((digit, index) => (
-                <div className="digit" key={`second-${index}`}>{digit}</div>
+                <div className="digit sotomayor" key={`second-${index}`}>{digit}</div>
               ))}
             </div>
             <div id="third-place" className="place">
               <span className="place-digit">3rd</span>
               {getDigits(counters.Mandela).map((digit, index) => (
-                <div className="digit" key={`third-${index}`}>{digit}</div>
+                <div className="digit mandela" key={`third-${index}`}>{digit}</div>
               ))}
             </div>
             <div id="fourth-place" className="place">
               <span className="place-digit">4th</span>
               {getDigits(counters.Truth).map((digit, index) => (
-                <div className="digit" key={`fourth-${index}`}>{digit}</div>
+                <div className="digit truth" key={`fourth-${index}`}>{digit}</div>
               ))}
             </div>
           </div>
@@ -155,14 +155,12 @@ const App: React.FC = () => {
         </div>
 
         {/* Countdown Widget */}
-        <div className="widget countdown gradient-border">
-          <div className="content">
-            <div className="countdown-text">{countdownText}</div>
-          </div>
+        <div className="widget countdown">
+          <div>{countdownText}</div>
         </div>
       </div>
     </div>
   );
-};
+}
 
 export default App;
