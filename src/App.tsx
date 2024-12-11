@@ -92,71 +92,47 @@ const App: React.FC = () => {
           <div className="content">
             <div id="first-place" className="place">
               <span className="place-digit">1st</span>
-              {getDigits(counters.Baldwin).map((digit, index) => (
-                <div className="digit baldwin" key={`first-${index}`}>{digit}</div>
-              ))}
+              {getDigits(counters.Baldwin)[0]}-{getDigits(counters.Baldwin)[1]}-{getDigits(counters.Baldwin)[2]}-{getDigits(counters.Baldwin)[3]}
             </div>
             <div id="second-place" className="place">
               <span className="place-digit">2nd</span>
-              {getDigits(counters.Sotomayor).map((digit, index) => (
-                <div className="digit sotomayor" key={`second-${index}`}>{digit}</div>
-              ))}
+              {getDigits(counters.Sotomayor)[0]}-{getDigits(counters.Sotomayor)[1]}-{getDigits(counters.Sotomayor)[2]}-{getDigits(counters.Sotomayor)[3]}
             </div>
             <div id="third-place" className="place">
               <span className="place-digit">3rd</span>
-              {getDigits(counters.Mandela).map((digit, index) => (
-                <div className="digit mandela" key={`third-${index}`}>{digit}</div>
-              ))}
+              {getDigits(counters.Mandela)[0]}-{getDigits(counters.Mandela)[1]}-{getDigits(counters.Mandela)[2]}-{getDigits(counters.Mandela)[3]}
             </div>
             <div id="fourth-place" className="place">
               <span className="place-digit">4th</span>
-              {getDigits(counters.Truth).map((digit, index) => (
-                <div className="digit truth" key={`fourth-${index}`}>{digit}</div>
-              ))}
+              {getDigits(counters.Truth)[0]}-{getDigits(counters.Truth)[1]}-{getDigits(counters.Truth)[2]}-{getDigits(counters.Truth)[3]}
             </div>
           </div>
         </div>
 
         {/* House Boxes */}
-        <div className="house-box">
-          <div className="counter-label">Baldwin House</div>
-          <div className="counter">
-            {getDigits(counters.Baldwin).map((digit, index) => (
-              <div className="digit baldwin" key={index}>{digit}</div>
-            ))}
-          </div>
+        <div className="house-box baldwinn">
+          <h3>Baldwin House</h3>
+          <p>Score: {counters.Baldwin}</p>
         </div>
 
-        <div className="house-box">
-          <div className="counter-label">Sotomayor House</div>
-          <div className="counter">
-            {getDigits(counters.Sotomayor).map((digit, index) => (
-              <div className="digit sotomayor" key={index}>{digit}</div>
-            ))}
-          </div>
+        <div className="house-box sotomayor">
+          <h3>Sotomayor House</h3>
+          <p>Score: {counters.Sotomayor}</p>
         </div>
 
-        <div className="house-box">
-          <div className="counter-label">Mandela House</div>
-          <div className="counter">
-            {getDigits(counters.Mandela).map((digit, index) => (
-              <div className="digit mandela" key={index}>{digit}</div>
-            ))}
-          </div>
+        <div className="house-box mandela">
+          <h3>Mandela House</h3>
+          <p>Score: {counters.Mandela}</p>
         </div>
 
-        <div className="house-box">
-          <div className="counter-label">Truth House</div>
-          <div className="counter">
-            {getDigits(counters.Truth).map((digit, index) => (
-              <div className="digit truth" key={index}>{digit}</div>
-            ))}
-          </div>
+        <div className="house-box truth">
+          <h3>Truth House</h3>
+          <p>Score: {counters.Truth}</p>
         </div>
 
-        {/* Countdown Widget */}
-        <div className="widget countdown">
-          <div>{countdownText}</div>
+        {/* Countdown Text */}
+        <div className="next-house-village-meeting">
+          {countdownText}
         </div>
       </div>
     </div>
