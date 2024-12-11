@@ -116,51 +116,13 @@ const App: React.FC = () => {
             </div>
           </div>
         </div>
-
-        {/* House Boxes */}
-        <div className="house-box">
-          <div className="counter-label">Baldwin House</div>
-          <div className="counter">
-            {getDigits(counters.Baldwin).map((digit, index) => (
-              <div className="digit baldwin" key={index}>{digit}</div>
-            ))}
-          </div>
-        </div>
-
-        <div className="house-box">
-          <div className="counter-label">Sotomayor House</div>
-          <div className="counter">
-            {getDigits(counters.Sotomayor).map((digit, index) => (
-              <div className="digit sotomayor" key={index}>{digit}</div>
-            ))}
-          </div>
-        </div>
-
-        <div className="house-box">
-          <div className="counter-label">Mandela House</div>
-          <div className="counter">
-            {getDigits(counters.Mandela).map((digit, index) => (
-              <div className="digit mandela" key={index}>{digit}</div>
-            ))}
-          </div>
-        </div>
-
-        <div className="house-box">
-          <div className="counter-label">Truth House</div>
-          <div className="counter">
-            {getDigits(counters.Truth).map((digit, index) => (
-              <div className="digit truth" key={index}>{digit}</div>
-            ))}
-          </div>
-        </div>
-
-        {/* Countdown Widget */}
-        <div className="widget countdown">
-          <div>{countdownText}</div>
+        {/* End of Leaderboard */}
+        <div className="next-house-village-meeting">
+          {countdownText}
         </div>
       </div>
     </div>
   );
-}
+};
 
 export default App;

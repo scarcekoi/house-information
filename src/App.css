@@ -54,7 +54,7 @@ body {
   flex-direction: column;
   align-items: center;
   margin-bottom: 20px;  /* Space at the bottom */
-  width: 360px;  /* Increased width of the leaderboard */
+  width: 480px;  /* Increased width of the leaderboard */
   color: #CDD6F4;  /* Updated leaderboard text color */
   position: relative;
   padding: 20px;
@@ -64,10 +64,14 @@ body {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Hover effect for the leaderboard */
+/* Glow effect: always visible, enhance on hover */
+.leaderboard {
+  box-shadow: 0 0 15px 5px rgba(0, 255, 255, 0.5); /* Constant glow */
+}
+
 .leaderboard:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 20px 10px rgba(0, 255, 255, 0.7); /* Stronger glowing effect on hover */
+  box-shadow: 0 0 20px 10px rgba(0, 255, 255, 0.7); /* Enhanced glowing effect on hover */
 }
 
 /* No box for "Next House Village Meeting", it's just text */
@@ -77,6 +81,7 @@ body {
   color: #CDD6F4;  /* Updated text color */
   margin-top: 10px;
   margin-bottom: 20px;
+  box-shadow: none; /* Ensure there's no box around the text */
 }
 
 /* Styling for each house box with glow effect always on */
