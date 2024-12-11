@@ -37,7 +37,7 @@ body {
   flex-direction: column;  /* Stack widgets vertically */
   justify-content: center;  /* Center the widgets horizontally */
   align-items: center;  /* Align the widgets in the center */
-  gap: 40px;  /* Increased space between widgets */
+  gap: 40px;  /* Increased space between widgets (was 20px before) */
   margin-top: 20px;  /* Add some space from the title */
   width: 100%; /* Ensure it takes full width of screen */
   max-width: 800px; /* Limit max-width for better control */
@@ -91,32 +91,15 @@ body {
   width: 100%;
   max-width: 250px;
   color: #CDD6F4;  /* Text color in the house box */
-  box-shadow: 0 0 15px 5px rgba(210, 15, 57, 0.5); /* Always glowing effect (red for Baldwin) */
+  box-shadow: 0 0 15px 5px rgba(210, 15, 57, 0.5); /* Always glowing effect */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  margin-bottom: 40px;  /* Added more space between house boxes */
+  margin-bottom: 40px;  /* Added more space between house boxes (was not specified) */
 }
 
 /* Hover effect to slightly scale and increase glow of house box */
 .house-box:hover {
   transform: scale(1.05);
   box-shadow: 0 0 20px 10px rgba(210, 15, 57, 0.7); /* Stronger glowing effect on hover */
-}
-
-/* Custom box shadows for each house */
-.baldwin {
-  box-shadow: 0 0 15px 5px #e78284; /* Baldwin's box shadow color (Red) */
-}
-
-.sotomayor {
-  box-shadow: 0 0 15px 5px #1e66f5; /* Sotomayor's box shadow color (Blue) */
-}
-
-.mandela {
-  box-shadow: 0 0 15px 5px #40a02b; /* Mandela's box shadow color (Green) */
-}
-
-.truth {
-  box-shadow: 0 0 15px 5px #df8e1d; /* Truth's box shadow color (Yellow) */
 }
 
 /* Leaderboard item styling */
@@ -134,50 +117,4 @@ body {
 /* Optional styling for digits, if you want specific colors for numbers */
 .leaderboard-item span {
   color: #FF9D00; /* Example: digits are orange */
-}
-
-/* Styling for the digit boxes */
-.digit {
-  display: inline-block;
-  width: 30px;
-  height: 30px;
-  margin: 2px;
-  text-align: center;
-  line-height: 30px;
-  font-size: 20px;
-  border-radius: 5px;
-  background-color: rgba(0, 255, 255, 0.1);
-}
-
-/* Styling for different house colors */
-.baldwin {
-  background-color: rgba(255, 0, 0, 0.5);
-}
-
-.sotomayor {
-  background-color: rgba(0, 0, 255, 0.5);
-}
-
-.mandela {
-  background-color: rgba(0, 255, 0, 0.5);
-}
-
-.truth {
-  background-color: rgba(255, 255, 0, 0.5);
-}
-
-/* Leaderboard container styling */
-.leaderboard-container {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  width: 100%;
-  align-items: center;
-}
-
-/* The container for the house counter and digits */
-.counter {
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
 }

@@ -118,8 +118,8 @@ const App: React.FC = () => {
         </div>
 
         {/* House Boxes */}
-        <div className="house-box baldwinn">
-          <h3>Baldwin House</h3>
+        <div className="house-box">
+          <div className="counter-label">Baldwin House</div>
           <div className="counter">
             {getDigits(counters.Baldwin).map((digit, index) => (
               <div className="digit baldwin" key={index}>{digit}</div>
@@ -127,8 +127,8 @@ const App: React.FC = () => {
           </div>
         </div>
 
-        <div className="house-box sotomayor">
-          <h3>Sotomayor House</h3>
+        <div className="house-box">
+          <div className="counter-label">Sotomayor House</div>
           <div className="counter">
             {getDigits(counters.Sotomayor).map((digit, index) => (
               <div className="digit sotomayor" key={index}>{digit}</div>
@@ -136,8 +136,8 @@ const App: React.FC = () => {
           </div>
         </div>
 
-        <div className="house-box mandela">
-          <h3>Mandela House</h3>
+        <div className="house-box">
+          <div className="counter-label">Mandela House</div>
           <div className="counter">
             {getDigits(counters.Mandela).map((digit, index) => (
               <div className="digit mandela" key={index}>{digit}</div>
@@ -145,8 +145,8 @@ const App: React.FC = () => {
           </div>
         </div>
 
-        <div className="house-box truth">
-          <h3>Truth House</h3>
+        <div className="house-box">
+          <div className="counter-label">Truth House</div>
           <div className="counter">
             {getDigits(counters.Truth).map((digit, index) => (
               <div className="digit truth" key={index}>{digit}</div>
@@ -154,9 +154,9 @@ const App: React.FC = () => {
           </div>
         </div>
 
-        {/* Countdown Text */}
-        <div className="next-house-village-meeting">
-          {countdownText}
+        {/* Countdown Widget */}
+        <div className="widget countdown">
+          <div>{countdownText}</div>
         </div>
       </div>
     </div>
