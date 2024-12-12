@@ -60,9 +60,11 @@ body {
   padding: 20px;
   background-color: #181825;  /* Set background color */
   border-radius: 10px;  /* Add rounded corners */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease;
+  box-shadow: 0 0 15px 5px rgba(0, 255, 255, 0.5), 0 0 15px 5px rgba(30, 102, 245, 0.5), 0 0 15px 5px rgba(64, 160, 43, 0.5), 0 0 15px 5px rgba(223, 142, 29, 0.5); /* Glowing effect around the leaderboard */
 }
 
+/* Gradient glow using pseudo-element for a more defined glow */
 .leaderboard::before {
   content: '';
   position: absolute;
@@ -70,9 +72,11 @@ body {
   left: -5px;
   right: -5px;
   bottom: -5px;
-  background: linear-gradient(to right, rgba(0, 255, 255, 0.5), rgba(30, 102, 245, 0.5), rgba(64, 160, 43, 0.5), rgba(223, 142, 29, 0.5));
+  background: rgba(0, 255, 255, 0.5); /* Default glow color */
   border-radius: 15px; /* Match the border radius of the leaderboard */
   z-index: -1; /* Ensure the pseudo-element is behind the content */
+  box-shadow: 0 0 20px 5px rgba(0, 255, 255, 0.5), 0 0 20px 5px rgba(30, 102, 245, 0.5), 0 0 20px 5px rgba(64, 160, 43, 0.5), 0 0 20px 5px rgba(223, 142, 29, 0.5); /* Glowing effect around */
+  transition: box-shadow 0.3s ease; /* Smooth transition for glow on hover */
 }
 
 /* Hover effect for the leaderboard */
@@ -80,8 +84,9 @@ body {
   transform: scale(1.05);
 }
 
+/* Change gradient glow on hover */
 .leaderboard:hover::before {
-  background: linear-gradient(to right, rgba(0, 255, 255, 0.7), rgba(30, 102, 245, 0.7), rgba(64, 160, 43, 0.7), rgba(223, 142, 29, 0.7));
+  box-shadow: 0 0 30px 10px rgba(0, 255, 255, 0.7), 0 0 30px 10px rgba(30, 102, 245, 0.7), 0 0 30px 10px rgba(64, 160, 43, 0.7), 0 0 30px 10px rgba(223, 142, 29, 0.7);
 }
 
 /* No box for "Next House Village Meeting", it's just text */
