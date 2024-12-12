@@ -122,7 +122,7 @@ const App: React.FC = () => {
           <div className="counter-label">Baldwin</div>
           <div className="counter">
             {getDigits(counters.Baldwin).map((digit, index) => (
-              <div className="baldwin digit" key={index}>{digit}</div>
+              <div className="baldwin-digit" key={index}>{digit}</div>
             ))}
           </div>
         </div>
@@ -131,7 +131,7 @@ const App: React.FC = () => {
           <div className="counter-label">Sotomayor</div>
           <div className="counter">
             {getDigits(counters.Sotomayor).map((digit, index) => (
-              <div className="sotomayor digit" key={index}>{digit}</div>
+              <div className="sotomayor-digit" key={index}>{digit}</div>
             ))}
           </div>
         </div>
@@ -140,7 +140,7 @@ const App: React.FC = () => {
           <div className="counter-label">Mandela</div>
           <div className="counter">
             {getDigits(counters.Mandela).map((digit, index) => (
-              <div className="mandela digit" key={index}>{digit}</div>
+              <div className="mandela-digit" key={index}>{digit}</div>
             ))}
           </div>
         </div>
@@ -149,7 +149,7 @@ const App: React.FC = () => {
           <div className="counter-label">Truth</div>
           <div className="counter">
             {getDigits(counters.Truth).map((digit, index) => (
-              <div className="truth digit" key={index}>{digit}</div>
+              <div className="truth-digit" key={index}>{digit}</div>
             ))}
           </div>
         </div>
