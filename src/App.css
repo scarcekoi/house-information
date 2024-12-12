@@ -80,7 +80,7 @@ body {
 }
 
 /* Styling for each house box with glow effect always on */
-.house-box {
+.baldwin-box {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -97,9 +97,76 @@ body {
 }
 
 /* Hover effect to slightly scale and increase glow of house box */
-.house-box:hover {
+.baldwin-box:hover {
   transform: scale(1.05);
   box-shadow: 0 0 20px 10px rgba(210, 15, 57, 0.7); /* Stronger glowing effect on hover */
+}
+/* Styling for each house box with glow effect always on */
+.sotomayor-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #181825;  /* Background color for the house box */
+  padding: 20px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 250px;
+  color: #CDD6F4;  /* Text color in the house box */
+  box-shadow: 0 0 15px 5px rgba(30, 102, 245, 0.5); /* Always glowing effect */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 40px;  /* Added more space between house boxes (was not specified) */
+}
+
+/* Hover effect to slightly scale and increase glow of house box */
+.sotomayor-box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px 10px rgba(30, 102, 245, 0.7); /* Stronger glowing effect on hover */
+}
+/* Styling for each house box with glow effect always on */
+.mandela-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #181825;  /* Background color for the house box */
+  padding: 20px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 250px;
+  color: #CDD6F4;  /* Text color in the house box */
+  box-shadow: 0 0 15px 5px rgba(64, 160, 43, 0.5); /* Always glowing effect */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 40px;  /* Added more space between house boxes (was not specified) */
+}
+
+/* Hover effect to slightly scale and increase glow of house box */
+.mandela-box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px 10px rgba(64, 160, 43, 0.7); /* Stronger glowing effect on hover */
+}
+
+/* Styling for each house box with glow effect always on */
+.truth-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #181825;  /* Background color for the house box */
+  padding: 20px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 250px;
+  color: #CDD6F4;  /* Text color in the house box */
+  box-shadow: 0 0 15px 5px rgba(223, 142, 29, 0.5); /* Always glowing effect */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 40px;  /* Added more space between house boxes (was not specified) */
+}
+
+/* Hover effect to slightly scale and increase glow of house box */
+.truth-box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px 10px rgba(223, 142, 29, 0.7); /* Stronger glowing effect on hover */
 }
 
 /* Leaderboard item styling */
