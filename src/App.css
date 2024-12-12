@@ -60,33 +60,14 @@ body {
   padding: 20px;
   background-color: #181825;  /* Set background color */
   border-radius: 10px;  /* Add rounded corners */
-  transition: transform 0.3s ease;
-  box-shadow: 0 0 15px 5px rgba(0, 255, 255, 0.5), 0 0 15px 5px rgba(30, 102, 245, 0.5), 0 0 15px 5px rgba(64, 160, 43, 0.5), 0 0 15px 5px rgba(223, 142, 29, 0.5); /* Glowing effect around the leaderboard */
-}
-
-/* Gradient glow using pseudo-element for a more defined glow */
-.leaderboard::before {
-  content: '';
-  position: absolute;
-  top: -5px;
-  left: -5px;
-  right: -5px;
-  bottom: -5px;
-  background: rgba(0, 255, 255, 0.5); /* Default glow color */
-  border-radius: 15px; /* Match the border radius of the leaderboard */
-  z-index: -1; /* Ensure the pseudo-element is behind the content */
-  box-shadow: 0 0 20px 5px rgba(0, 255, 255, 0.5), 0 0 20px 5px rgba(30, 102, 245, 0.5), 0 0 20px 5px rgba(64, 160, 43, 0.5), 0 0 20px 5px rgba(223, 142, 29, 0.5); /* Glowing effect around */
-  transition: box-shadow 0.3s ease; /* Smooth transition for glow on hover */
+  box-shadow: 0 0 15px 5px linear-gradient(to right, rgba(0, 255, 255, 0.5), rgba(30, 102, 245, 0.5), rgba(64, 160, 43, 0.5), rgba(223, 142, 29, 0.5)) 1; /* Glowing effect around the leaderboard */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Hover effect for the leaderboard */
 .leaderboard:hover {
   transform: scale(1.05);
-}
-
-/* Change gradient glow on hover */
-.leaderboard:hover::before {
-  box-shadow: 0 0 30px 10px rgba(0, 255, 255, 0.7), 0 0 30px 10px rgba(30, 102, 245, 0.7), 0 0 30px 10px rgba(64, 160, 43, 0.7), 0 0 30px 10px rgba(223, 142, 29, 0.7);
+  box-shadow: 0 0 20px 10px linear-gradient(to right, rgba(0, 255, 255, 0.7), rgba(30, 102, 245, 0.7), rgba(64, 160, 43, 0.7), rgba(223, 142, 29, 0.7)) 1; /* Stronger glowing effect on hover */
 }
 
 /* No box for "Next House Village Meeting", it's just text */
@@ -97,7 +78,6 @@ body {
   margin-top: 10px;
   margin-bottom: 20px;
 }
-
 .digit {
   margin: 0 3px;  /* Reduced space between digits */
   padding: 6px 8px;  /* Adjust padding to make digits smaller */
@@ -150,7 +130,6 @@ body {
   transform: scale(1.05);
   box-shadow: 0 0 20px 10px rgba(210, 15, 57, 0.7); /* Stronger glowing effect on hover */
 }
-
 /* Styling for each house box with glow effect always on */
 .sotomayor-box {
   display: flex;
@@ -173,7 +152,6 @@ body {
   transform: scale(1.05);
   box-shadow: 0 0 20px 10px rgba(30, 102, 245, 0.7); /* Stronger glowing effect on hover */
 }
-
 /* Styling for each house box with glow effect always on */
 .mandela-box {
   display: flex;
