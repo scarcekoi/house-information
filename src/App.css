@@ -87,6 +87,7 @@ body {
 /* Hover effect for the leaderboard */
 .leaderboard:hover {
   transform: scale(1.05);
+  background-color: #181825;  /* Set background color */
   box-shadow: 0 0 20px 10px rgba(0, 255, 255, 0.7), rgba(30, 102, 245, 0.7), rgba(64, 160, 43, 0.7), rgba(223, 142, 29, 0.7); /* Stronger glowing effect on hover */
 }
 
