@@ -88,6 +88,7 @@ body {
 .leaderboard:hover {
   transform: scale(1.05);
   box-shadow: 0 0 20px 10px rgba(0, 255, 255, 0.7), rgba(30, 102, 245, 0.7), rgba(64, 160, 43, 0.7), rgba(223, 142, 29, 0.7); /* Stronger glowing effect on hover */
+  /* Keep the background gradient static (no change) */
 }
 
 /* No box for "Next House Village Meeting", it's just text */
@@ -98,6 +99,7 @@ body {
   margin-top: 10px;
   margin-bottom: 20px;
 }
+
 .digit {
   margin: 0 3px;  /* Reduced space between digits */
   padding: 6px 8px;  /* Adjust padding to make digits smaller */
@@ -150,6 +152,7 @@ body {
   transform: scale(1.05);
   box-shadow: 0 0 20px 10px rgba(210, 15, 57, 0.7); /* Stronger glowing effect on hover */
 }
+
 /* Styling for each house box with glow effect always on */
 .sotomayor-box {
   display: flex;
@@ -172,6 +175,7 @@ body {
   transform: scale(1.05);
   box-shadow: 0 0 20px 10px rgba(30, 102, 245, 0.7); /* Stronger glowing effect on hover */
 }
+
 /* Styling for each house box with glow effect always on */
 .mandela-box {
   display: flex;
