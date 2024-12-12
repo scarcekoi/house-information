@@ -78,6 +78,35 @@ body {
   margin-top: 10px;
   margin-bottom: 20px;
 }
+.digit {
+  margin: 0 3px;  /* Reduced space between digits */
+  padding: 6px 8px;  /* Adjust padding to make digits smaller */
+  border-radius: 15px;
+  color: #CDD6F4;  /* Updated digit text color */
+  transition: transform 0.3s ease;
+  border: 5px solid #11111B;
+}
+
+.digit:hover {
+  transform: scale(1.2);
+}
+
+/* Color the digits to match their respective counter label */
+.baldwin .digit {
+  background-color: #d20f39;
+}
+
+.sotomayor .digit {
+  background-color: #1e66f5;
+}
+
+.mandela .digit {
+  background-color: #40a02b;
+}
+
+.truth .digit {
+  background-color: #df8e1d;
+}
 
 /* Styling for each house box with glow effect always on */
 .baldwin-box {
