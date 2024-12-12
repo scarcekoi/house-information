@@ -108,19 +108,19 @@ body {
 
 /* Color the digits to match their respective counter label */
 .baldwin .digit {
-  color: #d20f39;
+  background: #d20f39;
 }
 
 .sotomayor .digit {
-  color: #1e66f5;
+  background: #1e66f5;
 }
 
 .mandela .digit {
-  color: #40a02b;
+  background: #40a02b;
 }
 
 .truth .digit {
-  color: #df8e1d;
+  background: #df8e1d;
 }
 
 /* Styling for each house box with glow effect always on */
