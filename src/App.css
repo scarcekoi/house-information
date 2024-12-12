@@ -78,7 +78,7 @@ body {
       rgba(30, 102, 245, 1) 25% 50%, 
       rgba(64, 160, 43, 1) 50% 75%, 
       rgba(223, 142, 29, 1) 75%);
-  filter: blur(25px); /* Higher blur effect for better blending */
+  filter: blur(50px); /* Higher blur effect for better blending */
   z-index: -1;  /* Places the blur behind the content */
   border-radius: 10px;  /* Keep rounded corners */
   opacity: 0.7;  /* Make it slightly transparent for better blending */
