@@ -58,7 +58,7 @@ body {
   color: #CDD6F4;  /* Updated leaderboard text color */
   position: relative;
   padding: 20px;
-  background-color: #2E2E3A;  /* Set background color */
+  background-color: #181825;  /* Set background color */
   border-radius: 10px;  /* Add rounded corners */
   box-shadow: 0 0 15px 5px rgba(0, 255, 255, 0.5); /* Glowing effect around the leaderboard */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
