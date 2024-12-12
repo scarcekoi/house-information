@@ -84,13 +84,6 @@ body {
   opacity: 0.7;  /* Make it slightly transparent for better blending */
 }
 
-/* Hover effect for the leaderboard */
-.leaderboard:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 20px 10px rgba(0, 255, 255, 0.7), rgba(30, 102, 245, 0.7), rgba(64, 160, 43, 0.7), rgba(223, 142, 29, 0.7); /* Stronger glowing effect on hover */
-  /* Keep the background gradient static (no change) */
-}
-
 /* No box for "Next House Village Meeting", it's just text */
 .next-house-village-meeting {
   font-size: 20px;
