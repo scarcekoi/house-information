@@ -1,4 +1,3 @@
-/* General Body Styling */
 body {
   font-family: Calibri, sans-serif; /* Set body text to Calibri */
   margin: 0;
@@ -9,7 +8,6 @@ body {
   justify-content: space-between;
   height: 100vh;
   padding: 0 20px;
-  transition: background-color 0.3s, color 0.3s; /* Smooth transition for color changes */
 }
 
 .title {
@@ -51,7 +49,7 @@ body {
 }
 
 .place:hover {
-  transform: scale(1.1); /* Zoom in on hover */
+  transform: scale(1.1);
 }
 
 .counter-widget {
@@ -64,7 +62,7 @@ body {
 }
 
 .counter-label {
-  font-size: 36px;  /* Reduced label font size */
+  font-size: 36px;  /* Reduce label font size */
   font-weight: bold;
   margin-bottom: 10px;
   color: #CDD6F4;  /* Updated counter label color */
@@ -129,75 +127,15 @@ body {
   background-color: #181825;  /* Updated hover background color */
 }
 
-.login-btn:focus {
-  outline: 2px solid #FFD700; /* Highlight the button when focused */
-}
-
-/* Responsive design for mobile devices */
-@media (max-width: 768px) {
-  .widget {
-    width: 100%; /* Make widgets full width on smaller screens */
-    padding: 10px;
-  }
-
-  .leaderboard {
-    width: 100%; /* Ensure leaderboard does not overflow */
-  }
-
-  .counter-widget {
-    flex-grow: 1;
-    padding: 20px;
-  }
-
-  .title {
-    font-size: 36px; /* Slightly reduce font size for better mobile fit */
-  }
-
-  .counter {
-    font-size: 36px; /* Adjust font size for mobile view */
-  }
-}
-
-/* Light mode styling */
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
     background-color: #ffffff;
   }
-
-  body {
-    transition: background-color 0.3s, color 0.3s; /* Smooth transition for light mode */
-  }
-
   a:hover {
     color: #747bff;
   }
-
   button {
     background-color: #f9f9f9;
-  }
-
-  .login-btn {
-    background-color: #e3e4e8; /* Lighter background color for button in light mode */
-  }
-
-  .login-btn:hover {
-    background-color: #d1d3d8; /* Slightly darker hover effect */
-  }
-
-  .widget {
-    background-color: #f1f3f5; /* Lighter background for widget in light mode */
-  }
-
-  .place {
-    color: #333;
-  }
-
-  .counter-label, .counter, .countdown {
-    color: #333;
-  }
-
-  .leaderboard {
-    color: #333;
   }
 }
