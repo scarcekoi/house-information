@@ -66,6 +66,7 @@ body {
   font-weight: bold;
   margin-bottom: 10px;
   color: #CDD6F4;  /* Updated counter label color */
+  background-color: red;
 }
 
 .counter {
@@ -74,8 +75,6 @@ body {
   font-weight: bold;
   justify-content: center;
   color: #CDD6F4;  /* Updated counter digits color */
-  background: red;
-
 }
 
 /* Leaderboard widget styling */
