@@ -54,7 +54,7 @@ body {
   flex-direction: column;
   align-items: center;
   margin-bottom: 20px;  /* Space at the bottom */
-  width: 400px;  /* Increased width of the leaderboard */
+  width: 500px;  /* Increased width of the leaderboard */
   color: #CDD6F4;  /* Updated leaderboard text color */
   position: relative;  /* Required for absolute positioning of the blur div */
   padding: 20px;
