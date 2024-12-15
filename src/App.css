@@ -54,7 +54,7 @@ body {
   flex-direction: column;
   align-items: center;
   margin-bottom: 20px;  /* Space at the bottom */
-  width: 360px;  /* Increased width of the leaderboard */
+  width: 330px;  /* Increased width of the leaderboard */
   color: #CDD6F4;  /* Updated leaderboard text color */
   position: relative;  /* Required for absolute positioning of the blur div */
   padding: 20px;
@@ -108,19 +108,19 @@ body {
 
 /* Color the digits to match their respective counter label */
 .baldwin .digit {
-  background: #d20f39;
+  background-color: #d20f39;
 }
 
 .sotomayor .digit {
-  background: #1e66f5;
+  background-color: #1e66f5;
 }
 
 .mandela .digit {
-  background: #40a02b;
+  background-color: #40a02b;
 }
 
 .truth .digit {
-  background: #df8e1d;
+  background-color: #df8e1d;
 }
 
 /* Styling for each house box with glow effect always on */
