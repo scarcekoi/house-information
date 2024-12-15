@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import Login './Lgn.tsx';
+import Login from './Lgn.tsx';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom'; // Importing necessary components for routing
 
 // Define the Counters type for TypeScript
