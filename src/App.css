@@ -1,4 +1,3 @@
-/* Import Jellee Roman font */
 @font-face {
   font-family: 'Jellee Roman';
   src: url('./assets/Jellee-Roman.otf') format('opentype');
@@ -7,64 +6,61 @@
 }
 
 body {
-  font-family: Calibri, sans-serif; /* Set body text to Calibri */
+  font-family: Calibri, sans-serif;
   margin: 0;
   background-color: #1E1E2E;
-  color: #CDD6F4;  /* Updated text color */
+  color: #CDD6F4;
   display: flex;
-  flex-direction: column;  /* Keep everything aligned from top */
-  justify-content: flex-start;  /* Keep everything aligned from top */
-  align-items: center;  /* Center items horizontally */
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
   min-height: 100vh;
   padding: 0;
-  box-sizing: border-box; /* Ensures padding is inside the box */
-  overflow-y: auto; /* Allow scrolling */
+  box-sizing: border-box;
+  overflow-y: auto;
 }
 
 .title {
-  font-family: 'Jellee Roman', serif; /* Set titles to Jellee Roman */
+  font-family: 'Jellee Roman', serif;
   font-size: 48px;
   font-weight: bold;
   text-align: center;
   margin-top: 10px;
-  color: #CDD6F4;  /* Updated title color */
+  color: #CDD6F4;
   width: 100%;
 }
 
-/* Center the widget container */
 .widget-container {
   display: flex;
-  flex-direction: column;  /* Stack widgets vertically */
-  justify-content: center;  /* Center the widgets horizontally */
-  align-items: center;  /* Align the widgets in the center */
-  gap: 40px;  /* Increased space between widgets (was 20px before) */
-  margin-top: 20px;  /* Add some space from the title */
-  width: 100%; /* Ensure it takes full width of screen */
-  max-width: 800px; /* Limit max-width for better control */
-  box-sizing: border-box; /* Ensures padding is included in width calculations */
-  flex-grow: 1;  /* Allow the container to grow and occupy space */
-  min-height: 80vh; /* Ensure the container takes enough vertical space */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin-top: 20px;
+  width: 100%;
+  max-width: 800px;
+  box-sizing: border-box;
+  flex-grow: 1;
+  min-height: 80vh;
 }
 
-/* Glow effect around the leaderboard */
 .leaderboard {
   font-size: 24px;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 20px;  /* Space at the bottom */
-  width: 1360px;  /* Increased width of the leaderboard */
-  color: #CDD6F4;  /* Updated leaderboard text color */
-  position: relative;  /* Required for absolute positioning of the blur div */
+  margin-bottom: 20px;
+  width: 360px;
+  color: #CDD6F4;
+  position: relative;
   padding: 20px;
-  background-color: #181825;  /* Set background color */
-  border-radius: 10px;  /* Add rounded corners */
-  box-shadow: 0 0 15px 5px rgba(0, 255, 255, 0.5), rgba(30, 102, 245, 0.5), rgba(64, 160, 43, 0.5), rgba(223, 142, 29, 0.5); /* Glowing effect around the leaderboard */
+  background-color: #181825;
+  border-radius: 10px;
+  box-shadow: 0 0 15px 5px rgba(0, 255, 255, 0.5), rgba(30, 102, 245, 0.5), rgba(64, 160, 43, 0.5), rgba(223, 142, 29, 0.5);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* New absolute div with diagonal solid color blocks and blur effect */
 .leaderboard::before {
   content: '';
   position: absolute;
@@ -78,26 +74,25 @@ body {
       rgba(30, 102, 245, 1) 25% 50%, 
       rgba(64, 160, 43, 1) 50% 75%, 
       rgba(223, 142, 29, 1) 75%);
-  filter: blur(50px); /* Higher blur effect for better blending */
-  z-index: -1;  /* Places the blur behind the content */
-  border-radius: 10px;  /* Keep rounded corners */
-  opacity: 0.7;  /* Make it slightly transparent for better blending */
+  filter: blur(50px);
+  z-index: -1;
+  border-radius: 10px;
+  opacity: 0.7;
 }
 
-/* No box for "Next House Village Meeting", it's just text */
 .next-house-village-meeting {
   font-size: 20px;
   text-align: center;
-  color: #CDD6F4;  /* Updated text color */
+  color: #CDD6F4;
   margin-top: 10px;
   margin-bottom: 20px;
 }
 
 .digit {
-  margin: 0 3px;  /* Reduced space between digits */
-  padding: 6px 8px;  /* Adjust padding to make digits smaller */
+  margin: 0 3px;
+  padding: 6px 8px;
   border-radius: 15px;
-  color: #CDD6F4;  /* Updated digit text color */
+  color: #CDD6F4;
   transition: transform 0.3s ease;
   border: 5px solid #11111B;
 }
@@ -106,7 +101,6 @@ body {
   transform: scale(1.2);
 }
 
-/* Color the digits to match their respective counter label */
 .baldwin .digit {
   background-color: #d20f39;
 }
@@ -123,99 +117,90 @@ body {
   background-color: #df8e1d;
 }
 
-/* Styling for each house box with glow effect always on */
 .baldwin-box {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #181825;  /* Background color for the house box */
+  background-color: #181825;
   padding: 20px;
   border-radius: 10px;
   width: 100%;
   max-width: 250px;
-  color: #CDD6F4;  /* Text color in the house box */
-  box-shadow: 0 0 15px 5px rgba(210, 15, 57, 0.5); /* Always glowing effect */
+  color: #CDD6F4;
+  box-shadow: 0 0 15px 5px rgba(210, 15, 57, 0.5);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  margin-bottom: 40px;  /* Added more space between house boxes (was not specified) */
+  margin-bottom: 40px;
 }
 
-/* Hover effect to slightly scale and increase glow of house box */
 .baldwin-box:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 20px 10px rgba(210, 15, 57, 0.7); /* Stronger glowing effect on hover */
+  box-shadow: 0 0 20px 10px rgba(210, 15, 57, 0.7);
 }
 
-/* Styling for each house box with glow effect always on */
 .sotomayor-box {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #181825;  /* Background color for the house box */
+  background-color: #181825;
   padding: 20px;
   border-radius: 10px;
   width: 100%;
   max-width: 250px;
-  color: #CDD6F4;  /* Text color in the house box */
-  box-shadow: 0 0 15px 5px rgba(30, 102, 245, 0.5); /* Always glowing effect */
+  color: #CDD6F4;
+  box-shadow: 0 0 15px 5px rgba(30, 102, 245, 0.5);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  margin-bottom: 40px;  /* Added more space between house boxes (was not specified) */
+  margin-bottom: 40px;
 }
 
-/* Hover effect to slightly scale and increase glow of house box */
 .sotomayor-box:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 20px 10px rgba(30, 102, 245, 0.7); /* Stronger glowing effect on hover */
+  box-shadow: 0 0 20px 10px rgba(30, 102, 245, 0.7);
 }
 
-/* Styling for each house box with glow effect always on */
 .mandela-box {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #181825;  /* Background color for the house box */
+  background-color: #181825;
   padding: 20px;
   border-radius: 10px;
   width: 100%;
   max-width: 250px;
-  color: #CDD6F4;  /* Text color in the house box */
-  box-shadow: 0 0 15px 5px rgba(64, 160, 43, 0.5); /* Always glowing effect */
+  color: #CDD6F4;
+  box-shadow: 0 0 15px 5px rgba(64, 160, 43, 0.5);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  margin-bottom: 40px;  /* Added more space between house boxes (was not specified) */
+  margin-bottom: 40px;
 }
 
-/* Hover effect to slightly scale and increase glow of house box */
 .mandela-box:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 20px 10px rgba(64, 160, 43, 0.7); /* Stronger glowing effect on hover */
+  box-shadow: 0 0 20px 10px rgba(64, 160, 43, 0.7);
 }
 
-/* Styling for each house box with glow effect always on */
 .truth-box {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #181825;  /* Background color for the house box */
+  background-color: #181825;
   padding: 20px;
   border-radius: 10px;
   width: 100%;
   max-width: 250px;
-  color: #CDD6F4;  /* Text color in the house box */
-  box-shadow: 0 0 15px 5px rgba(223, 142, 29, 0.5); /* Always glowing effect */
+  color: #CDD6F4;
+  box-shadow: 0 0 15px 5px rgba(223, 142, 29, 0.5);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  margin-bottom: 40px;  /* Added more space between house boxes (was not specified) */
+  margin-bottom: 40px;
 }
 
-/* Hover effect to slightly scale and increase glow of house box */
 .truth-box:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 20px 10px rgba(223, 142, 29, 0.7); /* Stronger glowing effect on hover */
+  box-shadow: 0 0 20px 10px rgba(223, 142, 29, 0.7);
 }
 
-/* Leaderboard item styling */
 .leaderboard-item {
   font-size: 20px;
   padding: 10px;
@@ -224,10 +209,9 @@ body {
   margin-bottom: 10px;
   width: 80%;
   text-align: center;
-  color: #CDD6F4;  /* Color for leaderboard digits */
+  color: #CDD6F4;
 }
 
-/* Optional styling for digits, if you want specific colors for numbers */
 .leaderboard-item span {
-  color: #FF9D00; /* Example: digits are orange */
+  color: #FF9D00;
 }

@@ -1,8 +1,8 @@
 body {
-  font-family: Calibri, sans-serif; /* Set body text to Calibri */
+  font-family: Calibri, sans-serif;
   margin: 0;
   background-color: #1E1E2E;
-  color: #CDD6F4;  /* Updated text color */
+  color: #CDD6F4;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -11,26 +11,26 @@ body {
 }
 
 .title {
-  font-family: 'Jellee Roman', serif; /* Set titles to Jellee Roman */
+  font-family: 'Jellee Roman', serif;
   font-size: 48px;
   font-weight: bold;
   text-align: center;
   margin-top: 10px;
-  color: #CDD6F4;  /* Updated title color */
+  color: #CDD6F4;
 }
 
 .widget {
   margin: 20px 0;
-  background-color: #181825;  /* Updated widget background color */
+  background-color: #181825;
   padding: 15px;
   border-radius: 8px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Shadow for separation */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
   width: 300px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  box-sizing: border-box; /* Ensure padding is inside the box */
+  box-sizing: border-box;
 }
 
 .leaderboard {
@@ -39,7 +39,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: #CDD6F4;  /* Updated leaderboard text color */
+  color: #CDD6F4;
 }
 
 .place {
@@ -55,17 +55,17 @@ body {
 .counter-widget {
   text-align: center;
   padding: 10px;
-  flex-grow: 1;  /* Allow counters to grow and occupy space */
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
 .counter-label {
-  font-size: 36px;  /* Reduce label font size */
+  font-size: 36px;
   font-weight: bold;
   margin-bottom: 10px;
-  color: #CDD6F4;  /* Updated counter label color */
+  color: #CDD6F4;
 }
 
 .counter {
@@ -73,29 +73,28 @@ body {
   font-size: 48px;
   font-weight: bold;
   justify-content: center;
-  color: #CDD6F4;  /* Updated counter digits color */
+  color: #CDD6F4;
 }
 
-/* Leaderboard widget styling */
 .leaderboard {
   font-size: 24px;
   text-align: center;
   display: flex;
-  flex-direction: column; /* Stack items vertically */
-  align-items: center; /* Center the items horizontally */
-  margin-bottom: 20px;  /* Space at the bottom */
-  width: 360px;  /* Increased width of the leaderboard to prevent text wrapping */
-  color: #CDD6F4;  /* Updated leaderboard text color */
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+  width: 360px;
+  color: #CDD6F4;
 }
 
 .place {
-  display: block; /* Ensures the leaderboard items stack vertically */
-  margin: 5px 0; /* Adds space between leaderboard items */
+  display: block;
+  margin: 5px 0;
   transition: transform 0.3s ease;
 }
 
 .place:hover {
-  transform: scale(1.1); /* Zoom in on hover */
+  transform: scale(1.1);
 }
 
 .countdown {
@@ -103,18 +102,17 @@ body {
   text-align: center;
   margin-top: 40px;
   font-weight: bold;
-  color: #CDD6F4;  /* Updated countdown text color */
-  width: 100%;  /* Make sure countdown takes full width */
-  text-align: center;  /* Center the text */
+  color: #CDD6F4;
+  width: 100%;
+  text-align: center;
 }
 
-/* Login button styling */
 .login-btn {
   position: absolute;
   top: 20px;
   right: 20px;
-  background-color: #11111b;  /* Updated background color */
-  color: #CDD6F4;  /* Set text color */
+  background-color: #11111b;
+  color: #CDD6F4;
   padding: 10px 20px;
   border: none;
   border-radius: 8px;
@@ -124,7 +122,7 @@ body {
 }
 
 .login-btn:hover {
-  background-color: #181825;  /* Updated hover background color */
+  background-color: #181825;
 }
 
 @media (prefers-color-scheme: light) {
