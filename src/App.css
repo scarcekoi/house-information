@@ -54,10 +54,10 @@ body {
   flex-direction: column;
   align-items: center;
   margin-bottom: 20px;  /* Space at the bottom */
-  width: 360px;  /* Increased width of the leaderboard */
+  width: 1360px;  /* Increased width of the leaderboard */
   color: #CDD6F4;  /* Updated leaderboard text color */
   position: relative;  /* Required for absolute positioning of the blur div */
-  padding: 50px;
+  padding: 20px;
   background-color: #181825;  /* Set background color */
   border-radius: 10px;  /* Add rounded corners */
   box-shadow: 0 0 15px 5px rgba(0, 255, 255, 0.5), rgba(30, 102, 245, 0.5), rgba(64, 160, 43, 0.5), rgba(223, 142, 29, 0.5); /* Glowing effect around the leaderboard */
