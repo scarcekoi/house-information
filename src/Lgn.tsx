@@ -7,9 +7,10 @@ const Login: React.FC = () => {
 
   const handleLogin = (e: FormEvent) => {
     e.preventDefault();
-    if (username === 'user' && password === 'password') {
+    if (username === 'a.alexander' && password === 'password') {
       alert('Login successful!');
-      // Redirect to a different page if needed
+    } else if (username === '' || password === '') {
+      setError('Please enter both username and password');
     } else {
       setError('Invalid credentials');
     }
