@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import Login from './Lgn'; // Ensure the correct path to Lgn.tsx
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom'; // Importing necessary components for routing
+import Login from './Lgn.tsx'; // Importing Login page
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; // Importing necessary components for routing
 
 // Define the Counters type for TypeScript
 interface Counters {
@@ -80,93 +80,88 @@ const App: React.FC = () => {
 
   return (
     <Router>
-      <Routes>
-        {/* Route for Login Page */}
-        <Route path="/login" element={<Login />} />
+      <div className="App">
+        {/* Add navigation link to Login page */}
+        <div className="title">House Information</div>
 
-        {/* Route for Main Page (non-login route) */}
-        <Route
-          path="/"
-          element={
-            <div className="App">
-              <div className="title">House Information</div>
-
-              <div className="widget-container">
-                {/* Leaderboard Widget */}
-                <div className="widget leaderboard gradient-border">
-                  <div className="content">
-                    <div id="first-place" className="place">
-                      <span className="place-digit">1st</span>
-                      {getDigits(counters.Baldwin).map((digit, index) => (
-                        <div className="baldwin digit" key={`first-${index}`}>{digit}</div>
-                      ))}
-                    </div>
-                    <div id="second-place" className="place">
-                      <span className="place-digit">2nd</span>
-                      {getDigits(counters.Sotomayor).map((digit, index) => (
-                        <div className="sotomayor digit" key={`second-${index}`}>{digit}</div>
-                      ))}
-                    </div>
-                    <div id="third-place" className="place">
-                      <span className="place-digit">3rd</span>
-                      {getDigits(counters.Mandela).map((digit, index) => (
-                        <div className="mandela digit" key={`third-${index}`}>{digit}</div>
-                      ))}
-                    </div>
-                    <div id="fourth-place" className="place">
-                      <span className="place-digit">4th</span>
-                      {getDigits(counters.Truth).map((digit, index) => (
-                        <div className="truth digit" key={`fourth-${index}`}>{digit}</div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-
-                {/* House Boxes */}
-                <div className="baldwin-box">
-                  <div className="counter-label">Baldwin</div>
-                  <div className="counter">
-                    {getDigits(counters.Baldwin).map((digit, index) => (
-                      <div className="baldwin digit" key={index}>{digit}</div>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="sotomayor-box">
-                  <div className="counter-label">Sotomayor</div>
-                  <div className="counter">
-                    {getDigits(counters.Sotomayor).map((digit, index) => (
-                      <div className="sotomayor digit" key={index}>{digit}</div>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="mandela-box">
-                  <div className="counter-label">Mandela</div>
-                  <div className="counter">
-                    {getDigits(counters.Mandela).map((digit, index) => (
-                      <div className="mandela digit" key={index}>{digit}</div>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="truth-box">
-                  <div className="counter-label">Truth</div>
-                  <div className="counter">
-                    {getDigits(counters.Truth).map((digit, index) => (
-                      <div className="truth digit" key={index}>{digit}</div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Countdown Widget */}
-                <div className="widget countdown">
-                  <div>{countdownText}</div>
-                </div>
+        <div className="widget-container">
+          {/* Leaderboard Widget */}
+          <div className="widget leaderboard gradient-border">
+            <div className="content">
+              <div id="first-place" className="place">
+                <span className="place-digit">1st</span>
+                {getDigits(counters.Baldwin).map((digit, index) => (
+                  <div className="baldwin digit" key={`first-${index}`}>{digit}</div>
+                ))}
+              </div>
+              <div id="second-place" className="place">
+                <span className="place-digit">2nd</span>
+                {getDigits(counters.Sotomayor).map((digit, index) => (
+                  <div className="sotomayor digit" key={`second-${index}`}>{digit}</div>
+                ))}
+              </div>
+              <div id="third-place" className="place">
+                <span className="place-digit">3rd</span>
+                {getDigits(counters.Mandela).map((digit, index) => (
+                  <div className="mandela digit" key={`third-${index}`}>{digit}</div>
+                ))}
+              </div>
+              <div id="fourth-place" className="place">
+                <span className="place-digit">4th</span>
+                {getDigits(counters.Truth).map((digit, index) => (
+                  <div className="truth digit" key={`fourth-${index}`}>{digit}</div>
+                ))}
               </div>
             </div>
-          }
-        />
+          </div>
+
+          {/* House Boxes */}
+          <div className="baldwin-box">
+            <div className="counter-label">Baldwin</div>
+            <div className="counter">
+              {getDigits(counters.Baldwin).map((digit, index) => (
+                <div className="baldwin digit" key={index}>{digit}</div>
+              ))}
+            </div>
+          </div>
+
+          <div className="sotomayor-box">
+            <div className="counter-label">Sotomayor</div>
+            <div className="counter">
+              {getDigits(counters.Sotomayor).map((digit, index) => (
+                <div className="sotomayor digit" key={index}>{digit}</div>
+              ))}
+            </div>
+          </div>
+
+          <div className="mandela-box">
+            <div className="counter-label">Mandela</div>
+            <div className="counter">
+              {getDigits(counters.Mandela).map((digit, index) => (
+                <div className="mandela digit" key={index}>{digit}</div>
+              ))}
+            </div>
+          </div>
+
+          <div className="truth-box">
+            <div className="counter-label">Truth</div>
+            <div className="counter">
+              {getDigits(counters.Truth).map((digit, index) => (
+                <div className="truth digit" key={index}>{digit}</div>
+              ))}
+            </div>
+          </div>
+
+          {/* Countdown Widget */}
+          <div className="widget countdown">
+            <div>{countdownText}</div>
+          </div>
+        </div>
+      </div>
+
+      {/* Define Routes */}
+      <Routes>
+        <Route path="/login" element={<Login />} />
       </Routes>
     </Router>
   );
