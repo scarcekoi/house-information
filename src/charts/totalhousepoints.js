@@ -14,9 +14,9 @@ import Chart from 'chart.js/auto'
   new Chart(
     document.getElementById('acquisitions'),
     {
-      type: 'bar',
+      type: 'doughnut',
       options: {
-        animation: false,
+        animation: true,
         plugins: {
           legend: {
             display: false
@@ -26,14 +26,25 @@ import Chart from 'chart.js/auto'
           }
         }
       },
-      data: {
-        labels: data.map(row => row.year),
-        datasets: [
-          {
-            label: 'Acquisitions by year',
-            data: data.map(row => row.count)
-          }
-        ]
-      }
     }
   );
+
+  const data = {
+  labels: [
+    'Baldwin',
+    'Sotomayor',
+    'Mandela',
+    'Truth'
+  ],
+  datasets: [{
+    label: 'Total House Points',
+    data: [300, 50, 100],
+    backgroundColor: [
+      'rgb(210, 15, 57)',
+      'rgb(30, 102, 245)',
+      'rgb(64, 160, 43)',
+      'rgb(223, 142, 29)'
+    ],
+    hoverOffset: 4
+  }]
+};
