@@ -35,7 +35,7 @@ import Chart from 'chart.js/auto';
             enabled: true
           }
         },
-        borderColor: #cdd6f4
+        borderColor: '#cdd6f4'
       },
       data: data,
     }
