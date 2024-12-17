@@ -22,7 +22,7 @@ import Chart from 'chart.js/auto'
   };
 
   new Chart(
-    document.getElementById('acquisitions'),
+    document.getElementById('totalhousepoints'),
     {
       type: 'doughnut',
       options: {
