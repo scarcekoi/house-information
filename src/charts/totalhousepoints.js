@@ -26,6 +26,7 @@ import Chart from 'chart.js/auto'
           }
         }
       },
+      data: data,
     }
   );
 
