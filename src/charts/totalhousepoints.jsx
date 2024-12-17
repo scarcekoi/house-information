@@ -32,9 +32,10 @@ import Chart from 'chart.js/auto';
             display: false
           },
           tooltip: {
-            enabled: false
+            enabled: true
           }
-        }
+        },
+        borderColor: #cdd6f4
       },
       data: data,
     }
