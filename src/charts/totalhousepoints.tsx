@@ -60,7 +60,7 @@ const TotalHousePoints: React.FC<TotalHousePointsProps> = ({ counters }) => {
             arc: {
               hoverOffset: 550
             }
-          }
+          },
           borderColor: '#181825',
           hoverBorderColor: 'rgb(17, 17, 27)'
         },
