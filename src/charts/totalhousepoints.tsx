@@ -49,7 +49,7 @@ const TotalHousePoints: React.FC<TotalHousePointsProps> = ({ counters }) => {
           },
           borderColor: '#cdd6f4',
           hoverBorderColor: '#6c7086',
-          spacing: 10,
+          spacing: 20,
         },
         data: data,
       });
