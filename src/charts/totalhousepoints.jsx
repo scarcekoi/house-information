@@ -33,7 +33,8 @@ import Chart from 'chart.js/auto';
           },
           tooltip: {
             enabled: true,
-            backgroundColor: 'rgba(24, 24, 37, 0.8)'
+            backgroundColor: 'rgba(24, 24, 37, 0.8)',
+            titleColor: '#cdd6f4'
           }
         },
         borderColor: '#cdd6f4'
