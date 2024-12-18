@@ -230,8 +230,8 @@ body {
 
 #totalhousepoints {
   margin-left: 20px;
-  width: 400px; /* Set a specific width for the chart */
-  height: 400px; /* Set a specific height for the chart */
+  width: 100px; /* Set a specific width for the chart */
+  height: 100px; /* Set a specific height for the chart */
 }
 
 @media (prefers-color-scheme: light) {
