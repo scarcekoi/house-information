@@ -59,7 +59,7 @@ const TotalHousePoints: React.FC<TotalHousePointsProps> = ({ counters }) => {
     }
   }, [counters]);
 
-  return <canvas id="totalhousepoints" width="400" height="400"></canvas>;
+  return <canvas id="totalhousepoints" width="200" height="200"></canvas>;
 };
 
 export default TotalHousePoints;
