@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import Chart from 'chart.js/auto';
+import { Counters } from '/src/App.tsx';
 
 const TotalHousePoints = ({ counters }) => {
   useEffect(() => {
