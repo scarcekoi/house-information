@@ -27,30 +27,35 @@ const TotalHousePoints: React.FC<TotalHousePointsProps> = ({ counters }) => {
       }],
     };
 
-    const chart = new Chart(document.getElementById('totalhousepoints'), {
-      type: 'doughnut',
-      options: {
-        animation: true,
-        plugins: {
-          legend: {
-            display: true,
-          },
-          tooltip: {
-            enabled: true,
-            backgroundColor: 'rgba(24, 24, 37, 0.8)',
-            titleColor: '#cdd6f4',
-            bodyColor: '#cdd6f4',
-            footerColor: '#cdd6f4',
-          },
-        },
-        borderColor: '#cdd6f4',
-      },
-      data: data,
-    });
+    // Get the canvas element and assert it's not null
+    const canvasElement = document.getElementById('totalhousepoints') as HTMLCanvasElement | null;
 
-    return () => {
-      chart.destroy();
-    };
+    if (canvasElement) {
+      const chart = new Chart(canvasElement, {
+        type: 'doughnut',
+        options: {
+          animation: true,
+          plugins: {
+            legend: {
+              display: true,
+            },
+            tooltip: {
+              enabled: true,
+              backgroundColor: 'rgba(24, 24, 37, 0.8)',
+              titleColor: '#cdd6f4',
+              bodyColor: '#cdd6f4',
+              footerColor: '#cdd6f4',
+            },
+          },
+          borderColor: '#cdd6f4',
+        },
+        data: data,
+      });
+
+      return () => {
+        chart.destroy();
+      };
+    }
   }, [counters]);
 
   return <canvas id="totalhousepoints" width="400" height="400"></canvas>;
