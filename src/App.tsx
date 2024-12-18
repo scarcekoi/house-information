@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
+import TotalHousePoints from './TotalHousePoints'; // Import the TotalHousePoints component
 
 // Define the Counters type for TypeScript
 interface Counters {
@@ -159,6 +160,9 @@ const App: React.FC = () => {
           <div>{countdownText}</div>
         </div>
       </div>
+
+      {/* Pass counters to the TotalHousePoints component */}
+      <TotalHousePoints counters={counters} />
     </div>
   );
 }
