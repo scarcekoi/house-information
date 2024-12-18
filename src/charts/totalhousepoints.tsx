@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import Chart from 'chart.js/auto';
-import 'Jellee-Roman' from '/src/assets/Jellee-Roman.otf';
+import Jellee from '/src/assets/Jellee-Roman.otf';
 
 interface TotalHousePointsProps {
   counters: {
@@ -50,7 +50,7 @@ const TotalHousePoints: React.FC<TotalHousePointsProps> = ({ counters }) => {
               color: '#cdd6f4',
               display: true,
               font: {
-                family: 'Jellee-Roman',
+                family: 'Jellee',
                 size: 12
               }
             },
