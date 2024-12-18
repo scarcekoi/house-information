@@ -23,9 +23,9 @@ const App: React.FC = () => {
     updateCounters(counters);
     updateLeaderboard(counters);
     updateCountdown();
-    const intervalId = setInterval(updateCountdown, 1000); // Update every second
+    const intervalId = setInterval(updateCountdown, 1000);
 
-    return () => clearInterval(intervalId); // Clean up interval on component unmount
+    return () => clearInterval(intervalId);
   }, [counters]);
 
   const updateCounters = (counters: Counters) => {
