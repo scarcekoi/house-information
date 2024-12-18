@@ -50,7 +50,7 @@ const TotalHousePoints: React.FC<TotalHousePointsProps> = ({ counters }) => {
               display: true,
               font: {
                 family: 'Jellee',
-                size: 12,
+                size: 24,
                 weight: 'normal'
               },
               text: 'Total House Points'
