@@ -1,5 +1,7 @@
 declare module './totalhousepoints.jsx' {
-  interface Counters {
+  import React from 'react';
+
+  export interface Counters {
     Baldwin: number;
     Sotomayor: number;
     Mandela: number;
@@ -7,5 +9,6 @@ declare module './totalhousepoints.jsx' {
   }
 
   const TotalHousePoints: React.FC<{ counters: Counters }>;
+
   export default TotalHousePoints;
 }

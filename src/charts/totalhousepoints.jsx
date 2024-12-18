@@ -1,8 +1,16 @@
 import React, { useEffect } from 'react';
 import Chart from 'chart.js/auto';
-import { Counters } from '/src/App.tsx';
 
-const TotalHousePoints = ({ counters }) => {
+interface TotalHousePointsProps {
+  counters: {
+    Baldwin: number;
+    Sotomayor: number;
+    Mandela: number;
+    Truth: number;
+  };
+}
+
+const TotalHousePoints: React.FC<TotalHousePointsProps> = ({ counters }) => {
   useEffect(() => {
     const data = {
       labels: ['Baldwin', 'Sotomayor', 'Mandela', 'Truth'],
@@ -40,11 +48,10 @@ const TotalHousePoints = ({ counters }) => {
       data: data,
     });
 
-    // Cleanup the chart when the component unmounts
     return () => {
       chart.destroy();
     };
-  }, [counters]); // Re-run the effect whenever counters change
+  }, [counters]);
 
   return <canvas id="totalhousepoints" width="400" height="400"></canvas>;
 };
