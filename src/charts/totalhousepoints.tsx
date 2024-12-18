@@ -37,7 +37,7 @@ const TotalHousePoints: React.FC<TotalHousePointsProps> = ({ counters }) => {
           animation: true,
           plugins: {
             legend: {
-              display: true,
+              display: false,
             },
             tooltip: {
               enabled: true,
