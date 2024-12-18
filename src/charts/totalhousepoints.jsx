@@ -36,7 +36,7 @@ import Chart from 'chart.js/auto';
             backgroundColor: 'rgba(24, 24, 37, 0.8)'
           }
         },
-        borderColor: '  #cdd6f4'
+        borderColor: '#cdd6f4'
       },
       data: data,
     }
