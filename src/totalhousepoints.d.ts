@@ -1,7 +1,7 @@
-declare module './totalhousepoints.jsx' {
+declare module './charts/totalhousepoints.jsx' {
   import React from 'react';
 
-  export interface Counters {
+  interface Counters {
     Baldwin: number;
     Sotomayor: number;
     Mandela: number;
