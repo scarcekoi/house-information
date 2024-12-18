@@ -10,7 +10,7 @@ import Chart from 'chart.js/auto';
     ],
     datasets: [{
       label: 'Total House Points',
-      data: [300, 50, 100, 150], // Fix data to match labels
+      data: [300, 50, 100, 150],
       backgroundColor: [
         'rgb(210, 15, 57)',
         'rgb(30, 102, 245)',
@@ -29,12 +29,14 @@ import Chart from 'chart.js/auto';
         animation: true,
         plugins: {
           legend: {
-            display: false
+            display: true
           },
           tooltip: {
             enabled: true,
             backgroundColor: 'rgba(24, 24, 37, 0.8)',
-            titleColor: '#cdd6f4'
+            titleColor: '#cdd6f4',
+            bodyColor: '#cdd6f4',
+            footerColor: '#cdd6f4'
           }
         },
         borderColor: '#cdd6f4'
