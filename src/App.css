@@ -215,3 +215,28 @@ body {
 .leaderboard-item span {
   color: #FF9D00;
 }
+
+#totalhousepoints {
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+#totalhousepoints-container {
+  display: flex;
+  justify-content: flex-start; /* Align to left side */
+  align-items: center; /* Center vertically */
+  width: 100%;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
