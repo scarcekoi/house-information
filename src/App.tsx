@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import TotalHousePoints from '/src/charts/totalhousepoints.jsx';
+import TotalHousePoints from './charts/TotalHousePoints'; // Import the TotalHousePoints component from the charts folder
 
+// Define the Counters type for TypeScript
 interface Counters {
   Baldwin: number;
   Sotomayor: number;
@@ -23,9 +24,9 @@ const App: React.FC = () => {
     updateCounters(counters);
     updateLeaderboard(counters);
     updateCountdown();
-    const intervalId = setInterval(updateCountdown, 1000);
+    const intervalId = setInterval(updateCountdown, 1000); // Update every second
 
-    return () => clearInterval(intervalId);
+    return () => clearInterval(intervalId); // Clean up interval on component unmount
   }, [counters]);
 
   const updateCounters = (counters: Counters) => {
