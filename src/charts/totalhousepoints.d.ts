@@ -1,4 +1,4 @@
-declare module './charts/totalhousepoints.jsx' {
+declare module './totalhousepoints.jsx' {
   import React from 'react';
 
   interface Counters {
