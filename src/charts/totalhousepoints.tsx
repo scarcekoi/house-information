@@ -48,10 +48,7 @@ const TotalHousePoints: React.FC<TotalHousePointsProps> = ({ counters }) => {
             title: {
               color: '#cdd6f4',
               display: true,
-              font: {
-                family: 'Jellee Roman',
-                size: 12
-              },
+              font: Jellee Roman
             },
           },
           borderColor: '#cdd6f4',
