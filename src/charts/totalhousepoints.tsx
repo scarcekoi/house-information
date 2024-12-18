@@ -34,7 +34,6 @@ const TotalHousePoints: React.FC<TotalHousePointsProps> = ({ counters }) => {
       const chart = new Chart(canvasElement, {
         type: 'doughnut',
         options: {
-          animation: true,
           plugins: {
             legend: {
               display: false,
