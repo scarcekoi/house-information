@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import Chart from 'chart.js/auto';
-import Jellee from '/src/assets/Jellee-Roman.otf';
 
 interface TotalHousePointsProps {
   counters: {
