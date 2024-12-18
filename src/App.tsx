@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import totalhousepoints from './charts/totalhousepoints.jsx';
+import TotalHousePoints from './charts/totalhousepoints.jsx';
 
 interface Counters {
   Baldwin: number;
@@ -161,7 +161,7 @@ const App: React.FC = () => {
       </div>
 
       {/* Pass counters to the TotalHousePoints component */}
-      <totalhousepoints counters={counters} />
+      <TotalHousePoints counters={counters} />
     </div>
   );
 }
