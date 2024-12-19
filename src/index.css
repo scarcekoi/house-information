@@ -125,6 +125,22 @@ body {
   background-color: #181825;
 }
 
+.footer {
+  background-color: #181825;
+  color: #CDD6F4;
+  text-align: center;
+  padding: 20px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-size: 14px;
+}
+
+.footer p {
+  margin: 0;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
