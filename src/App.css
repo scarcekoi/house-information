@@ -29,6 +29,27 @@ body {
   width: 100%;
 }
 
+/* Footer styles */
+.footer {
+  background-color: #181825;
+  color: #CDD6F4;
+  text-align: center;
+  padding: 10px 0;
+  width: 100%;
+  font-size: 14px;
+  box-sizing: border-box;
+  margin-top: auto; /* Ensures it sticks to the bottom if content is shorter than the viewport */
+}
+
+.footer i {
+  color: red; /* Change the heart icon color (optional) */
+  font-size: 16px; /* Adjust the icon size */
+}
+
+.footer p {
+  margin: 0;
+}
+
 .title {
   font-family: 'Jellee Roman', serif;
   font-size: 48px;

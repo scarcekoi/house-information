@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import TotalHousePoints from './charts/totalhousepoints.tsx';
-import Footer from './Footer'; // Import the Footer component
+import Footer from './Footer.tsx';
 
 interface Counters {
   Baldwin: number;
