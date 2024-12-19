@@ -164,7 +164,7 @@ const App: React.FC = () => {
       <TotalHousePoints counters={counters} />
 
       {/* Add the Footer component */}
-      <Footer /> 
+      {/* <Footer /> */}
     </div>
   );
 }
