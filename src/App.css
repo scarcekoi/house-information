@@ -1,9 +1,6 @@
-/* App.css */
-
-/* Ensure that the root and body take full height */
 html, body {
-  height: 100%; /* Full height for the body */
-  margin: 0; /* Remove default margin */
+  height: 100%;
+  margin: 0;
 }
 
 body {
@@ -27,27 +24,6 @@ body {
   flex-direction: column;
   min-height: 100vh; /* Full viewport height */
   width: 100%;
-}
-
-/* Footer styles */
-.footer {
-  background-color: #181825;
-  color: #CDD6F4;
-  text-align: center;
-  padding: 10px 0;
-  width: 100%;
-  font-size: 14px;
-  box-sizing: border-box;
-  margin-top: auto; /* Ensures it sticks to the bottom if content is shorter than the viewport */
-}
-
-.footer i {
-  color: red; /* Change the heart icon color (optional) */
-  font-size: 16px; /* Adjust the icon size */
-}
-
-.footer p {
-  margin: 0;
 }
 
 .title {
