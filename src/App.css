@@ -106,22 +106,6 @@ body {
   transform: scale(1.2);
 }
 
-.baldwin .digit {
-  background-color: #d20f39;
-}
-
-.sotomayor .digit {
-  background-color: #1e66f5;
-}
-
-.mandela .digit {
-  background-color: #40a02b;
-}
-
-.truth .digit {
-  background-color: #df8e1d;
-}
-
 .baldwin-box {
   display: flex;
   flex-direction: column;
