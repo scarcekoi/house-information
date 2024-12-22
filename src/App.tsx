@@ -116,6 +116,7 @@ const App: React.FC = () => {
           </div>
         </div>
 
+        {/* Counter Widget for Total House Points */}
         <div className="counter-widget">
           <div className="counter-label">Total House Points</div>
           <TotalHousePoints counters={counters} />

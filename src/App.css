@@ -37,12 +37,12 @@ body {
 
 .widget-container {
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-between;
   gap: 40px;
   margin-top: 20px;
   width: 100%;
-  max-width: 1200px; /* Increased max-width to allow more space */
+  max-width: 1200px;
   box-sizing: border-box;
   flex-grow: 1;
   min-height: 80vh;
@@ -55,8 +55,8 @@ body {
   flex-direction: column;
   align-items: center;
   margin-bottom: 20px;
-  width: 80%; /* Adjusted to take up 80% of the container's width */
-  max-width: 1000px; /* Or whatever suits your design */
+  width: 100%; /* Full width */
+  max-width: 600px; /* Adjusted to fit inside the container */
   color: #CDD6F4;
   position: relative;
   padding: 220px;
@@ -141,6 +141,17 @@ body {
 
 .leaderboard-item span {
   color: #FF9D00;
+}
+
+/* Doughnut chart container styling */
+.doughnut-chart-container {
+  max-width: 600px; /* Define a max width for the chart */
+  width: 100%;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #181825;
+  border-radius: 10px;
+  box-shadow: 0 0 15px 5px rgba(0, 255, 255, 0.5), rgba(30, 102, 245, 0.5), rgba(64, 160, 43, 0.5), rgba(223, 142, 29, 0.5);
 }
 
 @media (prefers-color-scheme: light) {
