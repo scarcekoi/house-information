@@ -45,7 +45,11 @@ const TotalHousePoints: React.FC<TotalHousePointsProps> = ({ counters }) => {
     },
   };
 
-  return <Doughnut data={data} options={options} />;
+  return (
+    <div style={{ width: '100%', maxWidth: '600px', margin: '0 auto' }}>  {/* Container for chart */}
+      <Doughnut data={data} options={options} />
+    </div>
+  );
 };
 
 export default TotalHousePoints;
