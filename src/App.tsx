@@ -116,23 +116,17 @@ const App: React.FC = () => {
           </div>
         </div>
 
-        <div className="baldwin-box">
-          <div className="counter-label">Baldwin</div>
-          <div className="counter">
-            {getDigits(counters.Baldwin).map((digit, index) => (
-              <div className="digit baldwin-background" key={index}>{digit}</div>
-            ))}
-          </div>
+        <div className="counter-widget">
+          <div className="counter-label">Total House Points</div>
+          <TotalHousePoints counters={counters} />
         </div>
 
         <div className="widget countdown">
           <div>{countdownText}</div>
         </div>
       </div>
-
-      <TotalHousePoints counters={counters} />
     </div>
   );
-}
+};
 
 export default App;

@@ -1,8 +1,8 @@
 import React from 'react';
-import { Line } from 'react-chartjs-2';
-import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend } from 'chart.js';
+import { Doughnut } from 'react-chartjs-2';
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 
-ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
+ChartJS.register(ArcElement, Tooltip, Legend);
 
 interface TotalHousePointsProps {
   counters: {
@@ -20,28 +20,32 @@ const TotalHousePoints: React.FC<TotalHousePointsProps> = ({ counters }) => {
       {
         label: 'House Points',
         data: [counters.Baldwin, counters.Sotomayor, counters.Mandela, counters.Truth],
-        borderColor: '#FF5733',
-        backgroundColor: '#FF5733',
-        tension: 0.4,
+        backgroundColor: ['#FF5733', '#1E66F5', '#40A02B', '#DF8E1D'],
+        borderColor: '#11111B',
+        borderWidth: 1,
       },
     ],
   };
 
   const options = {
     responsive: true,
-    scales: {
-      x: {
-        grid: {
-          display: false,
-        },
+    plugins: {
+      tooltip: {
+        enabled: true,
+        backgroundColor: '#1E1E2E',
+        titleColor: '#CDD6F4',
+        bodyColor: '#CDD6F4',
       },
-      y: {
-        beginAtZero: true,
+      legend: {
+        position: 'bottom',
+        labels: {
+          color: '#CDD6F4',
+        },
       },
     },
   };
 
-  return <Line data={data} options={options} />;
+  return <Doughnut data={data} options={options} />;
 };
 
 export default TotalHousePoints;
