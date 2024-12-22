@@ -1,5 +1,8 @@
-import React, { useEffect } from 'react';
-import Chart from 'chart.js/auto';
+import React from 'react';
+import { Line } from 'react-chartjs-2';
+import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend } from 'chart.js';
+
+ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
 
 interface TotalHousePointsProps {
   counters: {
@@ -11,69 +14,34 @@ interface TotalHousePointsProps {
 }
 
 const TotalHousePoints: React.FC<TotalHousePointsProps> = ({ counters }) => {
-  useEffect(() => {
-    const data = {
-      labels: ['Baldwin', 'Sotomayor', 'Mandela', 'Truth'],
-      datasets: [{
-        label: 'Total House Points',
+  const data = {
+    labels: ['Baldwin', 'Sotomayor', 'Mandela', 'Truth'],
+    datasets: [
+      {
+        label: 'House Points',
         data: [counters.Baldwin, counters.Sotomayor, counters.Mandela, counters.Truth],
-        backgroundColor: [
-          'rgb(210, 15, 57)',
-          'rgb(30, 102, 245)',
-          'rgb(64, 160, 43)',
-          'rgb(223, 142, 29)',
-        ],
-        hoverOffset: 4,
-      }],
-    };
+        borderColor: '#FF5733',
+        backgroundColor: '#FF5733',
+        tension: 0.4,
+      },
+    ],
+  };
 
-    // Get the canvas element and assert it's not null
-    const canvasElement = document.getElementById('totalhousepoints') as HTMLCanvasElement | null;
-
-    if (canvasElement) {
-      const chart = new Chart(canvasElement, {
-        type: 'doughnut',
-        options: {
-          plugins: {
-            legend: {
-              display: false,
-            },
-            tooltip: {
-              enabled: true,
-              backgroundColor: 'rgba(24, 24, 37, 0.8)',
-              titleColor: '#cdd6f4',
-              bodyColor: '#cdd6f4',
-              footerColor: '#cdd6f4',
-            },
-            title: {
-              color: '#cdd6f4',
-              display: true,
-              font: {
-                family: 'Jellee',
-                size: 24,
-                weight: 'normal'
-              },
-              text: 'Total House Points'
-            },
-          },
-          elements: {
-            arc: {
-              hoverOffset: 5150
-            }
-          },
-          borderColor: '#181825',
-          hoverBorderColor: 'rgb(17, 17, 27)'
+  const options = {
+    responsive: true,
+    scales: {
+      x: {
+        grid: {
+          display: false,
         },
-        data: data,
-      });
+      },
+      y: {
+        beginAtZero: true,
+      },
+    },
+  };
 
-      return () => {
-        chart.destroy();
-      };
-    }
-  }, [counters]);
-
-  return <canvas id="totalhousepoints" width="50" height="50"></canvas>;
+  return <Line data={data} options={options} />;
 };
 
 export default TotalHousePoints;
