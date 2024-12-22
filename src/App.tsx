@@ -116,18 +116,50 @@ const App: React.FC = () => {
           </div>
         </div>
 
-        {/* Counter Widget for Total House Points */}
-        <div className="counter-widget">
-          <div className="counter-label">Total House Points</div>
-          <TotalHousePoints counters={counters} />
+        <div className="baldwin-box">
+          <div className="counter-label">Baldwin</div>
+          <div className="counter">
+            {getDigits(counters.Baldwin).map((digit, index) => (
+              <div className="digit baldwin-background" key={index}>{digit}</div>
+            ))}
+          </div>
+        </div>
+
+        <div className="sotomayor-box">
+          <div className="counter-label">Sotomayor</div>
+          <div className="counter">
+            {getDigits(counters.Sotomayor).map((digit, index) => (
+              <div className="digit sotomayor-background" key={index}>{digit}</div>
+            ))}
+          </div>
+        </div>
+
+        <div className="mandela-box">
+          <div className="counter-label">Mandela</div>
+          <div className="counter">
+            {getDigits(counters.Mandela).map((digit, index) => (
+              <div className="digit mandela-background" key={index}>{digit}</div>
+            ))}
+          </div>
+        </div>
+
+        <div className="truth-box">
+          <div className="counter-label">Truth</div>
+          <div className="counter">
+            {getDigits(counters.Truth).map((digit, index) => (
+              <div className="digit truth-background" key={index}>{digit}</div>
+            ))}
+          </div>
         </div>
 
         <div className="widget countdown">
           <div>{countdownText}</div>
         </div>
       </div>
+
+      <TotalHousePoints counters={counters} />
     </div>
   );
-};
+}
 
 export default App;

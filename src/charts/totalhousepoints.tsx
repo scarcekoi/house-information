@@ -1,8 +1,5 @@
-import React from 'react';
-import { Doughnut } from 'react-chartjs-2';
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
-
-ChartJS.register(ArcElement, Tooltip, Legend);
+import React, { useEffect } from 'react';
+import Chart from 'chart.js/auto';
 
 interface TotalHousePointsProps {
   counters: {
@@ -14,42 +11,69 @@ interface TotalHousePointsProps {
 }
 
 const TotalHousePoints: React.FC<TotalHousePointsProps> = ({ counters }) => {
-  const data = {
-    labels: ['Baldwin', 'Sotomayor', 'Mandela', 'Truth'],
-    datasets: [
-      {
-        label: 'House Points',
+  useEffect(() => {
+    const data = {
+      labels: ['Baldwin', 'Sotomayor', 'Mandela', 'Truth'],
+      datasets: [{
+        label: 'Total House Points',
         data: [counters.Baldwin, counters.Sotomayor, counters.Mandela, counters.Truth],
-        backgroundColor: ['#FF5733', '#1E66F5', '#40A02B', '#DF8E1D'],
-        borderColor: '#11111B',
-        borderWidth: 1,
-      },
-    ],
-  };
+        backgroundColor: [
+          'rgb(210, 15, 57)',
+          'rgb(30, 102, 245)',
+          'rgb(64, 160, 43)',
+          'rgb(223, 142, 29)',
+        ],
+        hoverOffset: 4,
+      }],
+    };
 
-  const options = {
-    responsive: true,
-    plugins: {
-      tooltip: {
-        enabled: true,
-        backgroundColor: '#1E1E2E',
-        titleColor: '#CDD6F4',
-        bodyColor: '#CDD6F4',
-      },
-      legend: {
-        position: 'bottom' as const, // Ensure correct casing for 'bottom'
-        labels: {
-          color: '#CDD6F4',
+    // Get the canvas element and assert it's not null
+    const canvasElement = document.getElementById('totalhousepoints') as HTMLCanvasElement | null;
+
+    if (canvasElement) {
+      const chart = new Chart(canvasElement, {
+        type: 'doughnut',
+        options: {
+          plugins: {
+            legend: {
+              display: false,
+            },
+            tooltip: {
+              enabled: true,
+              backgroundColor: 'rgba(24, 24, 37, 0.8)',
+              titleColor: '#cdd6f4',
+              bodyColor: '#cdd6f4',
+              footerColor: '#cdd6f4',
+            },
+            title: {
+              color: '#cdd6f4',
+              display: true,
+              font: {
+                family: 'Jellee',
+                size: 24,
+                weight: 'normal'
+              },
+              text: 'Total House Points'
+            },
+          },
+          elements: {
+            arc: {
+              hoverOffset: 5150
+            }
+          },
+          borderColor: '#181825',
+          hoverBorderColor: 'rgb(17, 17, 27)'
         },
-      },
-    },
-  };
+        data: data,
+      });
 
-  return (
-    <div style={{ width: '100%', maxWidth: '600px', margin: '0 auto' }}>  {/* Container for chart */}
-      <Doughnut data={data} options={options} />
-    </div>
-  );
+      return () => {
+        chart.destroy();
+      };
+    }
+  }, [counters]);
+
+  return <canvas id="totalhousepoints" width="100" height="100"></canvas>;
 };
 
 export default TotalHousePoints;
