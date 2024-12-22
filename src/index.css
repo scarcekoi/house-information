@@ -76,27 +76,6 @@ body {
   color: #CDD6F4;
 }
 
-.leaderboard {
-  font-size: 24px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 20px;
-  width: 360px;
-  color: #CDD6F4;
-}
-
-.place {
-  display: block;
-  margin: 5px 0;
-  transition: transform 0.3s ease;
-}
-
-.place:hover {
-  transform: scale(1.1);
-}
-
 .countdown {
   font-size: 32px;
   text-align: center;
@@ -104,7 +83,6 @@ body {
   font-weight: bold;
   color: #CDD6F4;
   width: 100%;
-  text-align: center;
 }
 
 .login-btn {
@@ -139,6 +117,49 @@ body {
 
 .footer p {
   margin: 0;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+.digit {
+  margin: 0 3px;
+  padding: 6px 8px;
+  border-radius: 15px;
+  color: #CDD6F4;
+  transition: transform 0.3s ease;
+  border: 5px solid #11111B;
+  background-color: transparent; /* Ensure the background is transparent */
+}
+
+.digit:hover {
+  transform: scale(1.2);
+}
+
+.baldwin .digit {
+  border-color: #d20f39;
+}
+
+.sotomayor .digit {
+  border-color: #1e66f5;
+}
+
+.mandela .digit {
+  border-color: #40a02b;
+}
+
+.truth .digit {
+  border-color: #df8e1d;
 }
 
 @media (prefers-color-scheme: light) {
