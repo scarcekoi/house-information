@@ -37,7 +37,7 @@ const TotalHousePoints: React.FC<TotalHousePointsProps> = ({ counters }) => {
         bodyColor: '#CDD6F4',
       },
       legend: {
-        position: 'bottom',
+        position: 'bottom' as const, // Ensure correct casing for 'bottom'
         labels: {
           color: '#CDD6F4',
         },
