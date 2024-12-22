@@ -59,7 +59,7 @@ body {
   max-width: 600px; /* Adjusted to fit inside the container */
   color: #CDD6F4;
   position: relative;
-  padding: 220px;
+  padding: 20px;
   background-color: #181825;
   border-radius: 10px;
   box-shadow: 0 0 15px 5px rgba(0, 255, 255, 0.5), rgba(30, 102, 245, 0.5), rgba(64, 160, 43, 0.5), rgba(223, 142, 29, 0.5);
