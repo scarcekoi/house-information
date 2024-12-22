@@ -37,9 +37,8 @@ body {
 
 .widget-container {
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
   gap: 40px;
   margin-top: 20px;
   width: 100%;
