@@ -107,7 +107,11 @@ body {
   transform: scale(1.2);
 }
 
-/* Other Box Styles */
+.baldwin-box:hover, .sotomayor-box:hover, .mandela-box:hover, .truth-box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px 10px rgba(210, 15, 57, 0.9);
+}
+
 .baldwin-box, .sotomayor-box, .mandela-box, .truth-box {
   display: flex;
   flex-direction: column;
