@@ -70,6 +70,7 @@ body {
 }
 
 .counter {
+  font-family: 'Jellee Roman', serif;
   display: flex;
   font-size: 48px;
   font-weight: bold;
