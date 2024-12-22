@@ -76,27 +76,6 @@ body {
   color: #CDD6F4;
 }
 
-.leaderboard {
-  font-size: 24px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 20px;
-  width: 360px;
-  color: #CDD6F4;
-}
-
-.place {
-  display: block;
-  margin: 5px 0;
-  transition: transform 0.3s ease;
-}
-
-.place:hover {
-  transform: scale(1.1);
-}
-
 .countdown {
   font-size: 32px;
   text-align: center;
@@ -141,15 +120,31 @@ body {
   margin: 0;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.baldwin-background {
+  background-color: #6F42C1;
+}
+
+.sotomayor-background {
+  background-color: #007BFF;
+}
+
+.mandela-background {
+  background-color: #28A745;
+}
+
+.truth-background {
+  background-color: #DC3545;
+}
+
+.digit {
+  margin: 0 3px;
+  padding: 6px 8px;
+  border-radius: 15px;
+  color: #CDD6F4;
+  transition: transform 0.3s ease;
+  border: 5px solid #11111B;
+}
+
+.digit:hover {
+  transform: scale(1.2);
 }

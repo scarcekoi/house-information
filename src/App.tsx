@@ -87,42 +87,40 @@ const App: React.FC = () => {
       <div className="title">House Information</div>
 
       <div className="widget-container">
-        {/* Leaderboard Widget */}
         <div className="widget leaderboard gradient-border">
           <div className="content">
             <div id="first-place" className="place">
               <span className="place-digit">1st</span>
               {getDigits(counters.Baldwin).map((digit, index) => (
-                <div className="baldwin digit" key={`first-${index}`}>{digit}</div>
+                <div className="digit baldwin-background" key={`first-${index}`}>{digit}</div>
               ))}
             </div>
             <div id="second-place" className="place">
               <span className="place-digit">2nd</span>
               {getDigits(counters.Sotomayor).map((digit, index) => (
-                <div className="sotomayor digit" key={`second-${index}`}>{digit}</div>
+                <div className="digit sotomayor-background" key={`second-${index}`}>{digit}</div>
               ))}
             </div>
             <div id="third-place" className="place">
               <span className="place-digit">3rd</span>
               {getDigits(counters.Mandela).map((digit, index) => (
-                <div className="mandela digit" key={`third-${index}`}>{digit}</div>
+                <div className="digit mandela-background" key={`third-${index}`}>{digit}</div>
               ))}
             </div>
             <div id="fourth-place" className="place">
               <span className="place-digit">4th</span>
               {getDigits(counters.Truth).map((digit, index) => (
-                <div className="truth digit" key={`fourth-${index}`}>{digit}</div>
+                <div className="digit truth-background" key={`fourth-${index}`}>{digit}</div>
               ))}
             </div>
           </div>
         </div>
 
-        {/* House Boxes */}
         <div className="baldwin-box">
           <div className="counter-label">Baldwin</div>
           <div className="counter">
             {getDigits(counters.Baldwin).map((digit, index) => (
-              <div className="baldwin digit" key={index}>{digit}</div>
+              <div className="digit baldwin-background" key={index}>{digit}</div>
             ))}
           </div>
         </div>
@@ -131,7 +129,7 @@ const App: React.FC = () => {
           <div className="counter-label">Sotomayor</div>
           <div className="counter">
             {getDigits(counters.Sotomayor).map((digit, index) => (
-              <div className="sotomayor digit" key={index}>{digit}</div>
+              <div className="digit sotomayor-background" key={index}>{digit}</div>
             ))}
           </div>
         </div>
@@ -140,7 +138,7 @@ const App: React.FC = () => {
           <div className="counter-label">Mandela</div>
           <div className="counter">
             {getDigits(counters.Mandela).map((digit, index) => (
-              <div className="mandela digit" key={index}>{digit}</div>
+              <div className="digit mandela-background" key={index}>{digit}</div>
             ))}
           </div>
         </div>
@@ -149,22 +147,17 @@ const App: React.FC = () => {
           <div className="counter-label">Truth</div>
           <div className="counter">
             {getDigits(counters.Truth).map((digit, index) => (
-              <div className="truth digit" key={index}>{digit}</div>
+              <div className="digit truth-background" key={index}>{digit}</div>
             ))}
           </div>
         </div>
 
-        {/* Countdown Widget */}
         <div className="widget countdown">
           <div>{countdownText}</div>
         </div>
       </div>
 
-      {/* Pass counters to the TotalHousePoints component */}
       <TotalHousePoints counters={counters} />
-
-      {/* Add the Footer component */}
-      {/* <Footer /> */}
     </div>
   );
 }
