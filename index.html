@@ -5,11 +5,28 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>House Information</title>
+    <style>
+      /* Ensure the div wraps the canvas and aligns it to the left */
+      #chart-container {
+        display: flex;
+        justify-content: flex-start; /* Align to the left */
+        width: 100%; /* You can adjust this width as needed */
+      }
+
+      canvas#totalhousepoints {
+        width: 100%; /* Or specify the desired width */
+      }
+    </style>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-    <div style="width: 50px;"><canvas id="totalhousepoints"></canvas></div>
+
+    <!-- Wrap the canvas in a div with an id for styling -->
+    <div id="chart-container" style="width: 50px;">
+      <canvas id="totalhousepoints"></canvas>
+    </div>
+
     <script type="module" src="/src/charts/totalhousepoints.tsx"></script>
   </body>
 </html>
