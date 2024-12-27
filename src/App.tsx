@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
+import TotalHousePoints from './charts/totalhousepoints.tsx';
 
 interface Counters {
   Baldwin: number;
@@ -155,6 +156,8 @@ const App: React.FC = () => {
           <div>{countdownText}</div>
         </div>
       </div>
+
+      <TotalHousePoints counters={counters} />
     </div>
   );
 }
