@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import TotalHousePoints from './charts/totalhousepoints.tsx';
+import TotalHousePoints from './charts/totalhousepoints';
+import Login from './Login';
 
 interface Counters {
   Baldwin: number;
@@ -18,6 +19,7 @@ const App: React.FC = () => {
   });
 
   const [countdownText, setCountdownText] = useState('');
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
     updateCounters(counters);
@@ -76,13 +78,21 @@ const App: React.FC = () => {
     return num.toString().padStart(4, '0').split('').map(Number);
   };
 
-  const handleLoginClick = () => {
-    alert("Login clicked! Add your login functionality here.");
+  const handleLoginSuccess = () => {
+    setIsLoggedIn(true);
   };
+
+  const handleLogout = () => {
+    setIsLoggedIn(false);
+  };
+
+  if (!isLoggedIn) {
+    return <Login onLoginSuccess={handleLoginSuccess} />;
+  }
 
   return (
     <div className="App">
-      <button className="login-btn" onClick={handleLoginClick}>Login</button>
+      <button className="logout-btn" onClick={handleLogout}>Logout</button>
 
       <div className="title">House Information</div>
 
