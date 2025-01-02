@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import TotalHousePoints from './charts/totalhousepoints.tsx';
-import { Login } from './Login.tsx';
+import { Login } from './Lgn.tsx';
 
 interface Counters {
   Baldwin: number;
