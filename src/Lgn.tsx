@@ -53,3 +53,5 @@ export const Login = ({ onLoginSuccess }: LoginProps): JSX.Element => {
     </div>
   );
 };
+
+export default Login;
