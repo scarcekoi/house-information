@@ -1,4 +1,4 @@
-import { useState, FormEvent } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Lgn.css';
 
 export interface LoginProps {
