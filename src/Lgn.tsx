@@ -1,11 +1,11 @@
 import React, { useState, FormEvent } from 'react';
 import './Lgn.css';
 
-interface LoginProps {
+export interface LoginProps {
   onLoginSuccess: () => void;
 }
 
-export const Login: React.FC<LoginProps> = ({ onLoginSuccess }) => {
+export const Login = ({ onLoginSuccess }: LoginProps): JSX.Element => {
   const [username, setUsername] = useState<string>('');
   const [password, setPassword] = useState<string>('');
   const [error, setError] = useState<string>('');
