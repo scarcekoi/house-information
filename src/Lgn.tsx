@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, type FormEvent } from 'react';
 import './Lgn.css';
 
 export interface LoginProps {
@@ -53,5 +53,3 @@ export const Login = ({ onLoginSuccess }: LoginProps): JSX.Element => {
     </div>
   );
 };
-
-export default Login;
