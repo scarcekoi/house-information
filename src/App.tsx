@@ -82,7 +82,7 @@ const App: React.FC = () => {
 
   return (
     <div className="App">
-      <button className="login-btn" onClick={handleLoginClick}>Login</button>
+      <button className="login-btn" onClick={handleLoginClick}>Teacher/Prefect Login</button>
 
       <div className="title">House Information</div>
 
