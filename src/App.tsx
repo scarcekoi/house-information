@@ -80,7 +80,6 @@ const App: React.FC = () => {
 
   return (
     <div className="App">
-      {/* Using Link from react-router-dom for routing */}
       <Link to="/login">
         <button className="login-btn">Teacher/Prefect Login</button>
       </Link>
@@ -117,48 +116,15 @@ const App: React.FC = () => {
           </div>
         </div>
 
-        <div className="baldwin-box">
-          <div className="counter-label">Baldwin</div>
-          <div className="counter">
-            {getDigits(counters.Baldwin).map((digit, index) => (
-              <div className="digit baldwin-background" key={index}>{digit}</div>
-            ))}
-          </div>
-        </div>
-
-        <div className="sotomayor-box">
-          <div className="counter-label">Sotomayor</div>
-          <div className="counter">
-            {getDigits(counters.Sotomayor).map((digit, index) => (
-              <div className="digit sotomayor-background" key={index}>{digit}</div>
-            ))}
-          </div>
-        </div>
-
-        <div className="mandela-box">
-          <div className="counter-label">Mandela</div>
-          <div className="counter">
-            {getDigits(counters.Mandela).map((digit, index) => (
-              <div className="digit mandela-background" key={index}>{digit}</div>
-            ))}
-          </div>
-        </div>
-
-        <div className="truth-box">
-          <div className="counter-label">Truth</div>
-          <div className="counter">
-            {getDigits(counters.Truth).map((digit, index) => (
-              <div className="digit truth-background" key={index}>{digit}</div>
-            ))}
-          </div>
+        {/* TotalHousePoints Chart */}
+        <div id="chart-container">
+          <TotalHousePoints counters={counters} />
         </div>
 
         <div className="widget countdown">
           <div>{countdownText}</div>
         </div>
       </div>
-
-      <TotalHousePoints counters={counters} />
     </div>
   );
 }

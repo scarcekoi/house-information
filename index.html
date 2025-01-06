@@ -14,18 +14,12 @@
 
       canvas#totalhousepoints {
         width: 100%;
+        max-width: 600px;
       }
     </style>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-
-    <!-- Wrap the canvas in a div with an id for styling -->
-    <div id="chart-container" style="width: 50%; margin-left: 0;">
-      <canvas id="totalhousepoints"></canvas>
-    </div>
-
-    <script type="module" src="/src/charts/totalhousepoints.tsx"></script>
   </body>
 </html>

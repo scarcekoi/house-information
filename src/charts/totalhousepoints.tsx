@@ -18,12 +18,12 @@ const TotalHousePoints: React.FC<TotalHousePointsProps> = ({ counters }) => {
         label: 'Total House Points',
         data: [counters.Baldwin, counters.Sotomayor, counters.Mandela, counters.Truth],
         backgroundColor: [
-          'rgb(210, 15, 57)',
-          'rgb(30, 102, 245)',
-          'rgb(64, 160, 43)',
-          'rgb(223, 142, 29)',
+          'rgb(210, 15, 57)',   // Baldwin color
+          'rgb(30, 102, 245)',  // Sotomayor color
+          'rgb(64, 160, 43)',   // Mandela color
+          'rgb(223, 142, 29)',  // Truth color
         ],
-        hoverOffset: 4,
+        hoverOffset: 4,  // Slight hover effect
       }],
     };
 
@@ -34,9 +34,11 @@ const TotalHousePoints: React.FC<TotalHousePointsProps> = ({ counters }) => {
       const chart = new Chart(canvasElement, {
         type: 'doughnut',
         options: {
+          responsive: true,  // Make the chart responsive
+          maintainAspectRatio: false, // Allow resizing
           plugins: {
             legend: {
-              display: false,
+              display: false,  // No legend display
             },
             tooltip: {
               enabled: true,
@@ -49,31 +51,32 @@ const TotalHousePoints: React.FC<TotalHousePointsProps> = ({ counters }) => {
               color: '#cdd6f4',
               display: true,
               font: {
-                family: 'Jellee',
+                family: 'Jellee',  // Customize font family
                 size: 24,
-                weight: 'normal'
+                weight: 'normal',
               },
-              text: 'Total House Points'
+              text: 'Total House Points',
             },
           },
           elements: {
             arc: {
-              hoverOffset: 5150
-            }
+              hoverOffset: 4,  // Ensure hover effect is reasonable
+            },
           },
           borderColor: '#181825',
-          hoverBorderColor: 'rgb(17, 17, 27)'
+          hoverBorderColor: 'rgb(17, 17, 27)',
         },
         data: data,
       });
 
+      // Cleanup on unmount
       return () => {
         chart.destroy();
       };
     }
   }, [counters]);
 
-  return <canvas id="totalhousepoints" width="100" height="100"></canvas>;
+  return <canvas id="totalhousepoints" className="chart-canvas" />;
 };
 
 export default TotalHousePoints;
