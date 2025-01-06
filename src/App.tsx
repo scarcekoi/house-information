@@ -1,4 +1,6 @@
+// src/App.tsx
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';  // Import Link from react-router-dom
 import './App.css';
 import TotalHousePoints from './charts/totalhousepoints.tsx';
 
@@ -76,13 +78,12 @@ const App: React.FC = () => {
     return num.toString().padStart(4, '0').split('').map(Number);
   };
 
-  const handleLoginClick = () => {
-    window.location.href = `${window.location.origin}/login`;
-  };
-
   return (
     <div className="App">
-      <button className="login-btn" onClick={handleLoginClick}>Teacher/Prefect Login</button>
+      {/* Using Link from react-router-dom for routing */}
+      <Link to="/login">
+        <button className="login-btn">Teacher/Prefect Login</button>
+      </Link>
 
       <div className="title">House Information</div>
 
