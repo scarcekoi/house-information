@@ -77,7 +77,7 @@ const App: React.FC = () => {
   };
 
   const handleLoginClick = () => {
-    
+    window.location.href = `house-information-login.vercel.app`;
   };
 
   return (
