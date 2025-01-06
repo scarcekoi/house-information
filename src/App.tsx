@@ -77,7 +77,7 @@ const App: React.FC = () => {
   };
 
   const handleLoginClick = () => {
-    alert("Login clicked! Add your login functionality here.");
+    
   };
 
   return (
