@@ -1,6 +1,4 @@
-// src/App.tsx
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';  // Import Link from react-router-dom
 import './App.css';
 import TotalHousePoints from './charts/totalhousepoints.tsx';
 
@@ -78,11 +76,13 @@ const App: React.FC = () => {
     return num.toString().padStart(4, '0').split('').map(Number);
   };
 
+  const handleLoginClick = () => {
+    alert("Login clicked! Add your login functionality here.");
+  };
+
   return (
     <div className="App">
-      <Link to="/login">
-        <button className="login-btn">Teacher/Prefect Login</button>
-      </Link>
+      <button className="login-btn" onClick={handleLoginClick}>Teacher/Prefect Login</button>
 
       <div className="title">House Information</div>
 
@@ -116,15 +116,48 @@ const App: React.FC = () => {
           </div>
         </div>
 
-        {/* TotalHousePoints Chart */}
-        <div id="chart-container">
-          <TotalHousePoints counters={counters} />
+        <div className="baldwin-box">
+          <div className="counter-label">Baldwin</div>
+          <div className="counter">
+            {getDigits(counters.Baldwin).map((digit, index) => (
+              <div className="digit baldwin-background" key={index}>{digit}</div>
+            ))}
+          </div>
+        </div>
+
+        <div className="sotomayor-box">
+          <div className="counter-label">Sotomayor</div>
+          <div className="counter">
+            {getDigits(counters.Sotomayor).map((digit, index) => (
+              <div className="digit sotomayor-background" key={index}>{digit}</div>
+            ))}
+          </div>
+        </div>
+
+        <div className="mandela-box">
+          <div className="counter-label">Mandela</div>
+          <div className="counter">
+            {getDigits(counters.Mandela).map((digit, index) => (
+              <div className="digit mandela-background" key={index}>{digit}</div>
+            ))}
+          </div>
+        </div>
+
+        <div className="truth-box">
+          <div className="counter-label">Truth</div>
+          <div className="counter">
+            {getDigits(counters.Truth).map((digit, index) => (
+              <div className="digit truth-background" key={index}>{digit}</div>
+            ))}
+          </div>
         </div>
 
         <div className="widget countdown">
           <div>{countdownText}</div>
         </div>
       </div>
+
+      <TotalHousePoints counters={counters} />
     </div>
   );
 }
