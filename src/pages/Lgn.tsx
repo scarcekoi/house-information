@@ -19,6 +19,7 @@ const Login: React.FC = () => {
     e.preventDefault();
     if (username === 'a.alexander' && password === 'password') {
       alert('Login successful!');
+      setError('');
     } else if (username === '' || password === '') {
       setError('Please enter both username and password');
     } else {
