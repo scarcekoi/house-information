@@ -1,4 +1,14 @@
 import React, { useState, FormEvent } from 'react';
+import {
+  Container,
+  CssBaseline,
+  Box,
+  Typography,
+  TextField,
+  Button,
+} from '@mui/material';
+
+import './App.css';
 
 const Login: React.FC = () => {
   const [username, setUsername] = useState<string>('');
@@ -17,29 +27,64 @@ const Login: React.FC = () => {
   };
 
   return (
-    <div className="login-form">
-      <h2>Login</h2>
-      <form onSubmit={handleLogin}>
-        <label htmlFor="username">Username</label>
-        <input
-          type="text"
-          id="username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-          required
-        />
-        <label htmlFor="password">Password</label>
-        <input
-          type="password"
-          id="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-        <button type="submit">Login</button>
-        {error && <p>{error}</p>}
-      </form>
-    </div>
+    <Container component="main" maxWidth="xs">
+      <CssBaseline />
+      <Box
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          minHeight: '100vh',
+        }}
+      >
+        <Typography variant="h5" component="h2" gutterBottom>
+          Login
+        </Typography>
+        <form onSubmit={handleLogin} noValidate>
+          <TextField
+            label="Username"
+            id="username"
+            type="text"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            variant="outlined"
+            fullWidth
+            margin="normal"
+            required
+          />
+          <TextField
+            label="Password"
+            id="password"
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            variant="outlined"
+            fullWidth
+            margin="normal"
+            required
+          />
+          <Button
+            type="submit"
+            variant="contained"
+            color="primary"
+            fullWidth
+            sx={{ marginTop: 2 }}
+          >
+            Login
+          </Button>
+          {error && (
+            <Typography
+              variant="body2"
+              color="error"
+              sx={{ marginTop: 2, textAlign: 'center' }}
+            >
+              {error}
+            </Typography>
+          )}
+        </form>
+      </Box>
+    </Container>
   );
 };
 
