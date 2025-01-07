@@ -1,7 +1,7 @@
 import React from "react";
 import { Routes, Route } from "";
 import App from "./pages/App.tsx";
-import Login from "Lgn.tsx";
+import Login from "./pages/Lgn.tsx";
 
 function App() {
 	return (
@@ -14,4 +14,4 @@ function App() {
 	);
 }
 
-export default App;
+export default Index;
