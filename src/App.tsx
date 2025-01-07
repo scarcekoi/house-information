@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import App from "./pages/App";
-import Login from "./pages/Lgn";
+import App from "./pages/App.tsx";
+import Login from "./pages/Lgn.tsx";
 
 function Index() {
   return (
