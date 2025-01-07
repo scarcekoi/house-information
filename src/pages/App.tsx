@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import TotalHousePoints from './charts/totalhousepoints.tsx';
+import TotalHousePoints from 'src/charts/totalhousepoints.tsx';
 
 interface Counters {
   Baldwin: number;
