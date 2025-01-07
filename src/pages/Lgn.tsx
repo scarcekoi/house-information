@@ -20,7 +20,7 @@ const Login: React.FC = () => {
     setError('');
 
     if (username === 'a.alexander' && password === 'password') {
-      alert('Login successful!');
+      window.location.href = ``;
       setError('');
       setUsername('');
       setPassword('');
