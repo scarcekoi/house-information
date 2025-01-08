@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import '../index.css';
+import TotalHousePoints from '../charts/totalhousepoints';
 
 interface Counters {
   Baldwin: number;
