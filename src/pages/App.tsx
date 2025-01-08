@@ -153,7 +153,10 @@ const App: React.FC = () => {
         </div>
       </div>
 
-      <TotalHousePoints counters={counters} />
+      <div className="chart-container">
+        <TotalHousePoints counters={counters} />
+      </div>
+
       <Footer />
     </div>
   );
