@@ -55,7 +55,7 @@ const TotalHousePoints: React.FC<TotalHousePointsProps> = ({ counters }) => {
                 size: 24,
                 weight: 'normal',
               },
-              text: 'Total House Points Doughnut Chart',
+              text: 'Total House Points',
             },
           },
           elements: {

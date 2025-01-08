@@ -152,7 +152,9 @@ const App: React.FC = () => {
         </div>
       </div>
 
-        <canvas id="totalhousepoints" className="chart-canvas" />
+      <div className="chart-container">
+        <div><TotalHousePoints counters={counters} /></div>
+      </div>
     </div>
   );
 }
