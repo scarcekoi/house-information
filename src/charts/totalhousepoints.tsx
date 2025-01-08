@@ -15,7 +15,7 @@ const TotalHousePoints: React.FC<TotalHousePointsProps> = ({ counters }) => {
     const data = {
       labels: ['Baldwin', 'Sotomayor', 'Mandela', 'Truth'],
       datasets: [{
-        label: 'Total House Points',
+        label: 'Total House Points Doughnut Chart',
         data: [counters.Baldwin, counters.Sotomayor, counters.Mandela, counters.Truth],
         backgroundColor: [
           'rgb(210, 15, 57)',   // Baldwin color
@@ -55,7 +55,7 @@ const TotalHousePoints: React.FC<TotalHousePointsProps> = ({ counters }) => {
                 size: 24,
                 weight: 'normal',
               },
-              text: 'Total House Points Doughnut Chart',
+              text: 'Total House Points',
             },
           },
           elements: {
