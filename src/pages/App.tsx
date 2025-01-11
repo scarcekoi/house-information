@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import '../index.css';
 import TotalHousePoints from '../charts/totalhousepoints';
+import Footer from '../Footer';
 
 interface Counters {
   Baldwin: number;
@@ -82,7 +83,8 @@ const App: React.FC = () => {
       <Link to="/login" className="login-btn">Teacher/Prefect Login</Link>
       <h1 className="title">House Information</h1>
       <div className="widget-container">
-        <div className="widget leaderboard gradient-border">
+        <div className="leaderboard">
+          <h2 className="leaderboard-title">House Leaderboard</h2>
           <div className="content">
             <div id="first-place" className="place">
               <span className="place-digit">1st</span>
@@ -109,6 +111,10 @@ const App: React.FC = () => {
               ))}
             </div>
           </div>
+        </div>
+
+        <div className="chart-container">
+          <TotalHousePoints counters={counters} />
         </div>
 
         <div className="baldwin-box">
@@ -147,11 +153,12 @@ const App: React.FC = () => {
           </div>
         </div>
 
-        <div className="widget countdown">
+        <div className="village-meeting-info">
+          <h3>Next House Village Meeting</h3>
           <div>{countdownText}</div>
         </div>
       </div>
-
+      <Footer />
     </div>
   );
 }

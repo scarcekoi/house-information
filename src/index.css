@@ -57,6 +57,13 @@ body {
   box-shadow: 0 0 15px 5px rgba(0, 255, 255, 0.5), rgba(30, 102, 245, 0.5), rgba(64, 160, 43, 0.5), rgba(223, 142, 29, 0.5);
 }
 
+.leaderboard-title {
+  font-family: 'Jellee Roman', serif;
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #CDD6F4;
+}
+
 .place {
   display: flex;
   align-items: center;
@@ -95,13 +102,18 @@ body {
   justify-content: center;
 }
 
-.countdown {
+.village-meeting-info {
+  grid-column: 1 / -1;
   font-size: 24px;
   text-align: center;
   margin-top: 40px;
   font-weight: bold;
   color: #CDD6F4;
   width: 100%;
+  background-color: #181825;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 15px 5px rgba(0, 255, 255, 0.2);
 }
 
 .login-btn {
@@ -146,6 +158,12 @@ body {
 .mandela-box { box-shadow: 0 0 15px 5px rgba(64, 160, 43, 0.7); }
 .truth-box { box-shadow: 0 0 15px 5px rgba(223, 142, 29, 0.7); }
 
+.chart-container {
+  grid-column: 1 / -1;
+  height: 400px;
+  margin-bottom: 40px;
+}
+
 @media (max-width: 768px) {
   .widget-container {
     grid-template-columns: 1fr;
@@ -160,4 +178,56 @@ body {
 
 .font-jellee {
   font-family: 'Jellee Roman', serif;
+}
+
+/* Login page styles */
+.login-form {
+  background-color: #181825;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px 5px rgba(0, 255, 255, 0.2);
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-family: 'Jellee Roman', serif;
+  color: #CDD6F4;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #11111B;
+  background-color: #1E1E2E;
+  color: #CDD6F4;
+  border-radius: 5px;
+}
+
+.login-submit-btn {
+  background-color: #11111b;
+  color: #CDD6F4;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.login-submit-btn:hover {
+  background-color: #181825;
+}
+
+.error-message {
+  color: #F38BA8;
+  margin-top: 10px;
+  text-align: center;
 }
