@@ -11,10 +11,10 @@ interface Counters {
 
 const App: React.FC = () => {
   const [counters] = useState<Counters>({
-    Baldwin: 0000,
-    Sotomayor: 0000,
-    Mandela: 0000,
-    Truth: 0000,
+    Baldwin: 0,
+    Sotomayor: 0,
+    Mandela: 0,
+    Truth: 0,
   });
 
   const [countdownText, setCountdownText] = useState('');
