@@ -1,12 +1,18 @@
 import React, { useState, FormEvent } from 'react';
-import { Link } from 'react-router-dom';
-import '../index.css';
-import Footer from '../Footer';
+import {
+  Container,
+  CssBaseline,
+  Box,
+  Typography,
+  TextField,
+  Button,
+} from '@mui/material';
+
+import './App.css';
 
 const Login: React.FC = () => {
   const [username, setUsername] = useState<string>('');
   const [password, setPassword] = useState<string>('');
-  
   const [error, setError] = useState<string>('');
 
   const handleLogin = (e: FormEvent) => {
@@ -14,7 +20,7 @@ const Login: React.FC = () => {
     setError('');
 
     if (username === 'a.alexander' && password === 'password') {
-      window.location.href = `/`;
+      window.location.href = ``;
       setError('');
       setUsername('');
       setPassword('');
@@ -26,39 +32,64 @@ const Login: React.FC = () => {
   };
 
   return (
-    <div className="App">
-      <Link to="/" className="login-btn">Back to Home</Link>
-      <h1 className="title">Teacher/Prefect Login</h1>
-      <div className="widget-container">
-        <div className="login-form">
-          <form onSubmit={handleLogin}>
-            <div className="form-group">
-              <label htmlFor="username">Username</label>
-              <input
-                type="text"
-                id="username"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-                required
-              />
-            </div>
-            <div className="form-group">
-              <label htmlFor="password">Password</label>
-              <input
-                type="password"
-                id="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-              />
-            </div>
-            <button type="submit" className="submit-btn">Login</button> {/* Updated button class */}
-          </form>
-          {error && <p className="error-message">{error}</p>}
-        </div>
-      </div>
-      <Footer />
-    </div>
+    <Container component="main" maxWidth="xs">
+      <CssBaseline />
+      <Box
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          minHeight: '100vh',
+        }}
+      >
+        <Typography variant="h5" component="h2" gutterBottom>
+          Login
+        </Typography>
+        <form onSubmit={handleLogin} noValidate>
+          <TextField
+            label="Username"
+            id="username"
+            type="text"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            variant="outlined"
+            fullWidth
+            margin="normal"
+            required
+          />
+          <TextField
+            label="Password"
+            id="password"
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            variant="outlined"
+            fullWidth
+            margin="normal"
+            required
+          />
+          <Button
+            type="submit"
+            variant="contained"
+            color="primary"
+            fullWidth
+            sx={{ marginTop: 2 }}
+          >
+            Login
+          </Button>
+          {error && (
+            <Typography
+              variant="body2"
+              color="error"
+              sx={{ marginTop: 2, textAlign: 'center' }}
+            >
+              {error}
+            </Typography>
+          )}
+        </form>
+      </Box>
+    </Container>
   );
 };
 
