@@ -52,7 +52,7 @@ const Login: React.FC = () => {
                 required
               />
             </div>
-            <button type="submit" className="login-btn">Login</button>
+            <button type="submit" className="submit-btn">Login</button> {/* Updated button class */}
           </form>
           {error && <p className="error-message">{error}</p>}
         </div>
