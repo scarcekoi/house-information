@@ -10,7 +10,7 @@ interface Counters {
 }
 
 const App: React.FC = () => {
-  const [counters, setCounters] = useState<Counters>({
+  const [counters] = useState<Counters>({
     Baldwin: 1515,
     Sotomayor: 1349,
     Mandela: 1274,
