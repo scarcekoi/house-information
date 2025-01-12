@@ -20,17 +20,12 @@ const App: React.FC = () => {
   const [countdownText, setCountdownText] = useState('');
 
   useEffect(() => {
-    updateCounters(counters);
     updateLeaderboard(counters);
     updateCountdown();
     const intervalId = setInterval(updateCountdown, 1000);
 
     return () => clearInterval(intervalId);
   }, [counters]);
-
-  const updateCounters = (counters: Counters) => {
-    setCounters(counters);
-  };
 
   const updateLeaderboard = (counters: Counters) => {
     const houseScores = [
@@ -83,30 +78,10 @@ const App: React.FC = () => {
       <div className="widget-container">
         <div className="widget leaderboard gradient-border">
           <div className="content">
-            <div id="first-place" className="place">
-              <span className="place-digit">1st</span>
-              {getDigits(counters.Baldwin).map((digit, index) => (
-                <div className="digit baldwin-background" key={`first-${index}`}>{digit}</div>
-              ))}
-            </div>
-            <div id="second-place" className="place">
-              <span className="place-digit">2nd</span>
-              {getDigits(counters.Sotomayor).map((digit, index) => (
-                <div className="digit sotomayor-background" key={`second-${index}`}>{digit}</div>
-              ))}
-            </div>
-            <div id="third-place" className="place">
-              <span className="place-digit">3rd</span>
-              {getDigits(counters.Mandela).map((digit, index) => (
-                <div className="digit mandela-background" key={`third-${index}`}>{digit}</div>
-              ))}
-            </div>
-            <div id="fourth-place" className="place">
-              <span className="place-digit">4th</span>
-              {getDigits(counters.Truth).map((digit, index) => (
-                <div className="digit truth-background" key={`fourth-${index}`}>{digit}</div>
-              ))}
-            </div>
+            <div id="first-place" className="place"></div>
+            <div id="second-place" className="place"></div>
+            <div id="third-place" className="place"></div>
+            <div id="fourth-place" className="place"></div>
           </div>
         </div>
 
@@ -146,8 +121,8 @@ const App: React.FC = () => {
           </div>
         </div>
 
-        <div className="countdown-box">
-          <div className="countdown-text">{countdownText}</div>
+        <div className="widget countdown">
+          <div>{countdownText}</div>
         </div>
       </div>
     </div>
