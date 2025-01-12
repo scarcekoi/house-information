@@ -85,19 +85,13 @@ body {
 .leaderboard .place {
   display: inline-block;
   margin-bottom: 10px;
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 10px 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+  color: #FF9D00; /* Highlight the place number with this color */
   white-space: nowrap;
-  max-width: 100%; /* Ensures the place item doesn't exceed container width */
-  box-sizing: border-box;
+  font-weight: bold;
 }
 
 .leaderboard .place span.place-digit {
-  font-weight: bold;
   color: #FF9D00;
-  margin-right: 10px;
 }
 
 .next-house-village-meeting {
