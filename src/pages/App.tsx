@@ -146,11 +146,10 @@ const App: React.FC = () => {
           </div>
         </div>
 
-        <div className="widget countdown">
-          <div>{countdownText}</div>
+        <div className="countdown-box">
+          <div className="countdown-text">{countdownText}</div>
         </div>
       </div>
-
     </div>
   );
 }
