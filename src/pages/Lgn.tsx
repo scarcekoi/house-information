@@ -9,7 +9,7 @@ import {
 } from '@mui/material';
 
 import './App.css';
-import { useAuth } from './AuthContext';
+import { useAuth } from '../components/AuthContext';
 
 // Editable username and password lists
 const users = [
