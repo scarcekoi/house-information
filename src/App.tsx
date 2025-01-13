@@ -10,10 +10,12 @@ const ProtectedRoute = ({ element }: { element: JSX.Element }) => {
 
 function Index() {
   return (
-    <Routes>
-      <Route path="/login" element={<Login />} />
-      <Route path="/" element={<ProtectedRoute element={<App />} />} />
-    </Routes>
+    <>
+      <Routes>
+        <Route path="/" element={<App />} />
+        <Route path="/login" element={<Login />} />
+      </Routes>
+    </>
   );
 }
 
