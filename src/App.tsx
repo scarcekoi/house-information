@@ -1,6 +1,6 @@
 import { Routes, Route, Navigate } from "react-router-dom";
-import App from "./pages/App";
-import Login from "./pages/Login";
+import App from "./pages/App.tsx";
+import Login from "./pages/Login.tsx";
 import { useAuth } from "./components/AuthContext";
 
 const ProtectedRoute = ({ element }: { element: JSX.Element }) => {
