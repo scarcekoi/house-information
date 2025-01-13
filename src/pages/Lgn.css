@@ -26,21 +26,21 @@ Container {
   font-weight: bold;
   text-align: center;
   margin-top: 10px;
-  color: #CDD6F4;  /* Updated title color */
+  color: #CDD6F4;
 }
 
 .widget {
   margin: 20px 0;
-  background-color: #181825;  /* Updated widget background color */
+  background-color: #181825;
   padding: 15px;
   border-radius: 8px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Shadow for separation */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
   width: 300px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  box-sizing: border-box; /* Ensure padding is inside the box */
+  box-sizing: border-box;
 }
 
 .leaderboard {
@@ -49,7 +49,7 @@ Container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: #CDD6F4;  /* Updated leaderboard text color */
+  color: #CDD6F4;
 }
 
 .place {
@@ -65,17 +65,17 @@ Container {
 .counter-widget {
   text-align: center;
   padding: 10px;
-  flex-grow: 1;  /* Allow counters to grow and occupy space */
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
 .counter-label {
-  font-size: 36px;  /* Reduce label font size */
+  font-size: 36px;
   font-weight: bold;
   margin-bottom: 10px;
-  color: #CDD6F4;  /* Updated counter label color */
+  color: #CDD6F4;
 }
 
 .counter {
@@ -83,14 +83,14 @@ Container {
   font-size: 48px;
   font-weight: bold;
   justify-content: center;
-  color: #CDD6F4;  /* Updated counter digits color */
+  color: #CDD6F4;
 }
 
 .digit {
-  margin: 0 3px;  /* Reduced space between digits */
-  padding: 6px 8px;  /* Adjust padding to make digits smaller */
+  margin: 0 3px;
+  padding: 6px 8px;
   border-radius: 15px;
-  color: #CDD6F4;  /* Updated digit text color */
+  color: #CDD6F4;
   transition: transform 0.3s ease;
   border: 5px solid #11111B;
 }
@@ -99,7 +99,6 @@ Container {
   transform: scale(1.2);
 }
 
-/* Color the digits to match their respective counter label */
 .baldwin .digit {
   background-color: #D20F39;
 }
@@ -116,20 +115,19 @@ Container {
   background-color: #DF8E1D;
 }
 
-/* Leaderboard widget styling */
 .leaderboard {
   font-size: 24px;
   text-align: center;
   display: flex;
-  flex-direction: column; /* Stack items vertically */
-  align-items: center; /* Center the items horizontally */
-  margin-bottom: 20px;  /* Space at the bottom */
-  width: 360px;  /* Increased width of the leaderboard to prevent text wrapping */
-  color: #CDD6F4;  /* Updated leaderboard text color */
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+  width: 360px;
+  color: #CDD6F4;
 }
 
 .place {
-  display: block; /* Ensures the leaderboard items stack vertically */
-  margin: 5px 0; /* Adds space between leaderboard items */
+  display: block;
+  margin: 5px 0;
   transition: transform 0.3s ease;
 }

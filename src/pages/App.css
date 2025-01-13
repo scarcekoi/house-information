@@ -57,7 +57,7 @@ body {
   align-items: center;
   margin-bottom: 20px;
   width: 100%;
-  max-width: 400px; /* Adjust this value to make it skinnier */
+  max-width: 400px;
   padding: 15px;
   color: #CDD6F4;
   position: relative;
