@@ -3,11 +3,6 @@ import App from "./pages/App.tsx";
 import Login from "./pages/Lgn.tsx";
 import { useAuth } from "./components/AuthContext";
 
-const ProtectedRoute = ({ element }: { element: JSX.Element }) => {
-  const { isLoggedIn } = useAuth();
-  return isLoggedIn ? element : <Navigate to="/login" />;
-};
-
 function Index() {
   return (
     <>
