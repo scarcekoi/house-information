@@ -10,6 +10,14 @@ import {
 
 import './App.css';
 
+// Editable username and password lists
+const users = [
+  { username: 'a.alexander', password: 'alexander123' },
+
+  { username: 'p.link', password: 'link123' },
+  { username: 'm.smith', password: 'welcome' },
+];
+
 const Login: React.FC = () => {
   const [username, setUsername] = useState<string>('');
   const [password, setPassword] = useState<string>('');
@@ -19,13 +27,21 @@ const Login: React.FC = () => {
     e.preventDefault();
     setError('');
 
-    if (username === 'a.alexander' && password === 'password') {
-      window.location.href = ``;
+    if (username === '' || password === '') {
+      setError('Please enter both username and password');
+      return;
+    }
+
+    const user = users.find(
+      (user) => user.username === username && user.password === password
+    );
+
+    if (user) {
+      setError('');
+      window.location.href = '/';
       setError('');
       setUsername('');
       setPassword('');
-    } else if (username === '' || password === '') {
-      setError('Please enter both username and password');
     } else {
       setError('Invalid credentials');
     }
