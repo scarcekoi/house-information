@@ -9,6 +9,7 @@ import {
 } from '@mui/material';
 
 import './App.css';
+import { useAuth } from './AuthContext';
 
 // Editable username and password lists
 const users = [
@@ -19,6 +20,7 @@ const users = [
 ];
 
 const Login: React.FC = () => {
+  const { login } = useAuth();
   const [username, setUsername] = useState<string>('');
   const [password, setPassword] = useState<string>('');
   const [error, setError] = useState<string>('');
@@ -37,9 +39,9 @@ const Login: React.FC = () => {
     );
 
     if (user) {
+      login();
       setError('');
       window.location.href = '/';
-      setError('');
       setUsername('');
       setPassword('');
     } else {
