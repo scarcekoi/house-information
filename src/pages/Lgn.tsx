@@ -13,7 +13,10 @@ import { useAuth } from '../components/AuthContext';
 
 // Editable username and password lists
 const users = [
-  { username: 'a.alexander', password: 'alexander123' },
+  { username: 'a.alexander', password: 'aalexander123' },
+  { username: 'k.rich', password: 'krich123' },
+  { username: 'e.peyton', password: 'epeyton123' },
+  { username: 'c.britain', password: 'cbritaian123' },
 
   { username: 'p.link', password: 'link123' },
   { username: 'm.smith', password: 'welcome' },
