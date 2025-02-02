@@ -75,15 +75,13 @@ const App: React.FC = () => {
   return (
     <div className="App">
       <h1 className="title">House Information</h1>
-      <div className="widget-container column-layout">
+      <div className="widget-container">
         <div className="leaderboard">
-          <div className="widget gradient-border">
-            <div className="content">
-              <div id="first-place" className="place"></div>
-              <div id="second-place" className="place"></div>
-              <div id="third-place" className="place"></div>
-              <div id="fourth-place" className="place"></div>
-            </div>
+          <div className="content">
+            <div id="first-place" className="place"></div>
+            <div id="second-place" className="place"></div>
+            <div id="third-place" className="place"></div>
+            <div id="fourth-place" className="place"></div>
           </div>
         </div>
 
