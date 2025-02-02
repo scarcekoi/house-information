@@ -24,6 +24,7 @@ body {
   margin: 0 auto;
   padding: 2rem;
   box-sizing: border-box;
+  align-items: center;
 }
 
 .title {
@@ -47,63 +48,11 @@ body {
   margin-right: auto;
 }
 
-.column-layout {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 .house-counters {
   display: flex;
   flex-direction: column;
   gap: 40px;
   width: 100%;
-}
-
-.leaderboard,
-.countdown {
-  font-size: 24px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 20px;
-  padding: 20px;
-  background-color: #181825;
-  border-radius: 10px;
-  box-shadow: 0 0 15px 5px rgba(0, 255, 255, 0.5), rgba(30, 102, 245, 0.5), rgba(64, 160, 43, 0.5),
-    rgba(223, 142, 29, 0.5);
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.countdown {
-  margin-top: 0;
-  font-weight: bold;
-  color: #cdd6f4;
-}
-
-.place {
-  display: flex;
-  align-items: center;
-  margin: 10px 0;
-  width: 100%;
-}
-
-.place-digit {
-  font-family: "Jellee Roman", serif;
-  font-size: 24px;
-  margin-right: 10px;
-  min-width: 40px;
-}
-
-.counter-widget {
-  background-color: #181825;
-  padding: 20px;
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .counter-label {
@@ -143,59 +92,13 @@ body {
   background-color: #181825;
 }
 
-.digit {
-  margin: 0 3px;
-  padding: 6px 8px;
-  border-radius: 15px;
-  color: #cdd6f4;
-  transition: transform 0.3s ease;
-  border: 5px solid #11111b;
-}
-
-.digit:hover {
-  transform: scale(1.2);
-}
-
-.baldwin-background {
-  background-color: #d20f39;
-}
-.sotomayor-background {
-  background-color: #1e66f5;
-}
-.mandela-background {
-  background-color: #40a02b;
-}
-.truth-background {
-  background-color: #df8e1d;
-}
-
-.baldwin-box,
-.sotomayor-box,
-.mandela-box,
-.truth-box {
-  width: 100%;
-  padding: 20px;
-  border-radius: 10px;
-  margin-bottom: 0;
-  box-sizing: border-box;
-}
-
-.baldwin-box {
-  box-shadow: 0 0 15px 5px rgba(210, 15, 57, 0.7);
-}
-.sotomayor-box {
-  box-shadow: 0 0 15px 5px rgba(30, 102, 245, 0.7);
-}
-.mandela-box {
-  box-shadow: 0 0 15px 5px rgba(64, 160, 43, 0.7);
-}
-.truth-box {
-  box-shadow: 0 0 15px 5px rgba(223, 142, 29, 0.7);
+.font-jellee {
+  font-family: "Jellee Roman", serif;
 }
 
 @media (max-width: 768px) {
   .widget-container {
-    grid-template-columns: 1fr;
+    width: 90%;
   }
 
   .login-btn {
@@ -203,8 +106,4 @@ body {
     margin-bottom: 20px;
     align-self: flex-end;
   }
-}
-
-.font-jellee {
-  font-family: "Jellee Roman", serif;
 }
