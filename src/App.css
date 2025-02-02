@@ -50,7 +50,7 @@ body {
   gap: 20px;
   margin-top: 20px;
   width: 100%;
-  max-width: 180px;
+  max-width: 160px;
   box-sizing: border-box;
   flex-grow: 1;
   padding-bottom: 40px;
@@ -104,6 +104,7 @@ body {
   font-weight: bold;
   width: 100%;
   text-align: center;
+  font-size: 18px;
 }
 
 .baldwin-box,
@@ -159,7 +160,7 @@ body {
 
 .counter-label {
   font-family: "Jellee Roman", serif;
-  font-size: 28px;
+  font-size: 24px;
   font-weight: bold;
   margin-bottom: 5px;
   color: #cdd6f4;
@@ -178,7 +179,7 @@ body {
   transition: transform 0.3s ease;
   border: 2px solid #11111b;
   font-family: "Clement", sans-serif;
-  font-size: 36px;
+  font-size: 42px;
 }
 
 .digit:hover {
