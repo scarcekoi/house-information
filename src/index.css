@@ -1,8 +1,8 @@
 body {
   font-family: Calibri, sans-serif;
   margin: 0;
-  background-color: #1E1E2E;
-  color: #CDD6F4;
+  background-color: #1e1e2e;
+  color: #cdd6f4;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -27,24 +27,40 @@ body {
 }
 
 .title {
-  font-family: 'Jellee Roman', serif;
+  font-family: "Jellee Roman", serif;
   font-size: 48px;
   font-weight: bold;
   text-align: center;
   margin-top: 10px;
-  color: #CDD6F4;
+  color: #cdd6f4;
 }
 
 .widget-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  margin-top: 20px;
+  width: 100%;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.column-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.house-counters {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 40px;
-  margin-top: 20px;
   width: 100%;
 }
 
 .leaderboard {
-  grid-column: 1 / -1;
   font-size: 24px;
   text-align: center;
   display: flex;
@@ -54,7 +70,9 @@ body {
   padding: 20px;
   background-color: #181825;
   border-radius: 10px;
-  box-shadow: 0 0 15px 5px rgba(0, 255, 255, 0.5), rgba(30, 102, 245, 0.5), rgba(64, 160, 43, 0.5), rgba(223, 142, 29, 0.5);
+  box-shadow: 0 0 15px 5px rgba(0, 255, 255, 0.5), rgba(30, 102, 245, 0.5), rgba(64, 160, 43, 0.5),
+    rgba(223, 142, 29, 0.5);
+  width: 100%;
 }
 
 .place {
@@ -65,7 +83,7 @@ body {
 }
 
 .place-digit {
-  font-family: 'Jellee Roman', serif;
+  font-family: "Jellee Roman", serif;
   font-size: 24px;
   margin-right: 10px;
   min-width: 40px;
@@ -81,18 +99,21 @@ body {
 }
 
 .counter-label {
-  font-family: 'Jellee Roman', serif;
+  font-family: "Jellee Roman", serif;
   font-size: 36px;
   font-weight: bold;
   margin-bottom: 10px;
-  color: #CDD6F4;
+  color: #cdd6f4;
 }
 
 .counter {
   display: flex;
+  justify-content: center;
+  background-color: #181825;
+  padding: 10px;
+  border-radius: 10px;
   font-size: 48px;
   font-weight: bold;
-  justify-content: center;
 }
 
 .countdown {
@@ -100,8 +121,12 @@ body {
   text-align: center;
   margin-top: 40px;
   font-weight: bold;
-  color: #CDD6F4;
+  color: #cdd6f4;
   width: 100%;
+  background-color: #181825;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px 5px rgba(0, 255, 255, 0.5);
 }
 
 .login-btn {
@@ -109,7 +134,7 @@ body {
   top: 20px;
   right: 20px;
   background-color: #11111b;
-  color: #CDD6F4;
+  color: #cdd6f4;
   padding: 10px 20px;
   border: none;
   border-radius: 8px;
@@ -127,24 +152,50 @@ body {
   margin: 0 3px;
   padding: 6px 8px;
   border-radius: 15px;
-  color: #CDD6F4;
+  color: #cdd6f4;
   transition: transform 0.3s ease;
-  border: 5px solid #11111B;
+  border: 5px solid #11111b;
 }
 
 .digit:hover {
   transform: scale(1.2);
 }
 
-.baldwin-background { background-color: #d20f39; }
-.sotomayor-background { background-color: #1e66f5; }
-.mandela-background { background-color: #40a02b; }
-.truth-background { background-color: #df8e1d; }
+.baldwin-background {
+  background-color: #d20f39;
+}
+.sotomayor-background {
+  background-color: #1e66f5;
+}
+.mandela-background {
+  background-color: #40a02b;
+}
+.truth-background {
+  background-color: #df8e1d;
+}
 
-.baldwin-box { box-shadow: 0 0 15px 5px rgba(210, 15, 57, 0.7); }
-.sotomayor-box { box-shadow: 0 0 15px 5px rgba(30, 102, 245, 0.7); }
-.mandela-box { box-shadow: 0 0 15px 5px rgba(64, 160, 43, 0.7); }
-.truth-box { box-shadow: 0 0 15px 5px rgba(223, 142, 29, 0.7); }
+.baldwin-box,
+.sotomayor-box,
+.mandela-box,
+.truth-box {
+  width: 100%;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.baldwin-box {
+  box-shadow: 0 0 15px 5px rgba(210, 15, 57, 0.7);
+}
+.sotomayor-box {
+  box-shadow: 0 0 15px 5px rgba(30, 102, 245, 0.7);
+}
+.mandela-box {
+  box-shadow: 0 0 15px 5px rgba(64, 160, 43, 0.7);
+}
+.truth-box {
+  box-shadow: 0 0 15px 5px rgba(223, 142, 29, 0.7);
+}
 
 @media (max-width: 768px) {
   .widget-container {
@@ -159,5 +210,5 @@ body {
 }
 
 .font-jellee {
-  font-family: 'Jellee Roman', serif;
+  font-family: "Jellee Roman", serif;
 }
