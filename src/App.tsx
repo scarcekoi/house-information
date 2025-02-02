@@ -1,6 +1,5 @@
 import { Routes, Route } from "react-router-dom";
 import App from "./pages/App.tsx";
-import Login from "./pages/Lgn.tsx";
 
 function Index() {
   return (
