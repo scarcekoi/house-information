@@ -7,7 +7,6 @@ function Index() {
     <>
       <Routes>
         <Route path="/" element={<App />} />
-        <Route path="/login" element={<Login />} />
       </Routes>
     </>
   );
