@@ -47,10 +47,10 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  gap: 40px;
+  gap: 20px; /* Reduced gap */
   margin-top: 20px;
   width: 100%;
-  max-width: 300px;
+  max-width: 220px; /* Further reduced from 300px */
   box-sizing: border-box;
   flex-grow: 1;
   padding-bottom: 40px;
@@ -58,14 +58,14 @@ body {
 
 .leaderboard,
 .countdown {
-  font-size: 24px;
+  font-size: 18px; /* Reduced font size */
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-bottom: 20px;
   width: 100%;
-  padding: 20px;
+  padding: 15px; /* Reduced padding */
   color: #cdd6f4;
   position: relative;
   background-color: #181825;
@@ -98,14 +98,14 @@ body {
 }
 
 .leaderboard {
-  font-size: 24px;
+  font-size: 18px; /* Reduced font size */
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-bottom: 20px;
   width: 100%;
-  padding: 20px;
+  padding: 15px; /* Reduced padding */
   color: #cdd6f4;
   position: relative;
   background-color: #181825;
@@ -138,14 +138,14 @@ body {
 }
 
 .digit {
-  margin: 0 2px;
-  padding: 4px 6px;
-  border-radius: 10px;
+  margin: 0 1px; /* Reduced margin */
+  padding: 2px 4px; /* Reduced padding */
+  border-radius: 8px; /* Reduced border-radius */
   color: #cdd6f4;
   transition: transform 0.3s ease;
-  border: 3px solid #11111b;
+  border: 2px solid #11111b; /* Reduced border width */
   font-family: "Clement", sans-serif;
-  font-size: 36px;
+  font-size: 28px; /* Reduced font size */
 }
 
 .digit:hover {
@@ -184,12 +184,12 @@ body {
   align-items: center;
   justify-content: center;
   background-color: #181825;
-  padding: 15px;
+  padding: 10px; /* Further reduced padding */
   border-radius: 10px;
   width: 100%;
   color: #cdd6f4;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  margin-bottom: 20px;
+  margin-bottom: 10px; /* Reduced margin */
   box-sizing: border-box;
 }
 
@@ -240,14 +240,14 @@ body {
 
 .countdown {
   font-family: "Jellee Roman", serif;
-  font-size: 24px;
+  font-size: 18px; /* Reduced font size */
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-bottom: 20px;
   width: 100%;
-  padding: 20px;
+  padding: 15px; /* Reduced padding */
   color: #cdd6f4;
   position: relative;
   background-color: #181825;
@@ -260,10 +260,15 @@ body {
 
 .counter-label {
   font-family: "Jellee Roman", serif;
-  font-size: 28px;
+  font-size: 24px; /* Reduced font size */
   font-weight: bold;
-  margin-bottom: 5px;
+  margin-bottom: 3px; /* Reduced margin */
   color: #cdd6f4;
+}
+
+.counter {
+  display: flex;
+  justify-content: center;
 }
 
 @media (prefers-color-scheme: light) {
