@@ -42,10 +42,10 @@ const App: React.FC = () => {
     const diff2 = houseScores[1].score - houseScores[2].score
     const diff3 = houseScores[2].score - houseScores[3].score
 
-    document.getElementById("first-place")!.innerText = `1st Place: ${houseScores[0].name} (+${diff1})`
-    document.getElementById("second-place")!.innerText = `2nd Place: ${houseScores[1].name} (+${diff2} | -${diff1})`
-    document.getElementById("third-place")!.innerText = `3rd Place: ${houseScores[2].name} (+${diff3} | -${diff2})`
-    document.getElementById("fourth-place")!.innerText = `4th Place: ${houseScores[3].name} (-${diff3})`
+    document.getElementById("first-place")!.innerText = `1st: ${houseScores[0].name} (+${diff1})`
+    document.getElementById("second-place")!.innerText = `2nd: ${houseScores[1].name} (+${diff2} | -${diff1})`
+    document.getElementById("third-place")!.innerText = `3rd: ${houseScores[2].name} (+${diff3} | -${diff2})`
+    document.getElementById("fourth-place")!.innerText = `4th: ${houseScores[3].name} (-${diff3})`
   }
 
   const targetDate = new Date("2024-12-20T14:41:00")
@@ -61,7 +61,7 @@ const App: React.FC = () => {
 
     if (timeDifference > 0) {
       setCountdownText(
-        `${daysRemaining} Days ${hoursRemaining} Hours ${minutesRemaining} Minutes ${secondsRemaining} Seconds until next house village meeting`,
+        `${daysRemaining}d ${hoursRemaining}h ${minutesRemaining}m ${secondsRemaining}s until next village meeting`,
       )
     } else {
       setCountdownText("Village meeting has already occurred!")
