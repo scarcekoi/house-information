@@ -37,7 +37,6 @@ const App: React.FC = () => {
     ]
 
     houseScores.sort((a, b) => b.score - a.score)
-    setCurrentHouse(houseScores[0].name)
 
     const diff1 = houseScores[0].score - houseScores[1].score
     const diff2 = houseScores[1].score - houseScores[2].score
