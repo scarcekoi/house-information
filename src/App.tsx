@@ -2,7 +2,6 @@ import type React from "react"
 import { useState, useEffect } from "react"
 import "./App.css"
 import "./index.css"
-import Banner from "./Banner"
 
 interface Counters {
   Baldwin: number
@@ -20,7 +19,6 @@ const App: React.FC = () => {
   })
 
   const [countdownText, setCountdownText] = useState("")
-  const [currentHouse, setCurrentHouse] = useState("Baldwin")
 
   useEffect(() => {
     updateLeaderboard(counters)
@@ -77,7 +75,6 @@ const App: React.FC = () => {
 
   return (
     <div className="App">
-      <Banner currentHouse={currentHouse} />
       <h1 className="title">House Information</h1>
       <div className="widget-container">
         <div className="leaderboard">
