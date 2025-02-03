@@ -37,7 +37,7 @@ body {
   font-size: 48px;
   font-weight: bold;
   text-align: center;
-  margin-top: 70px; /* Updated margin-top */
+  margin-top: 100px; /* Increased margin-top */
   color: #cdd6f4;
   width: 100%;
 }
@@ -95,9 +95,11 @@ body {
   width: 100%;
   height: 100%;
   filter: blur(50px);
-  z-index: -1;
+  z-index: -1; /* Updated z-index */
   border-radius: 10px;
   opacity: 0.7;
+  box-shadow: 0 0 15px 5px rgba(0, 255, 255, 0.5), rgba(30, 102, 245, 0.5), rgba(64, 160, 43, 0.5),
+    rgba(223, 142, 29, 0.5);
 }
 
 .leaderboard .place {
@@ -126,8 +128,7 @@ body {
 .sotomayor-box,
 .mandela-box,
 .truth-box {
-  box-shadow: 0 0 15px 5px rgba(0, 255, 255, 0.5), rgba(30, 102, 245, 0.5), rgba(64, 160, 43, 0.5),
-    rgba(223, 142, 29, 0.5);
+  box-shadow: none; /* Removed box-shadow */
 }
 
 .baldwin-box:hover,
@@ -193,9 +194,9 @@ body {
   background-color: #181825;
   color: #cdd6f4;
   text-align: center;
-  padding: 15px; /* Updated padding */
+  padding: 15px;
   font-family: "Jellee Roman", serif;
-  font-size: 24px; /* Updated font-size */
+  font-size: 24px;
   z-index: 1000;
 }
 
