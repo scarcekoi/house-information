@@ -30,6 +30,7 @@ body {
   min-height: 100vh;
   width: 100%;
   align-items: center;
+  padding-top: 90px;
 }
 
 .title {
@@ -76,13 +77,12 @@ body {
 .leaderboard {
   font-size: 22px;
   padding: 15px 20px;
-  width: 100%;
+  width: 360px;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-bottom: 20px;
-  width: 360px;
   color: #CDD6F4;
   position: relative;
   padding: 20px;
@@ -130,10 +130,7 @@ body {
   text-align: center;
 }
 
-.baldwin-box,
-.sotomayor-box,
-.mandela-box,
-.truth-box {
+.baldwin-box {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -141,23 +138,26 @@ body {
   background-color: #181825;
   padding: 10px 15px;
   border-radius: 10px;
-  width: 100%;
+  width: 320px;
   color: #cdd6f4;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   margin-bottom: 10px;
   box-sizing: border-box;
-}
-
-.baldwin-box {
   box-shadow: 0 0 15px 5px rgba(210, 15, 57, 0.7);
 }
+
 .sotomayor-box {
+  width: 290px;
   box-shadow: 0 0 15px 5px rgba(30, 102, 245, 0.7);
 }
+
 .mandela-box {
+  width: 260px;
   box-shadow: 0 0 15px 5px rgba(64, 160, 43, 0.7);
 }
+
 .truth-box {
+  width: 230px;
   box-shadow: 0 0 15px 5px rgba(223, 142, 29, 0.7);
 }
 
@@ -171,12 +171,15 @@ body {
 .baldwin-box:hover {
   box-shadow: 0 0 20px 10px rgba(210, 15, 57, 0.9);
 }
+
 .sotomayor-box:hover {
   box-shadow: 0 0 20px 10px rgba(30, 102, 245, 0.9);
 }
+
 .mandela-box:hover {
   box-shadow: 0 0 20px 10px rgba(64, 160, 43, 0.9);
 }
+
 .truth-box:hover {
   box-shadow: 0 0 20px 10px rgba(223, 142, 29, 0.9);
 }
@@ -212,12 +215,15 @@ body {
 .baldwin-background {
   background-color: #d20f39;
 }
+
 .sotomayor-background {
   background-color: #1e66f5;
 }
+
 .mandela-background {
   background-color: #40a02b;
 }
+
 .truth-background {
   background-color: #df8e1d;
 }
@@ -230,7 +236,7 @@ body {
   background-color: #181825;
   color: #cdd6f4;
   text-align: center;
-  padding: 15px;
+  padding: 20px;
   font-family: "Jellee Roman", serif;
   font-size: 24px;
   z-index: 1000;
