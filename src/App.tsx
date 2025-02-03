@@ -2,6 +2,7 @@ import type React from "react"
 import { useState, useEffect } from "react"
 import "./App.css"
 import "./index.css"
+import Banner from "./Banner"
 
 interface Counters {
   Baldwin: number
@@ -19,6 +20,7 @@ const App: React.FC = () => {
   })
 
   const [countdownText, setCountdownText] = useState("")
+  const [currentHouse, setCurrentHouse] = useState("Baldwin")
 
   useEffect(() => {
     updateLeaderboard(counters)
@@ -37,6 +39,7 @@ const App: React.FC = () => {
     ]
 
     houseScores.sort((a, b) => b.score - a.score)
+    setCurrentHouse(houseScores[0].name)
 
     const diff1 = houseScores[0].score - houseScores[1].score
     const diff2 = houseScores[1].score - houseScores[2].score
@@ -74,6 +77,7 @@ const App: React.FC = () => {
 
   return (
     <div className="App">
+      <Banner currentHouse={currentHouse} />
       <h1 className="title">House Information</h1>
       <div className="widget-container">
         <div className="leaderboard">

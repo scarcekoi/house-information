@@ -70,9 +70,7 @@ body {
   position: relative;
   background-color: #181825;
   border-radius: 10px;
-  box-shadow: 0 0 15px 5px rgba(0, 255, 255, 0.5), rgba(30, 102, 245, 0.5), rgba(64, 160, 43, 0.5),
-    rgba(223, 142, 29, 0.5);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease;
   box-sizing: border-box;
   padding: 15px 25px;
   width: auto;
@@ -96,13 +94,6 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    -45deg,
-    rgba(210, 15, 57, 1) 25%,
-    rgba(30, 102, 245, 1) 25% 50%,
-    rgba(64, 160, 43, 1) 50% 75%,
-    rgba(223, 142, 29, 1) 75%
-  );
   filter: blur(50px);
   z-index: -1;
   border-radius: 10px;
@@ -131,24 +122,19 @@ body {
   background: rgba(223, 142, 29, 0.7);
 }
 
+.baldwin-box,
+.sotomayor-box,
+.mandela-box,
+.truth-box {
+  box-shadow: 0 0 15px 5px rgba(0, 255, 255, 0.5), rgba(30, 102, 245, 0.5), rgba(64, 160, 43, 0.5),
+    rgba(223, 142, 29, 0.5);
+}
+
 .baldwin-box:hover,
 .sotomayor-box:hover,
 .mandela-box:hover,
 .truth-box:hover {
   transform: scale(1.05);
-}
-
-.baldwin-box:hover::before {
-  background: rgba(210, 15, 57, 0.9);
-}
-.sotomayor-box:hover::before {
-  background: rgba(30, 102, 245, 0.9);
-}
-.mandela-box:hover::before {
-  background: rgba(64, 160, 43, 0.9);
-}
-.truth-box:hover::before {
-  background: rgba(223, 142, 29, 0.9);
 }
 
 .counter-label {
@@ -197,6 +183,25 @@ body {
   font-size: 22px;
   text-align: center;
   white-space: nowrap;
+}
+
+.banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #181825;
+  color: #cdd6f4;
+  text-align: center;
+  padding: 10px;
+  font-family: "Jellee Roman", serif;
+  font-size: 18px;
+  z-index: 1000;
+  transition: transform 0.3s ease-in-out;
+}
+
+.banner.hidden {
+  transform: translateY(-100%);
 }
 
 @media (prefers-color-scheme: light) {
