@@ -2,6 +2,7 @@ import type React from "react"
 import { useState, useEffect } from "react"
 import "./App.css"
 import "./index.css"
+import TotalHousePoints from "./TotalHousePoints"  // Import the chart component
 
 interface Counters {
   Baldwin: number
@@ -130,6 +131,8 @@ const App: React.FC = () => {
         <div className="countdown">
           <div>{countdownText}</div>
         </div>
+
+        <TotalHousePoints counters={counters} />
       </div>
     </div>
   )
