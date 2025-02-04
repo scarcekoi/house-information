@@ -2,7 +2,7 @@ import type React from "react"
 import { useState, useEffect } from "react"
 import "./App.css"
 import "./index.css"
-import TotalHousePoints from "./TotalHousePoints"  // Import the chart component
+import TotalHousePoints from "./charts/totalhousepoints.tsx"  // Import the chart component
 
 interface Counters {
   Baldwin: number
