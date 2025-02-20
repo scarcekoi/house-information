@@ -3,6 +3,13 @@
   src: url("./assets/Clement-Numbers.otf") format("opentype");
 }
 
+@font-face {
+  font-family: "Jellee Roman";
+  src: url("./assets/Jellee-Roman.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 html,
 body {
   height: auto;
